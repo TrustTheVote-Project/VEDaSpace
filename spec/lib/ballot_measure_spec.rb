@@ -12,14 +12,18 @@
 require_relative '../spec_helper.rb'
 
 describe VSSC::BallotMeasure do
+  let(:b) { VSSC::BallotMeasure.new }
+  
   it "should be a kind of Contest" do
-    expect(VSSC::BallotMeasure.new).to be_a(VSSC::Contest)
+    expect(b).to be_a(VSSC::Contest)
   end
+  
   it "should have a FullText string property" do
-    b = VSSC::BallotMeasure.new
-    expect(b).to respond_to(:full_text=)
-    expect(b).to respond_to(:full_text)
-    expect(b.elements["FullText"]).to  eq(:full_text)
+    expect(b).to have_element("FullText")
   end
-  it "should have a SummaryText string property"
+  
+  it "should have a SummaryText string property" do
+    expect(b).to have_element("SummaryText")
+  end
+    
 end

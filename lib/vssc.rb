@@ -1,4 +1,5 @@
 require "active_support/all"
+require "active_model"
 
 module VSSC
   
@@ -7,21 +8,66 @@ module VSSC
     module ClassMethods
       attr_reader :elements, :attributes
     
-      def define_element(element_name, data_type=String)
+      def define_element(element_name, opts={})
         #puts self.class.to_s
         method_name = element_name.underscore
         #puts method_name
+        element_type = opts[:type] || String
         @elements ||= {}
-        @elements[element_name] = method_name.to_sym
-        #@attributes ||= {}
+        @elements[element_name] ||= {}
+        @elements[element_name][:method] = method_name.to_sym
+        @elements[element_name][:type] = element_type
         
+        if opts[:required]
+          validates_presence_of method_name
+        end
+        
+        if opts[:multiple]
+          validate("#{method_name}_type_validation")
+          
+          define_method "#{method_name}_type_validation" do
+            v = true
+            self.send(method_name).each {|val| v = (v && val.is_a?(element_type)) }
+            if !v
+              errors.add(method_name, "All #{element_name} myse be #{element_type}")
+            end
+          end
+          
+          define_method method_name do
+            instance_variable_set("@#{method_name}", instance_variable_get("@#{method_name}") || [])
+            instance_variable_get("@#{method_name}")
+          end
+          define_method "#{method_name}=" do |val|
+            raise 'Must be an array' if !val.is_a?(Array)
+            instance_variable_set("@#{method_name}", val)
+          end
+        else
+          attr_accessor method_name
+        end
+      end
+      
+      def define_attribute(element_name, opts={})
+        #puts self.class.to_s
+        method_name = element_name.underscore
+        #puts method_name
+        @attributes ||= {}
+        @attributes[element_name] ||= {}
+        @attributes[element_name][:method] = method_name.to_sym
+        @attributes[element_name][:type] = opts[:type] || "String"
+        
+        #@attributes ||= {}
+        if opts[:required]
+          validates_presence_of method_name
+        end
         attr_accessor method_name
       end
+      
     end
     
     
     def self.included(base)
       base.extend ClassMethods
+      base.include ActiveModel::Validations
     end
 
     def attributes
@@ -373,4 +419,9 @@ end
 
 require 'vssc/election_report.rb'
 require 'vssc/contest.rb'
+require 'vssc/ordered_contest.rb'
+require 'vssc/vote_counts'
 require 'vssc/ballot_measure.rb'
+require 'vssc/ballot_selection.rb'
+require 'vssc/ballot_measure_selection.rb'
+require 'vssc/ballot_style.rb'
