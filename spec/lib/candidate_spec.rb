@@ -20,7 +20,8 @@ require_relative '../spec_helper.rb'
 describe VSSC::Candidate do
   let(:c) { VSSC::Candidate.new }
   before(:each) do
-    #c
+    c.object_id = "abc"
+    c.ballot_name = "abc"
   end
   subject { c }
   it { should have_element("Party") }
@@ -36,18 +37,18 @@ describe VSSC::Candidate do
   it { should have_attribute("candidateID") }
 
   it { should have_attribute("fileDate") }
-  it { should validated_attribute_type("fileDate", DateTime.now.iso8601)}
+  it { should validate_attribute_type("fileDate", DateTime.now.iso8601)}
   
   it { should have_attribute("isIncumbent") }
-  it { should validate_attribute_type("isIncumbent"), true}
+  it { should validate_attribute_type("isIncumbent", true)}
   
   it { should have_attribute("isTopTicket") }
-  it { should validate_attribute_type("isTopTicket"), true}
+  it { should validate_attribute_type("isTopTicket", true)}
   
   it { should have_attribute("sequenceOrder") }
-  it { should validate_attribute_type("sequenceOrder"), 1}
+  it { should validate_attribute_type("sequenceOrder", 1)}
   
   it { should have_attribute("candidateStatus") }
-  it { should validate_attribute_type("candidateStatus"), VSSC::CandidateStatus.qualified}
+  it { should validate_attribute_type("candidateStatus", VSSC::CandidateStatus.qualified)}
   
 end

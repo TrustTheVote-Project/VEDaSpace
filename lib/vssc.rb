@@ -52,6 +52,7 @@ module VSSC
       def define_attribute(element_name, opts={})
         #puts self.class.to_s
         method_name = element_name.underscore
+        element_type = opts[:type] || String
         #puts method_name
         @attributes ||= {}
         @attributes[element_name] ||= {}
@@ -61,6 +62,29 @@ module VSSC
         #@attributes ||= {}
         if opts[:required]
           validates_presence_of method_name
+        end
+        if opts[:type]
+          validate("#{method_name}_type_validation")
+          
+          define_method "#{method_name}_type_validation" do
+            return true if self.send(method_name).blank?
+            v = false
+            if element_type == "xsd:dateTime"
+              value = self.send(method_name)
+              begin
+                v = DateTime.iso8601(value.to_s).iso8601.to_s == value.to_s
+              rescue
+                v = false
+              end
+            elsif element_type == "xsd:boolean"
+              v = [true, false].include?(self.send(method_name))
+            else
+              v = self.send(method_name).is_a?(element_type)
+            end
+            if !v
+              errors.add(method_name, "All #{element_name} myse be #{element_type}")
+            end
+          end
         end
         attr_accessor method_name
       end
