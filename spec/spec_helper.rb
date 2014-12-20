@@ -6,30 +6,34 @@ RSpec.configure do |config|
   
 end
 
+require 'rspec/expectations'
 
 RSpec::Matchers.define :have_element do |expected|
   match do |inst|
-    expect(inst).to respond_to("#{expected.underscore}=")
-    expect(inst).to respond_to("#{expected.underscore}")
-    expect(inst.elements[expected][:method]).to eq(expected.underscore.to_sym)
+    success = inst.respond_to?("#{expected.underscore}=")
+    success &= inst.respond_to?("#{expected.underscore}")
+    success && (inst.elements[expected][:method] == expected.underscore.to_sym) 
   end
+  description { "have element for #{expected} "}
 end
 
 
 RSpec::Matchers.define :have_attribute do |expected|
   match do |inst|
-    expect(inst).to respond_to("#{expected.underscore}=")
-    expect(inst).to respond_to("#{expected.underscore}")
-    expect(inst.attributes[expected][:method]).to eq(expected.underscore.to_sym)
+    success = inst.respond_to?("#{expected.underscore}=")
+    success &= inst.respond_to?("#{expected.underscore}")
+    success && (inst.attributes[expected][:method] == expected.underscore.to_sym)
   end
+  description { "have attribute for #{expected}"}
 end
 
 
 RSpec::Matchers.define :have_element_array do |expected|
   match do |inst|
     meth = inst.elements[expected][:method]
-    expect(inst.send(meth)).to be_a(Array)  
+    inst.send(meth).is_a?(Array)
   end
+  description { "have array element #{expected}"}
 end
 
 RSpec::Matchers.define :validate_element_array_type do |expected, instance|
@@ -40,19 +44,42 @@ RSpec::Matchers.define :validate_element_array_type do |expected, instance|
     else
       inst.send(meth) << 0
     end
-    expect(inst).to_not be_valid
+    success = !inst.valid?
     inst.send(meth).clear
     inst.send(meth) << instance
-    expect(inst).to be_valid
+    success && inst.valid?
   end
+  description { "should only accept #{instance.class} in array element #{expected}"}
+end
+
+RSpec::Matchers.define :validate_element_array_min_size do |expected, count|
+  match do |inst|
+    meth =  inst.elements[expected][:method]
+    meth_type = inst.elements[expected][:type]
+    inst.send(meth).clear
+    (count - 1).times do 
+      inst.send(meth) << meth_type.new
+    end    
+    success = !inst.valid?
+    inst.send(meth) << meth_type.new
+
+    success && inst.valid?
+  end
+  description do
+    "have min size of #{count} for array element #{expected}"
+  end
+  
 end
 
 RSpec::Matchers.define :validate_presence_of_attribute do |expected|
   match do |inst|
     meth = inst.attributes[expected][:method]
     inst.send("#{meth}=",nil)
-    expect(inst).to_not be_valid
+    success = !inst.valid?
     inst.send("#{meth}=","abc")
-    expect(inst).to be_valid
+    success && inst.valid?
+  end
+  description  do 
+    "require presence of #{expected} attribute"
   end
 end

@@ -23,6 +23,9 @@ module VSSC
         end
         
         if opts[:multiple]
+          if opts[:min_size]
+            validates_length_of method_name, is: opts[:min_size]
+          end
           validate("#{method_name}_type_validation")
           
           define_method "#{method_name}_type_validation" do
@@ -425,3 +428,5 @@ require 'vssc/ballot_measure.rb'
 require 'vssc/ballot_selection.rb'
 require 'vssc/ballot_measure_selection.rb'
 require 'vssc/ballot_style.rb'
+require 'vssc/ballot_style_collection.rb'
+require 'vssc/candidate.rb'
