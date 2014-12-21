@@ -74,10 +74,9 @@ end
 RSpec::Matchers.define :validate_presence_of_attribute do |expected|
   match do |inst|
     meth = inst.attributes[expected][:method]
+    success = inst.valid?
     inst.send("#{meth}=",nil)
-    success = !inst.valid?
-    inst.send("#{meth}=","abc")
-    success && inst.valid?
+    success && !inst.valid?
   end
   description  do 
     "require presence of #{expected} attribute"

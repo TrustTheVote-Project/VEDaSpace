@@ -32,7 +32,7 @@ module VSSC
             v = true
             self.send(method_name).each {|val| v = (v && val.is_a?(element_type)) }
             if !v
-              errors.add(method_name, "All #{element_name} myse be #{element_type}")
+              errors.add(method_name, "All #{element_name} must be #{element_type}")
             end
           end
           
@@ -82,7 +82,7 @@ module VSSC
               v = self.send(method_name).is_a?(element_type)
             end
             if !v
-              errors.add(method_name, "All #{element_name} myse be #{element_type}")
+              errors.add(method_name, "All #{element_name} must be #{element_type}")
             end
           end
         end
@@ -446,6 +446,7 @@ end
 
 require 'vssc/election_report.rb'
 require 'vssc/contest.rb'
+require 'vssc/contact.rb'
 require 'vssc/ordered_contest.rb'
 require 'vssc/vote_counts'
 require 'vssc/ballot_measure.rb'
@@ -454,3 +455,6 @@ require 'vssc/ballot_measure_selection.rb'
 require 'vssc/ballot_style.rb'
 require 'vssc/ballot_style_collection.rb'
 require 'vssc/candidate.rb'
+require 'vssc/candidate_choice.rb'
+require 'vssc/candidate_collection.rb'
+require 'vssc/candidate_selection.rb'
