@@ -443,14 +443,14 @@ module VSSC
   
 end
 
-
+require 'vssc/gp_unit.rb'
 require 'vssc/election_report.rb'
 require 'vssc/contest.rb'
 require 'vssc/contest_collection.rb'
 require 'vssc/contact.rb'
 require 'vssc/ordered_contest.rb'
-require 'vssc/counts'
-require 'vssc/vote_counts'
+require 'vssc/counts.rb'
+require 'vssc/vote_counts.rb'
 require 'vssc/ballot_measure.rb'
 require 'vssc/ballot_selection.rb'
 require 'vssc/ballot_measure_selection.rb'
@@ -460,3 +460,4 @@ require 'vssc/candidate.rb'
 require 'vssc/candidate_choice.rb'
 require 'vssc/candidate_collection.rb'
 require 'vssc/candidate_selection.rb'
+require 'vssc/device.rb'
