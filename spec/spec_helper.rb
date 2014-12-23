@@ -83,6 +83,22 @@ RSpec::Matchers.define :validate_presence_of_attribute do |expected|
   end
 end
 
+RSpec::Matchers.define :validate_element_type do |expected, instance|
+  match do |inst|
+    meth =  inst.elements[expected][:method]
+    unless instance.is_a?(String)
+      inst.send("#{meth}=", "string")
+    else
+      inst.send("#{meth}=", 0)
+    end
+    success = !inst.valid?
+    inst.send("#{meth}=", instance)
+    success && inst.valid?
+  end
+  description { "only accept #{instance.class} types in element #{expected}"}
+end
+
+
 RSpec::Matchers.define :validate_attribute_type do |expected, instance|
   match do |inst|
     meth =  inst.attributes[expected][:method]

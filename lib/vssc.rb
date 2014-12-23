@@ -21,7 +21,29 @@ module VSSC
         if opts[:required]
           validates_presence_of method_name
         end
-        
+        if opts[:type]
+          validate("#{method_name}_type_validation")
+          
+          define_method "#{method_name}_type_validation" do
+            return true if self.send(method_name).blank?
+            v = false
+            if element_type == "xsd:dateTime" || element_type == "xsd:date"
+              value = self.send(method_name)
+              begin
+                v = DateTime.iso8601(value.to_s).iso8601.to_s == value.to_s
+              rescue
+                v = false
+              end
+            elsif element_type == "xsd:boolean"
+              v = [true, false].include?(self.send(method_name))
+            else
+              v = self.send(method_name).is_a?(element_type)
+            end
+            if !v
+              errors.add(method_name, "All #{element_name} must be #{element_type}")
+            end
+          end
+        end
         if opts[:multiple]
           if opts[:min_size]
             validates_length_of method_name, is: opts[:min_size]
@@ -69,7 +91,7 @@ module VSSC
           define_method "#{method_name}_type_validation" do
             return true if self.send(method_name).blank?
             v = false
-            if element_type == "xsd:dateTime"
+            if element_type == "xsd:dateTime" || element_type == "xsd:date"
               value = self.send(method_name)
               begin
                 v = DateTime.iso8601(value.to_s).iso8601.to_s == value.to_s
@@ -462,3 +484,4 @@ require 'vssc/candidate_collection.rb'
 require 'vssc/candidate_selection.rb'
 require 'vssc/device.rb'
 require 'vssc/district.rb'
+require 'vssc/election.rb'
