@@ -466,7 +466,6 @@ module VSSC
 end
 
 require 'vssc/gp_unit.rb'
-require 'vssc/election_report.rb'
 require 'vssc/contest.rb'
 require 'vssc/contest_collection.rb'
 require 'vssc/contact.rb'
@@ -484,4 +483,13 @@ require 'vssc/candidate_collection.rb'
 require 'vssc/candidate_selection.rb'
 require 'vssc/device.rb'
 require 'vssc/district.rb'
+
+require 'vssc/gp_unit_collection.rb'
+require 'vssc/party_collection.rb'
+require 'vssc/person_collection.rb'
+require 'vssc/office_collection.rb'
+
+
 require 'vssc/election.rb'
+
+require 'vssc/election_report.rb'
