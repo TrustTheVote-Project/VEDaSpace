@@ -446,6 +446,7 @@ end
 
 require 'vssc/election_report.rb'
 require 'vssc/contest.rb'
+require 'vssc/contest_collection.rb'
 require 'vssc/contact.rb'
 require 'vssc/ordered_contest.rb'
 require 'vssc/vote_counts'
