@@ -6,44 +6,44 @@ module VSSC
 	
   module ClassAttributes
     module ClassMethods
-      attr_reader :elements, :attributes
+      attr_accessor :elements, :attributes
     
-      def define_element(element_name, opts={})
+      def define_xml_accessor(accessor_group, element_name, opts={})
+        
         #puts self.class.to_s
         method_name = element_name.underscore
         #puts method_name
         element_type = opts[:type] || String
-        @elements ||= {}
-        @elements[element_name] ||= {}
-        @elements[element_name][:method] = method_name.to_sym
-        @elements[element_name][:type] = element_type
+        
+        self.send("#{accessor_group}=", (self.send(accessor_group) || {}))
+      
+        self.send(accessor_group)[element_name] ||= {}
+        self.send(accessor_group)[element_name][:method] = method_name.to_sym
+        self.send(accessor_group)[element_name][:type] = element_type
         
         if opts[:required]
           validates_presence_of method_name
         end
+        
         if opts[:type]
           validate("#{method_name}_type_validation")
           
           define_method "#{method_name}_type_validation" do
             return true if self.send(method_name).blank?
-            v = false
+            valid_value = false
             if element_type == "xsd:dateTime" || element_type == "xsd:date"
-              value = self.send(method_name)
-              begin
-                v = DateTime.iso8601(value.to_s).iso8601.to_s == value.to_s
-              rescue
-                v = false
-              end
+              valid_value = is_valid_date_time?(self.send(method_name))
             elsif element_type == "xsd:boolean"
-              v = [true, false].include?(self.send(method_name))
+              valid_value = [true, false].include?(self.send(method_name))
             else
-              v = self.send(method_name).is_a?(element_type)
+              valid_value = self.send(method_name).is_a?(element_type)
             end
-            if !v
+            if !valid_value
               errors.add(method_name, "All #{element_name} must be #{element_type}")
             end
           end
         end
+        
         if opts[:multiple]
           if opts[:min_size]
             validates_length_of method_name, is: opts[:min_size]
@@ -51,9 +51,9 @@ module VSSC
           validate("#{method_name}_type_validation")
           
           define_method "#{method_name}_type_validation" do
-            v = true
-            self.send(method_name).each {|val| v = (v && val.is_a?(element_type)) }
-            if !v
+            valid_value = true
+            self.send(method_name).each {|val| valid_value = (valid_value && val.is_a?(element_type)) }
+            if !valid_value
               errors.add(method_name, "All #{element_name} must be #{element_type}")
             end
           end
@@ -62,6 +62,7 @@ module VSSC
             instance_variable_set("@#{method_name}", instance_variable_get("@#{method_name}") || [])
             instance_variable_get("@#{method_name}")
           end
+          
           define_method "#{method_name}=" do |val|
             raise 'Must be an array' if !val.is_a?(Array)
             instance_variable_set("@#{method_name}", val)
@@ -70,53 +71,28 @@ module VSSC
           attr_accessor method_name
         end
       end
+    
+      def define_element(element_name, opts={})
+        define_xml_accessor(:elements, element_name, opts)
+      end
       
       def define_attribute(element_name, opts={})
-        #puts self.class.to_s
-        method_name = element_name.underscore
-        element_type = opts[:type] || String
-        #puts method_name
-        @attributes ||= {}
-        @attributes[element_name] ||= {}
-        @attributes[element_name][:method] = method_name.to_sym
-        @attributes[element_name][:type] = opts[:type] || "String"
-        
-        #@attributes ||= {}
-        if opts[:required]
-          validates_presence_of method_name
-        end
-        if opts[:type]
-          validate("#{method_name}_type_validation")
-          
-          define_method "#{method_name}_type_validation" do
-            return true if self.send(method_name).blank?
-            v = false
-            if element_type == "xsd:dateTime" || element_type == "xsd:date"
-              value = self.send(method_name)
-              begin
-                v = DateTime.iso8601(value.to_s).iso8601.to_s == value.to_s
-              rescue
-                v = false
-              end
-            elsif element_type == "xsd:boolean"
-              v = [true, false].include?(self.send(method_name))
-            else
-              v = self.send(method_name).is_a?(element_type)
-            end
-            if !v
-              errors.add(method_name, "All #{element_name} must be #{element_type}")
-            end
-          end
-        end
-        attr_accessor method_name
+        define_xml_accessor(:attributes, element_name, opts)
       end
       
     end
     
-    
     def self.included(base)
       base.extend ClassMethods
       base.include ActiveModel::Validations
+    end
+    
+    def is_valid_date_time?(value)
+      begin
+        return DateTime.iso8601(value.to_s).iso8601.to_s == value.to_s
+      rescue
+        return false
+      end
     end
 
     def attributes
@@ -124,6 +100,21 @@ module VSSC
     end
     def elements
       self.class.elements
+    end
+    
+    
+    def set_vssc_attributes(xml_attributes)
+      xml_attributes.each do |key, value|
+        if attributes.include?(key)
+          self.send("#{attributes[key][:method]}=", value.value)
+        else
+          parse_error "Attribute #{key} not part of #{self.class}"
+        end
+      end
+    end
+    
+    def parse_error(msg)
+      puts msg
     end
     
   end
@@ -465,39 +456,41 @@ module VSSC
   
 end
 
-require 'vssc/party_registration.rb'
-require 'vssc/spatial_extent.rb'
-require 'vssc/spatial_dimension.rb'
-require 'vssc/counts.rb'
-require 'vssc/total_counts.rb'
-require 'vssc/gp_unit.rb'
-require 'vssc/contest.rb'
-require 'vssc/contest_collection.rb'
-require 'vssc/contact.rb'
-require 'vssc/ordered_contest.rb'
-require 'vssc/vote_counts.rb'
-require 'vssc/ballot_measure.rb'
-require 'vssc/ballot_selection.rb'
-require 'vssc/ballot_measure_selection.rb'
-require 'vssc/ballot_style.rb'
-require 'vssc/ballot_style_collection.rb'
-require 'vssc/candidate.rb'
-require 'vssc/candidate_choice.rb'
-require 'vssc/candidate_collection.rb'
-require 'vssc/candidate_selection.rb'
-require 'vssc/device.rb'
-require 'vssc/district.rb'
-require 'vssc/office.rb'
-require 'vssc/party.rb'
-require 'vssc/person.rb'
-require 'vssc/reporting_unit.rb'
-require 'vssc/straight_party.rb'
+require_relative 'vssc/party_registration.rb'
+require_relative 'vssc/spatial_extent.rb'
+require_relative 'vssc/spatial_dimension.rb'
+require_relative 'vssc/counts.rb'
+require_relative 'vssc/total_counts.rb'
+require_relative 'vssc/gp_unit.rb'
+require_relative 'vssc/contest.rb'
+require_relative 'vssc/contest_collection.rb'
+require_relative 'vssc/contact.rb'
+require_relative 'vssc/ordered_contest.rb'
+require_relative 'vssc/vote_counts.rb'
+require_relative 'vssc/ballot_measure.rb'
+require_relative 'vssc/ballot_selection.rb'
+require_relative 'vssc/ballot_measure_selection.rb'
+require_relative 'vssc/ballot_style.rb'
+require_relative 'vssc/ballot_style_collection.rb'
+require_relative 'vssc/candidate.rb'
+require_relative 'vssc/candidate_choice.rb'
+require_relative 'vssc/candidate_collection.rb'
+require_relative 'vssc/candidate_selection.rb'
+require_relative 'vssc/device.rb'
+require_relative 'vssc/district.rb'
+require_relative 'vssc/office.rb'
+require_relative 'vssc/party.rb'
+require_relative 'vssc/person.rb'
+require_relative 'vssc/reporting_unit.rb'
+require_relative 'vssc/straight_party.rb'
 
-require 'vssc/gp_unit_collection.rb'
-require 'vssc/party_collection.rb'
-require 'vssc/person_collection.rb'
-require 'vssc/office_collection.rb'
+require_relative 'vssc/gp_unit_collection.rb'
+require_relative 'vssc/party_collection.rb'
+require_relative 'vssc/person_collection.rb'
+require_relative 'vssc/office_collection.rb'
 
-require 'vssc/election.rb'
+require_relative 'vssc/election.rb'
 
-require 'vssc/election_report.rb'
+require_relative 'vssc/election_report.rb'
+
+require_relative 'vssc/parser.rb'
