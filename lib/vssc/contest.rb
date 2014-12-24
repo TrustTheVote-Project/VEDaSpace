@@ -4,8 +4,8 @@ module VSSC
     
     define_element("BallotSelection", multiple: true)
     define_element("ContestGPScope")
-    define_element("ContestTotalCounts", multiple: true)
-    define_element("ContestTotalCountsByGPUnit", multiple: true)
+    define_element("ContestTotalCounts", multiple: true, type: TotalCounts)
+    define_element("ContestTotalCountsByGPUnit", multiple: true, type: TotalCounts)
     
     define_attribute("object_id", required: true)
     define_attribute("abbreviation")

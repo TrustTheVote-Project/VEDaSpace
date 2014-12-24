@@ -465,6 +465,9 @@ module VSSC
   
 end
 
+require 'vssc/party_registration.rb'
+require 'vssc/spatial_dimension.rb'
+require 'vssc/total_counts.rb'
 require 'vssc/gp_unit.rb'
 require 'vssc/contest.rb'
 require 'vssc/contest_collection.rb'
@@ -488,7 +491,6 @@ require 'vssc/gp_unit_collection.rb'
 require 'vssc/party_collection.rb'
 require 'vssc/person_collection.rb'
 require 'vssc/office_collection.rb'
-
 
 require 'vssc/election.rb'
 

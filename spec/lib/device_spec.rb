@@ -17,6 +17,7 @@ describe VSSC::Device do
   let(:d) { VSSC::Device.new }
   before(:each) do
     d.device_type = VSSC::DeviceType.lever
+    d.object_id = "oid"
   end
   subject { d }
   it "should be a kind of GPUnit" do

@@ -33,7 +33,9 @@ describe VSSC::Contest do
   
   it { should have_element("ContestGPScope") }
   it { should have_element_array("ContestTotalCounts") }
+  it { should validate_element_array_type("ContestTotalCounts", VSSC::TotalCounts.new)}
   it { should have_element_array("ContestTotalCountsByGPUnit") }
+  it { should validate_element_array_type("ContestTotalCountsByGPUnit", VSSC::TotalCounts.new)}
   
   it { should have_attribute("object_id") }
   it { should validate_presence_of_attribute("object_id") }

@@ -15,6 +15,7 @@ describe VSSC::District do
   let(:d) { VSSC::District.new }
   before(:each) do
     d.district_type = VSSC::DistrictType.local
+    d.object_id = "oid"
   end
   subject { d }
   it "should be a kind of GPUnit" do
