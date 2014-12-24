@@ -489,6 +489,7 @@ require 'vssc/district.rb'
 require 'vssc/office.rb'
 require 'vssc/party.rb'
 require 'vssc/person.rb'
+require 'vssc/reporting_unit.rb'
 
 require 'vssc/gp_unit_collection.rb'
 require 'vssc/party_collection.rb'
