@@ -487,6 +487,7 @@ require 'vssc/candidate_selection.rb'
 require 'vssc/device.rb'
 require 'vssc/district.rb'
 require 'vssc/office.rb'
+require 'vssc/party.rb'
 
 require 'vssc/gp_unit_collection.rb'
 require 'vssc/party_collection.rb'
