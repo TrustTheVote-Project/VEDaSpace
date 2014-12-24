@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/amekelburg/vssc_ruby.svg?branch=master)](https://travis-ci.org/amekelburg/vssc_ruby)
+
 A set of ruby classes representing the VSSC election data schema:
 
 http://grouper.ieee.org/groups//1622/index.html
