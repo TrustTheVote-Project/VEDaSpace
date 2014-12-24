@@ -106,10 +106,31 @@ module VSSC
     def set_vssc_attributes(xml_attributes)
       xml_attributes.each do |key, value|
         if attributes.include?(key)
-          self.send("#{attributes[key][:method]}=", value.value)
+          self.send("#{attributes[key][:method]}=", convert_value_to_type(value.value, attributes[key][:type] ))
         else
           parse_error "Attribute #{key} not part of #{self.class}"
         end
+      end
+    end
+    
+    def convert_value_to_type(value, obj_type)
+      if obj_type.is_a?(Class) && obj_type.ancestors.include?(VSSC::Enum)
+        return obj_type.find(value)
+      end
+      case obj_type.to_s
+      when "String"
+        return value.to_s
+      when "Fixnum"
+        puts "A"
+        return value.to_i
+      when "Float"
+        return value.to_f
+      when "xsd:date", "xsd:dateTime"
+        return DateTime.iso8601(value)
+      when "xsd:boolean"
+        return (!value.blank? && !["0","false","nil","null"].include?(value.to_s.downcase))
+      else
+        return value.to_s
       end
     end
     
@@ -124,6 +145,10 @@ module VSSC
     module ClassMethods
       def all
         self.enums
+      end
+      
+      def find(string_val)
+        enums.detect {|e| e.to_s == string_val}
       end
     
       def enums
