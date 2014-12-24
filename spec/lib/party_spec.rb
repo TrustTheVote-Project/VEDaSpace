@@ -16,10 +16,10 @@ require_relative '../spec_helper.rb'
 
 
 describe VSSC::Party do
-  let(:c) { VSSC::Party.new }
-  subject { c }
+  let(:p) { VSSC::Party.new }
+  subject { p }
   it "should be a kind of BallotSelection" do
-    expect(c).to be_a(VSSC::BallotSelection)
+    expect(p).to be_a(VSSC::BallotSelection)
   end
   it { should have_attribute("abbreviation") }
   it { should have_attribute("localPartyCode") }
