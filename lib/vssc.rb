@@ -466,6 +466,7 @@ module VSSC
 end
 
 require 'vssc/party_registration.rb'
+require 'vssc/spatial_extent.rb'
 require 'vssc/spatial_dimension.rb'
 require 'vssc/total_counts.rb'
 require 'vssc/gp_unit.rb'
