@@ -20,6 +20,7 @@ module VSSC
         self.send(accessor_group)[element_name] ||= {}
         self.send(accessor_group)[element_name][:method] = method_name.to_sym
         self.send(accessor_group)[element_name][:type] = element_type
+        self.send(accessor_group)[element_name][:multiple] = !!opts[:multiple]
         
         if opts[:required]
           validates_presence_of method_name
@@ -80,6 +81,14 @@ module VSSC
         define_xml_accessor(:attributes, element_name, opts)
       end
       
+      def parse_vssc(node)
+        e = self.new
+        e.set_vssc_attributes(node.attributes)
+        e.set_vssc_elements(node.elements)
+        e
+      end
+      
+      
     end
     
     def self.included(base)
@@ -96,20 +105,49 @@ module VSSC
     end
 
     def attributes
-      self.class.attributes
+      (self.class.superclass == Object ? {} : (self.class.superclass.attributes || {})).merge(self.class.attributes || {})
     end
     def elements
-      self.class.elements
+      (self.class.superclass == Object ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
     end
     
     
     def set_vssc_attributes(xml_attributes)
       xml_attributes.each do |key, value|
-        if attributes.include?(key)
+        if self.attributes.include?(key)
           self.send("#{attributes[key][:method]}=", convert_value_to_type(value.value, attributes[key][:type] ))
         else
           parse_error "Attribute #{key} not part of #{self.class}"
         end
+      end
+    end
+    def set_vssc_elements(xml_elements)
+      xml_elements.each do |element|
+        if self.elements.include?(element.name)
+          method = elements[element.name][:method]
+          value =  convert_element_to_type(element, elements[element.name][:type])
+          if elements[element.name][:multiple]
+            self.send("#{method}") << value
+          else
+            self.send("#{method}=", value)
+          end
+        else
+          parse_error "Element #{element.name} not part of #{self.class}"
+        end
+      end
+    end
+    
+    def convert_element_to_type(element, obj_type)
+      if obj_type.to_s == "String"
+        element.children.first.to_s
+      else
+        klass = nil
+        begin
+          klass = "VSSC::#{(element.attributes['type'].value || element.name)}".constantize
+        rescue
+          klass = obj_type
+        end
+        klass.parse_vssc(element)
       end
     end
     
@@ -121,7 +159,6 @@ module VSSC
       when "String"
         return value.to_s
       when "Fixnum"
-        puts "A"
         return value.to_i
       when "Float"
         return value.to_f

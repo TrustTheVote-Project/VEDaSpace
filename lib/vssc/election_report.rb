@@ -22,11 +22,6 @@ module VSSC
     define_attribute("vendorApplicationID", required: true)
     
     
-    def self.parse_vssc(node)
-      e = self.new
-      e.set_vssc_attributes(node.attributes)
-      e
-    end
     
   end
 end
