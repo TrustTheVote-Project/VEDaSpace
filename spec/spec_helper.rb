@@ -7,6 +7,8 @@ RSpec.configure do |config|
 end
 
 require 'rspec/expectations'
+require 'rspec/matchers' # req by equivalent-xml custom matcher `be_equivalent_to`
+require 'equivalent-xml'
 
 RSpec::Matchers.define :have_element do |expected|
   match do |inst|

@@ -107,6 +107,15 @@ module VSSC
     def attributes
       (self.class.superclass == Object ? {} : (self.class.superclass.attributes || {})).merge(self.class.attributes || {})
     end
+    
+    def xml_attributes_hash
+      attr_hash = {}
+      attributes.map do |k, options|
+        attr_hash[k] = self.send(options[:method])
+      end
+      return attr_hash
+    end
+    
     def elements
       (self.class.superclass == Object ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
     end
@@ -121,6 +130,7 @@ module VSSC
         end
       end
     end
+    
     def set_vssc_elements(xml_elements)
       xml_elements.each do |element|
         if self.elements.include?(element.name)
@@ -159,11 +169,11 @@ module VSSC
       when "String"
         return value.to_s
       when "Fixnum"
-        return value.to_i
+        return value.blank? ? nil : value.to_i
       when "Float"
-        return value.to_f
+        return value.blank? ? nil : value.to_f
       when "xsd:date", "xsd:dateTime"
-        return DateTime.iso8601(value)
+        return value.blank? ? nil : DateTime.iso8601(value)
       when "xsd:boolean"
         return (!value.blank? && !["0","false","nil","null"].include?(value.to_s.downcase))
       else
@@ -173,6 +183,29 @@ module VSSC
     
     def parse_error(msg)
       puts msg
+    end
+    
+    
+    
+    def to_xml_node(xml = nil, node_name = nil)
+      node_name ||= self.class.name.split('::').last
+      xml ||= Nokogiri::XML::Builder.new
+      xml.send(node_name, xml_attributes_hash) do |r|
+        elements.each do |k, options|
+          value = self.send(options[:method])
+          if options[:type].to_s =~ /VSSC::/ && !value.nil?
+            if !value.is_a?(Array)
+              value = [value]
+            end
+            value.each do |v|
+              v.to_xml_node(r, k)
+            end
+          else
+            r.send(k) { value }
+          end
+        end
+      end
+      xml
     end
     
   end

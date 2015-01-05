@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mbklein/equivalent-xml
+  revision: 1d1dc4919e120db599164fc81351913e2c62d11e
+  specs:
+    equivalent-xml (0.5.1)
+      nokogiri (>= 1.4.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,5 +47,6 @@ PLATFORMS
 DEPENDENCIES
   activemodel
   activesupport
+  equivalent-xml (~> 0.5.1)!
   nokogiri
   rspec

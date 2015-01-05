@@ -8,7 +8,7 @@ module VSSC
     define_element("PartyCollection", type: PartyCollection)
     define_element("OfficeCollection", type: OfficeCollection)
     
-    define_element("Election", multiple: true)
+    define_element("Election", multiple: true, type: Election)
     
     define_attribute("object_id", required: true)
     define_attribute("date", required: true, type: "xsd:dateTime")

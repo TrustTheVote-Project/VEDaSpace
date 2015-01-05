@@ -50,6 +50,7 @@ describe VSSC::ElectionReport do
   it { should have_element("OfficeCollection") }
   it { should validate_element_type("OfficeCollection", VSSC::OfficeCollection.new) }
   it { should have_element_array("Election") }
+  it { should validate_element_array_type("Election", VSSC::Election.new) }
 
   it { should have_attribute("object_id") }
   it { should validate_presence_of_attribute("object_id") }
@@ -77,7 +78,21 @@ describe VSSC::ElectionReport do
   it { should validate_presence_of_attribute("vendorApplicationID") }
   
   
-  
+  describe 'XML import/export' do
+    it "should import/export equivalent files" do
+      xml_file = './spec/fixtures/ohio2014.p1622-v29.xml'
+      doc = nil
+      e = nil
+      File.open(xml_file) do |f|
+        doc = Nokogiri::XML(f)
+      end
+      File.open(xml_file) do |f|
+        e = VSSC::Parser.parse(f)
+      end
+            
+      expect(e.to_xml_node.doc.root).to be_equivalent_to(doc.root)
+    end
+  end
   
   
 end
