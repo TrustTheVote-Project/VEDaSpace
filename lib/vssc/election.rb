@@ -3,6 +3,7 @@ module VSSC
     include VSSC::ClassAttributes
     define_element("BallotStyleCollection", type: BallotStyleCollection)
     define_element("CandidateCollection", type: CandidateCollection)
+    define_element("ContestCollection", type: ContestCollection)
     define_element("ElectionGPScope")
     
     define_attribute("object_id", required: true)

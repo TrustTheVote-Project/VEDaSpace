@@ -21,7 +21,18 @@ module VSSC
     define_attribute("stateCode")
     define_attribute("vendorApplicationID", required: true)
     
+    # root node extra attributes
+    # xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://grouper.ieee.org/groups/1622/fake_url" xsi:schemaLocation="http://grouper.ieee.org/groups/1622/fake_url file:///G:/1622.2/ElectionResultsV29.xsd"
     
+    def xml_attributes_hash_with_root(node_name)
+      attr_hash = xml_attributes_hash_without_root(node_name)
+      attr_hash['xmlns:xsi'] = "http://www.w3.org/2001/XMLSchema-instance"
+      attr_hash['xmlns'] = "http://grouper.ieee.org/groups/1622/fake_url"
+      attr_hash['xsi:schemaLocation'] = "http://grouper.ieee.org/groups/1622/fake_url file:///G:/1622.2/ElectionResultsV29.xsd"
+      return attr_hash
+    end
+    
+     alias_method_chain :xml_attributes_hash, :root
     
   end
 end

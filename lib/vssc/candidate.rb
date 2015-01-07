@@ -19,7 +19,7 @@ module VSSC
     
     define_attribute("sequenceOrder", type: Fixnum)
     
-    define_attribute("candidateStatus", type: CandidateStatus)
+    define_attribute("status", type: CandidateStatus)
 
   end
 end

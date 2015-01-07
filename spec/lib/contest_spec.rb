@@ -30,10 +30,13 @@ describe VSSC::Contest do
   subject { c }
   
   it { should have_element_array("BallotSelection") }
+  it { should validate_element_array_type("BallotSelection", VSSC::BallotSelection.new)}
   
   it { should have_element("ContestGPScope") }
+
   it { should have_element_array("ContestTotalCounts") }
   it { should validate_element_array_type("ContestTotalCounts", VSSC::TotalCounts.new)}
+
   it { should have_element_array("ContestTotalCountsByGPUnit") }
   it { should validate_element_array_type("ContestTotalCountsByGPUnit", VSSC::TotalCounts.new)}
   

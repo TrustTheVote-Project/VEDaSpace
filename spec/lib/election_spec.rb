@@ -35,6 +35,8 @@ describe VSSC::Election do
   it { should validate_element_type("BallotStyleCollection", VSSC::BallotStyleCollection.new) }
   it { should have_element("CandidateCollection") }
   it { should validate_element_type("CandidateCollection", VSSC::CandidateCollection.new) }
+  it { should have_element("ContestCollection") }
+  it { should validate_element_type("ContestCollection", VSSC::ContestCollection.new) }
   it { should have_element("ElectionGPScope")}
   
   it { should have_attribute("object_id") }

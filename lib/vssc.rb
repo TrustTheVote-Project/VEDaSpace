@@ -10,9 +10,7 @@ module VSSC
     
       def define_xml_accessor(accessor_group, element_name, opts={})
         
-        #puts self.class.to_s
         method_name = element_name.underscore
-        #puts method_name
         element_type = opts[:type] || String
         
         self.send("#{accessor_group}=", (self.send(accessor_group) || {}))
@@ -64,6 +62,10 @@ module VSSC
             instance_variable_get("@#{method_name}")
           end
           
+          # define_method method_name.pluralize do
+          #   self.send(method_name)
+          # end
+          
           define_method "#{method_name}=" do |val|
             raise 'Must be an array' if !val.is_a?(Array)
             instance_variable_set("@#{method_name}", val)
@@ -88,6 +90,14 @@ module VSSC
         e
       end
       
+      def is_type?(type_name)
+        begin
+          "VSSC::#{type_name}".constantize
+          return true
+        rescue
+          return false
+        end
+      end
       
     end
     
@@ -108,13 +118,23 @@ module VSSC
       (self.class.superclass == Object ? {} : (self.class.superclass.attributes || {})).merge(self.class.attributes || {})
     end
     
-    def xml_attributes_hash
+    def xml_attributes_hash(node_name)
       attr_hash = {}
       attributes.map do |k, options|
-        attr_hash[k] = self.send(options[:method])
+        v = convert_type_to_value(self.send(options[:method]), options[:type])
+        attr_hash[k] = v unless v.nil?
+      end
+      if node_name != class_node_name && is_type?(node_name)
+        attr_hash['xsi:type'] = class_node_name
       end
       return attr_hash
     end
+    
+    def is_type?(type_name)
+      self.class.is_type?(type_name)
+    end
+    
+    
     
     def elements
       (self.class.superclass == Object ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
@@ -153,7 +173,7 @@ module VSSC
       else
         klass = nil
         begin
-          klass = "VSSC::#{(element.attributes['type'].value || element.name)}".constantize
+          klass = "VSSC::#{(element.attributes['type'].value || element.attributes['xsi:type'].value || element.name)}".constantize
         rescue
           klass = obj_type
         end
@@ -181,27 +201,51 @@ module VSSC
       end
     end
     
-    def parse_error(msg)
-      puts msg
+    def convert_type_to_value(value, obj_type)
+      case obj_type.to_s
+      when "xsd:date"
+        return value.blank? ? nil : value.iso8601.gsub(/T.*/,'')
+      when "xsd:dateTime"
+        return value.blank? ? nil : value.iso8601.gsub("+00:00","Z")
+      when "xsd:boolean"
+        return value.nil? ? nil : value.to_s
+      when "Float"
+        return value.blank? ? nil : value.to_s.chomp('.0')
+      else
+        return (value.to_s == "") ? nil : value.to_s
+      end
     end
     
+    def parse_error(msg)
+      puts "Error: #{msg}"
+    end
     
+    def class_node_name
+      self.class.name.split('::').last
+    end
     
     def to_xml_node(xml = nil, node_name = nil)
-      node_name ||= self.class.name.split('::').last
+      node_name ||= class_node_name
       xml ||= Nokogiri::XML::Builder.new
-      xml.send(node_name, xml_attributes_hash) do |r|
+      xml.send(node_name, xml_attributes_hash(node_name)) do |r|
         elements.each do |k, options|
-          value = self.send(options[:method])
-          if options[:type].to_s =~ /VSSC::/ && !value.nil?
-            if !value.is_a?(Array)
-              value = [value]
+          value = self.send(options[:method])           
+          if !value.nil? && (!value.is_a?(Array) || !value.empty?)       
+            if options[:type].to_s =~ /VSSC::/
+              if !value.is_a?(Array)
+                value = [value]
+              end
+              value.each do |v|
+                v.to_xml_node(r, k)
+              end
+            else
+              if !value.is_a?(Array)
+                value = [value]
+              end
+              value.each do |v|
+                r.send(k, convert_type_to_value(v, options[:type]))
+              end
             end
-            value.each do |v|
-              v.to_xml_node(r, k)
-            end
-          else
-            r.send(k) { value }
           end
         end
       end
@@ -557,13 +601,13 @@ require_relative 'vssc/spatial_dimension.rb'
 require_relative 'vssc/counts.rb'
 require_relative 'vssc/total_counts.rb'
 require_relative 'vssc/gp_unit.rb'
+require_relative 'vssc/vote_counts.rb'
+require_relative 'vssc/ballot_selection.rb'
 require_relative 'vssc/contest.rb'
 require_relative 'vssc/contest_collection.rb'
 require_relative 'vssc/contact.rb'
 require_relative 'vssc/ordered_contest.rb'
-require_relative 'vssc/vote_counts.rb'
 require_relative 'vssc/ballot_measure.rb'
-require_relative 'vssc/ballot_selection.rb'
 require_relative 'vssc/ballot_measure_selection.rb'
 require_relative 'vssc/ballot_style.rb'
 require_relative 'vssc/ballot_style_collection.rb'

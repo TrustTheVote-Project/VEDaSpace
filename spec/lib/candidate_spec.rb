@@ -48,7 +48,7 @@ describe VSSC::Candidate do
   it { should have_attribute("sequenceOrder") }
   it { should validate_attribute_type("sequenceOrder", 1)}
   
-  it { should have_attribute("candidateStatus") }
-  it { should validate_attribute_type("candidateStatus", VSSC::CandidateStatus.qualified)}
+  it { should have_attribute("status") }
+  it { should validate_attribute_type("status", VSSC::CandidateStatus.qualified)}
   
 end

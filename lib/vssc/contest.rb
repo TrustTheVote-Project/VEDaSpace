@@ -2,7 +2,7 @@ module VSSC
   class Contest
     include VSSC::ClassAttributes
     
-    define_element("BallotSelection", multiple: true)
+    define_element("BallotSelection", multiple: true, type: BallotSelection)
     define_element("ContestGPScope")
     define_element("ContestTotalCounts", multiple: true, type: TotalCounts)
     define_element("ContestTotalCountsByGPUnit", multiple: true, type: TotalCounts)

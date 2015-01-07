@@ -80,6 +80,7 @@ describe VSSC::ElectionReport do
   
   describe 'XML import/export' do
     it "should import/export equivalent files" do
+      #xml_file = './spec/fixtures/ohio2014-simplified.xml'
       xml_file = './spec/fixtures/ohio2014.p1622-v29.xml'
       doc = nil
       e = nil
