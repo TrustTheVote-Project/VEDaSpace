@@ -262,7 +262,7 @@ module VSSC
       end
       
       def find(string_val)
-        enums.detect {|e| e.to_s == string_val}
+        enums.detect {|e| e.to_s.downcase == string_val.to_s.downcase}
       end
     
       def enums
