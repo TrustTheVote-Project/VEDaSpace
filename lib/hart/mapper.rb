@@ -1,3 +1,7 @@
+require './lib/dmap.rb'
+require './lib/vssc.rb'
+require 'nokogiri'
+
 module Hart
   class Mapper
     BASE = "doc/hart/G12"
@@ -27,10 +31,29 @@ module Hart
     #     :polling_place_type, {:precinct_split_id=>[:precinct_split, :id]})
     # end
         
-    # puts DMap::Report.new.text(:district)
-    
     #full stack
-    #puts DMap::Report.new(:precinct).text
+    # puts DMap::Report.new(:precinct).text
+    
+    report = VSSC::ElectionReport.new
+    report.gp_unit_collection = VSSC::GPUnitCollection.new
+    
+    
+    DMap::ModelRegister.classes[:district].all.values.each do |d|
+      puts d
+      district = VSSC::District.new
+      district.object_id = "district-#{d.attributes[:id]}"
+      district.name = d.attributes[:name]
+      
+      d.relations(:district_precinct_split).each do |d_p_split|
+        district.gp_sub_unit_ref << "precinct-split-#{d_p_split.attributes[:precinct_split_id]}"
+      end
+      
+      report.gp_unit_collection.gp_unit << district
+      
+    end
+    
+    puts report.to_xml_node
+    
     
     # single associations
     # puts DMap::Report.new(:precinct=>:district).text
