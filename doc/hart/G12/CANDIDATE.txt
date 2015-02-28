@@ -1,0 +1,278 @@
+2	4	2		Democratic	N	15	0
+2	5	1		Republican	N	14	0
+2	6	3		Libertarian	N	16	0
+2	7	4		Green	N	17	0
+3	8	4		Jill Stein / Cheri Honkala	N	17	
+3	296	1		Mitt Romney / Paul Ryan	N	14	
+3	297	2		Barack Obama / Joe Biden	N	15	
+3	298	3		Gary Johnson / Jim Gray	N	16	
+4	9	1		Ted Cruz	N	14	
+4	10	2		Paul Sadler	N	15	
+4	11	3		John Jay Myers	N	16	
+4	12	4		David B. Collins	N	17	
+5	13	1		Michael McCaul	N	14	
+5	14	2		Tawana W. Cadien	N	15	
+5	15	3		Richard Priest	N	16	
+6	16	1		Bill Flores	N	14	
+6	17	2		Ben Easton	N	16	
+7	18	1		Lamar Smith	N	14	
+7	19	2		Candace E. Duvál	N	15	
+7	20	3		John-Henry Liberty	N	16	
+8	21	1		Roger Williams	N	14	
+8	22	2		Elaine M. Henderson	N	15	
+8	23	3		Betsy Dewey	N	16	
+9	24	1		Susan Narvaiz	N	14	
+9	25	2		Lloyd Doggett	N	15	
+9	26	3		Ross Lynn Leone	N	16	
+9	27	4		Meghan Owen	N	17	
+10	28	1		Christi Craddick	N	14	
+10	29	2		Dale Henry	N	15	
+10	30	3		Vivekananda "Vik" Wall	N	16	
+10	31	4		Chris Kennedy	N	17	
+11	32	1		Barry Smitherman	N	14	
+11	33	2		Jaime O. Perez	N	16	
+11	34	3		Josh Wendel	N	17	
+12	35	1		Don Willett	N	14	
+12	36	2		RS Roberto Koelsch	N	16	
+13	37	1		John Devine	N	14	
+13	38	2		Tom Oxford	N	16	
+13	39	3		Charles E. Waterbury	N	17	
+14	40	1		Nathan Hecht	N	14	
+14	41	2		Michele Petty	N	15	
+14	42	3		Mark Ash	N	16	
+14	43	4		Jim Chisholm	N	17	
+15	44	1		Sharon Keller	N	14	
+15	45	2		Keith Hampton	N	15	
+15	46	3		Lance Stott	N	16	
+16	47	1		Barbara Parker Hervey	N	14	
+16	48	2		Mark W. Bennett	N	16	
+17	49	1		Elsa Alcala	N	14	
+17	50	2		William Bryan Strange, III	N	16	
+18	51	1		Ken Mercer	N	14	
+18	52	2		Rebecca Bell-Metereau	N	15	
+18	53	3		Mark Loewe	N	16	
+18	54	4		Irene Meyer Scharf	N	17	
+19	55	1		Tom Maynard	N	14	
+19	56	2		Judy Jennings	N	15	
+20	57	1		Kirk Watson	N	15	
+20	58	2		Ryan M. Dixon	N	16	
+21	59	1		Grant Rostig	N	14	
+21	60	2		Judith Zaffirini	N	15	
+21	61	3		Joseph Morse	N	16	
+22	62	1		Troy Fraser	N	14	
+23	63	1		Donna Campbell	N	14	
+23	64	2		John Courage	N	15	
+24	65	1		Dawnna Dukes	N	15	
+24	66	2		Andy Fernandez	N	16	
+25	67	1		Paul Workman	N	14	
+25	68	2		Chris Frandsen	N	15	
+25	69	3		Nick Tanner	N	16	
+26	70	1		Robert Thomas	N	14	
+26	71	2		Donna Howard	N	15	
+26	72	3		Joe Edgar	N	16	
+27	73	1		Elliott Naishtat	N	15	
+27	74	2		Kent Phillips	N	16	
+28	75	1		Mark Strama	N	15	
+29	76	1		Eddie Rodriguez	N	15	
+29	77	2		Arthur DiBianca	N	16	
+30	78	1		Jeff Rose	N	14	
+30	79	2		J. Andrew Hathcock	N	15	
+31	80	1		Scott Field	N	14	
+31	81	2		Diane Henson	N	15	
+32	82	1		David Puryear	N	14	
+32	83	2		Karen L. Watkins	N	15	
+33	84	1		Bob Pemberton	N	14	
+33	85	2		Bryan Case	N	15	
+34	86	1		Scott Jenkins	N	15	
+35	87	1		Rhonda Hurley	N	15	
+36	88	1		Darlene Byrne	N	15	
+37	89	1		David Wahlberg	N	15	
+38	90	1		Gisela Triana	N	15	
+39	91	1		Stephen Yelenosky	N	15	
+40	92	1		Tim Sulak	N	15	
+41	93	1		Julie Kocurek	N	15	
+42	94	1		Jim Coronado	N	15	
+43	95	1		Rosemary Lehmberg	N	15	
+44	96	1		Carlos H. Barrera	N	15	
+45	97	1		David Escamilla	N	15	
+46	98	2		Greg Hamilton	N	15	
+46	99	3		Jaclyn L. Finkel	N	16	
+46	100	1		Raymond Frank	N	14	
+47	101	2		Bruce Elfant	N	15	
+47	102	3		Mike Burris	N	16	
+47	103	1		Vik Vad	N	14	
+48	104	1		Ron Davis	N	15	
+49	105	2		Karen Huber	N	15	
+49	106	3		Pat Dixon	N	16	
+49	107	1		Gerald Daugherty	N	14	
+50	108	1		Danny Thomas	N	15	
+51	109	2		Adan Ballesteros	N	15	
+51	110	3		Raul "Roy" Camacho	N	16	
+51	111	1		Toby J. Miller	N	14	
+52	112	2		Sally Hernandez	N	15	
+52	113	3		Scott G. McKinlay	N	16	
+52	114	1		Mike Varela	N	14	
+53	115	1		Maria Canchola	N	15	
+53	116	2		David Hull-Radowski	N	16	
+54	117	1		Carlos Lopez	N	15	
+54	118	2		Michael M. Holt	N	16	
+56	119	1		Yes	N	1	
+56	120	2		No	N	1	
+57	121	1		Yes	N	1	
+57	122	2		No	N	1	
+58	123	1		Yes	N	1	
+58	124	2		No	N	1	
+59	125	1		Yes	N	1	
+59	126	2		No	N	1	
+60	127	1		Yes	N	1	
+60	128	2		No	N	1	
+61	129	1		Yes	N	1	
+61	130	2		No	N	1	
+62	131	1		Yes	N	1	
+62	132	2		No	N	1	
+63	283	1		Yes		1	
+63	284	2		No		1	
+64	135	1		Yes	N	1	
+64	136	2		No	N	1	
+65	137	1		Yes	N	1	
+65	138	2		No	N	1	
+66	144	2		Against	N	1	
+66	145	1		For		1	
+67	291	1		For		1	
+67	292	2		Against		1	
+68	146	2		Against	N	1	
+68	147	1		For		1	
+69	290	2		Against		1	
+69	293	1		For		1	
+70	150	2		Against	N	1	
+70	151	1		For		1	
+71	152	2		Against	N	1	
+71	153	1		For		1	
+72	154	2		Against	N	1	
+72	304	1		For		1	
+73	302	1		For		1	
+73	303	2		Against		1	
+75	155	1		Joseph D. Aaron	N	1	
+76	156	1		Dave Nelsen	N	1	
+77	157	1		Paul Johnson	N	1	
+77	158	2		Clarence Brown	N	1	
+79	159	1		Bob Bradley	N	1	
+79	160	2		Ed Tidwell	N	1	
+80	161	1		Ron Smith	N	1	
+81	162	1		Richard Bohn	N	1	
+83	163	1		For	N	1	
+83	164	2		Against	N	1	
+85	165	1		Omar Peña	N	1	
+85	166	2		David Prout	N	1	
+85	167	3		Tom Anker	N	1	
+86	168	1		Victor Gonzales	N	1	
+88	169	2		E.C. "Sonny" Ables	N	1	
+88	170	4		Lisa Guest	N	1	
+88	171	3		Mike Maritz	N	1	
+88	172	1		Michael Sutton	N	1	
+90	173	1		Stephen M. Aechternacht	N	1	
+91	174	1		Lawrence Richard "Rich" Scroggins	N	1	
+91	175	2		Larry Neal Britton	N	1	
+92	279	2		Against		1	
+92	280	1		For		1	
+94	178	2		Against	N	1	
+94	300	1		For		1	
+96	179	1		Barbara P. Mink	N	1	
+96	180	2		Brigido "Brig" Mireles	N	1	
+97	181	1		Betty Hwang	N	1	
+98	182	1		Daniel J. "DC" Caldwell	N	1	
+98	184	2		Allen Kaplan	N	1	
+100	183	1		Jayme Mathias	N	1	
+100	278	2		Sam Guzman	N	1	
+101	185	1		Ann E. Teich	N	1	
+101	186	2		Christine V. Brister	N	1	
+102	187	1		Charlie Jackson	N	1	
+102	188	2		Amber Elenz	N	1	
+103	189	1		Gina Hinojosa	N	1	
+103	190	2		Mary Ellen Pietruszynski	N	1	
+105	191	1		Charles "Chad" Chadwell	N	1	
+105	192	2		Tere McCann	N	1	
+106	193	1		Pauline Law	N	1	
+106	194	2		Eric M. Pav	N	1	
+108	195	1		Mike Zeniecki	N	1	
+108	196	2		John A. Howell	N	1	
+108	197	3		Turk McMurry	N	1	
+110	198	1		Keith Collins	N	1	
+110	199	2		John Grossenbacher	N	1	
+111	200	1		Jo Jones	N	1	
+112	201	1		Diana Christiano	N	1	
+112	202	2		Rob Lallier	N	1	
+112	203	3		John T. Lenz	N	1	
+114	204	1		Robert J. Kleeman	N	1	
+114	205	2		George E. Robinson III	N	1	
+114	206	3		Steve Ashlock	N	1	
+114	207	4		Frank H. Del Castillo, Jr.	N	1	
+116	208	1		For	N	1	
+116	209	2		Against	N	1	
+117	210	1		For	N	1	
+117	211	2		Against	N	1	
+118	212	1		For	N	1	
+118	213	2		Against	N	1	
+119	214	1		For	N	1	
+119	215	2		Against	N	1	
+120	216	1		For	N	1	
+120	217	2		Against	N	1	
+122	218	1		For	N	1	
+122	219	2		Against	N	1	
+123	220	1		For	N	1	
+123	221	2		Against	N	1	
+125	222	1		J. Robert Long	N	1	
+125	223	2		Tara Thomason	N	1	
+125	224	3		Robert C. Thompson	N	1	
+125	225	4		Hank B. Smith	N	1	
+127	226	1		For	N	1	
+127	227	2		Against	N	1	
+128	228	1		For	N	1	
+128	229	2		Against	N	1	
+129	230	1		For	N	1	
+129	231	2		Against	N	1	
+130	232	1		For	N	1	
+130	233	2		Against	N	1	
+131	234	1		For	N	1	
+131	235	2		Against	N	1	
+133	236	1		For	N	1	
+133	237	2		Against	N	1	
+134	238	1		For	N	1	
+134	239	2		Against	N	1	
+136	240	1		Andrew Smith	N	1	
+136	241	2		Perry Horton	N	1	
+136	242	3		Chris Schedler	N	1	
+136	243	4		Casey Kopecky	N	1	
+136	244	5		Timothy Riley	N	1	
+138	245	1		For	N	1	
+138	246	2		Against	N	1	
+139	247	1		For	N	1	
+139	248	2		Against	N	1	
+140	249	1		For	N	1	
+140	250	2		Against	N	1	
+141	251	1		For	N	1	
+141	252	2		Against	N	1	
+143	253	1		Joe Petronis	N	1	
+143	254	2		Charles "Chuck" Walters	N	1	
+144	255	1		Janet Maxey	N	1	
+144	256	2		Ron Robinder	N	1	
+146	257	1		Paul Rábago	N	1	
+146	258	2		Chris W. Rocco	N	1	
+146	259	3		Donald Baker	N	1	
+146	260	4		Robert M. Kenny, Jr	N	1	
+148	261	1		Lyle Thormann	N	1	
+148	262	2		Jim Bannerot	N	1	
+148	263	3		Dick Brown	N	1	
+148	264	4		Alan Roddy	N	1	
+150	265	1		John Franz	N	1	
+150	266	2		Brian Probst	N	1	
+150	267	3		Harry Filbey	N	1	
+153	268	1		Jack Allen Goodman	N	1	
+153	269	2		Robert "Bob" Larsen	N	1	
+153	270	3		Jerry D. Hering	N	1	
+155	271	1		Linda R. Klar	N	1	
+155	272	2		Ryan Leahy	N	1	
+155	273	3		Enrique Alvarez	N	1	
+155	274	4		Holly A. Pope	N	1	
+155	275	5		Betty Reeves	N	1	
+155	276	6		Kay Henry	N	1	

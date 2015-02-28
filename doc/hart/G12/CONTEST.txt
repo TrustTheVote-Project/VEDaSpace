@@ -1,0 +1,176 @@
+2	2	STRAIGHT PARTY	S	To cast a straight-party vote, choose the party name. Selecting a party automatically selects all candidates associated with that party. If you select a candidate associated with a party other than the straight-party selection, your vote for that candidate will be counted in that particular contest.		0	N	1	N	0	0	0		0	0	1		0
+3	3	PRESIDENT	C			1	Y	1	N			0		0	0	1		0
+4	4	UNITED STATES SENATOR	C			0	Y	1	N			0		0	0	1		0
+5	5	DISTRICT 10, UNITED STATES REPRESENTATIVE	C			0	Y	1	N			0		0	0	1		0
+6	6	DISTRICT 17, UNITED STATES REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+7	7	DISTRICT 21, UNITED STATES REPRESENTATIVE	C			0	Y	1	N			0		0	0	1		0
+8	8	DISTRICT 25, UNITED STATES REPRESENTATIVE	C			0	Y	1	N			0		0	0	1		0
+9	9	DISTRICT 35, UNITED STATES REPRESENTATIVE	C			1	Y	1	N			0		0	0	1		0
+10	10	RAILROAD COMMISSIONER	C			0	Y	1	N			0		0	0	1		0
+11	11	RAILROAD COMMISSIONER, UNEXPIRED TERM	C			0	Y	1	N			0		0	0	1		0
+12	12	PLACE 2, JUSTICE, SUPREME COURT	C			0	Y	1	N			0		0	0	1		0
+13	13	PLACE 4, JUSTICE, SUPREME COURT	C			0	Y	1	N			0		0	0	1		0
+14	14	PLACE 6, JUSTICE, SUPREME COURT	C			0	Y	1	N			0		0	0	1		0
+15	15	PRESIDING JUDGE, COURT OF CRIMINAL APPEALS	C			0	Y	1	N			0		0	0	1		0
+16	16	PLACE 7, JUDGE, COURT OF CRIMINAL APPEALS	C			0	Y	1	N			0		0	0	1		0
+17	17	PLACE 8, JUDGE, COURT OF CRIMINAL APPEALS	C			0	Y	1	N			0		0	0	1		0
+18	18	DISTRICT 5, MEMBER, STATE BOARD OF EDUCATION	C			0	Y	1	N			0		0	0	1		0
+19	19	DISTRICT 10, MEMBER, STATE BOARD OF EDUCATION 	C			0	Y	1	N			0		0	0	1		0
+20	20	DISTRICT 14, STATE SENATOR 	C			0	Y	1	N			0		0	0	1		0
+21	21	DISTRICT 21, STATE SENATOR	C			0	Y	1	N			0		0	0	1		0
+22	22	DISTRICT 24, STATE SENATOR 	C			0	Y	1	N			0		0	0	1		0
+23	23	DISTRICT 25, STATE SENATOR 	C			0	Y	1	N			0		0	0	1		0
+24	24	DISTRICT 46, STATE REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+25	25	DISTRICT 47, STATE REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+26	26	DISTRICT 48, STATE REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+27	27	DISTRICT 49, STATE REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+28	28	DISTRICT 50, STATE REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+29	29	DISTRICT 51, STATE REPRESENTATIVE 	C			0	Y	1	N			0		0	0	1		0
+30	30	PLACE 2, JUSTICE, 3RD COURT OF APPEALS DISTRICT	C			0	Y	1	N			0		0	0	1		0
+31	31	PLACE 3, JUSTICE, 3RD COURT OF APPEALS DISTRICT 	C			0	Y	1	N			0		0	0	1		0
+32	32	PLACE 5, JUSTICE, 3RD COURT OF APPEALS DISTRICT 	C			0	Y	1	N			0		0	0	1		0
+33	33	PLACE 6, JUSTICE, 3RD COURT OF APPEALS DISTRICT 	C			0	Y	1	N			0		0	0	1		0
+34	34	DISTRICT JUDGE, 53RD JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+35	35	DISTRICT JUDGE, 98TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+36	36	DISTRICT JUDGE, 126TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+37	37	DISTRICT JUDGE, 167TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+38	38	DISTRICT JUDGE, 200TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+39	39	DISTRICT JUDGE, 345TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+40	40	DISTRICT JUDGE, 353RD JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+41	41	DISTRICT JUDGE, 390TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+42	42	DISTRICT JUDGE, 427TH JUDICIAL DISTRICT	C			0	Y	1	N			0		0	0	1		0
+43	43	DISTRICT ATTORNEY	C			0	Y	1	N			0		0	0	1		0
+44	44	COUNTY COURT AT LAW #8, JUDGE	C			0	Y	1	N			0		0	0	1		0
+45	45	COUNTY ATTORNEY	C			0	Y	1	N			0		0	0	1		0
+46	46	SHERIFF	C			0	Y	1	N			0		0	0	1		0
+47	47	COUNTY TAX ASSESSOR-COLLECTOR	C			0	Y	1	N			0		0	0	1		0
+48	48	PRECINCT 1, COUNTY COMMISSIONER 	C			0	Y	1	N			0		0	0	1		0
+49	49	PRECINCT 3, COUNTY COMMISSIONER	C			0	Y	1	N			0		0	0	1		0
+50	50	PRECINCT 1, CONSTABLE 	C			0	Y	1	N			0		0	0	1		0
+51	51	PRECINCT 2, CONSTABLE	C			0	Y	1	N			0		0	0	1		0
+52	52	PRECINCT 3, CONSTABLE	C			0	Y	1	N			0		0	0	1		0
+53	53	PRECINCT 4, CONSTABLE 	C			0	Y	1	N			0		0	0	1		0
+54	54	PRECINCT 5, CONSTABLE 	C			0	Y	1	N			0		0	0	1		0
+55	59	CITY OF AUSTIN SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+56	60	PROP. 1, CITY OF AUSTIN	P		Shall the city charter be amended to move the City's general election date from May to November?	0	N	1	N			0		0	0	1		0
+57	61	PROP. 2, CITY OF AUSTIN	P		Shall the city charter be amended to move the City's general election date from May to November, to provide that council members serve four-year staggered terms, to provide that council elections occur in even-numbered years, and to limit the mayor and council members to two terms?	0	N	1	N			0		0	0	1		0
+58	62	PROP. 3, CITY OF AUSTIN	P		Shall the city charter be amended to provide for the election of council members from 10 geographical single-member districts, with the mayor to be elected from the city at large, and to provide for an independent citizens redistricting commission?	0	N	1	N			0		0	0	1		0
+59	63	PROP. 4, CITY OF AUSTIN	P		Shall the city charter be amended to provide for the election of council members from eight geographical single-member districts, with the mayor and two additional council members to be elected from the city at large?	0	N	1	N			0		0	0	1		0
+60	64	PROP. 5, CITY OF AUSTIN	P		Shall the city charter be amended to permit the members of the city council and the city council's appointees to hire and manage their own staffs?	0	N	1	N			0		0	0	1		0
+61	65	PROP. 6, CITY OF AUSTIN	P		Shall the city charter be amended to provide that the city council appoint the city attorney?	0	N	1	N			0		0	0	1		0
+62	66	PROP. 7, CITY OF AUSTIN	P		Shall the city charter be amended to reduce the number of signatures needed for a citizen initiated ordinance or referendum?	0	N	1	N			0		0	0	1		0
+63	67	PROP. 8, CITY OF AUSTIN	P		Shall the city charter be amended to allow council members to raise political funds for 30 days after an election in which the council member was elected?	0	N	1	N			0		0	0	1		0
+64	68	PROP. 9, CITY OF AUSTIN	P		Shall the city charter be amended to permit the city council to lease parkland to an independent school district for a purpose that the council has found, by a two-thirds majority, is a park purpose?	0	N	1	N			0		0	0	1		0
+65	69	PROP. 10, CITY OF AUSTIN	P		Shall the city charter be amended to provide a civil service system for most city employees who are not already covered by a state civil service statute?	0	N	1	N			0		0	0	1		0
+66	70	PROP. 11, CITY OF AUSTIN	P		Adoption of the emergency medical services personnel civil service law.	0	N	1	N			0		0	0	1		0
+67	71	PROP. 12, CITY OF AUSTIN	P		The issuance of $143,299,000 transportation and mobility improvement bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+68	72	PROP. 13, CITY OF AUSTIN	P		The issuance of $30,000,000 open space and watershed protection bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+69	73	PROP. 14, CITY OF AUSTIN	P		The issuance of $77,680,000 park and recreation improvement bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+70	74	PROP. 15, CITY OF AUSTIN	P		The issuance of $78,300,000 housing bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+71	75	PROP. 16, CITY OF AUSTIN	P		The issuance of $31,079,000 public safety facility improvement bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+72	76	PROP. 17, CITY OF AUSTIN	P		The issuance of $11,148,000 health and human services facility improvement bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+73	77	PROP. 18, CITY OF AUSTIN	P		The issuance of $13,442,000 library, museum, and cultural arts facility improvement bonds and notes and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N			0		0	0	1		0
+74	79	CITY OF JONESTOWN GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+75	80	ALDERMAN, PLACE 3, CITY OF JONESTOWN	C			0	N	1	N			0		0	0	1		0
+76	81	ALDERMAN, PLACE 4, CITY OF JONESTOWN	C			0	N	1	N			0		0	0	1		0
+77	82	ALDERMAN, PLACE 5, CITY OF JONESTOWN	C			0	N	1	N			0		0	0	1		0
+78	84	CITY OF LAGO VISTA, TEXAS GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+79	85	COUNCIL MEMBER, PLACE 2, CITY OF LAGO VISTA	C			0	N	1	N			0		0	0	1		0
+80	86	COUNCIL MEMBER, PLACE 4, CITY OF LAGO VISTA	C			0	N	1	N			0		0	0	1		0
+81	87	COUNCIL MEMBER, PLACE 6, CITY OF LAGO VISTA	C			0	N	1	N			0		0	0	1		0
+82	89	CITY OF LAKEWAY BOND ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+83	90	PROP. 1, CITY OF LAKEWAY 	P		The issuance of not to exceed $4,300,000 of City of Lakeway, Texas, General Obligation Bonds for the purpose of designing, acquiring, improving, expanding, and constructing city-wide street, curb, gutter, and sidewalk improvements and incidental drainage improvements, and utility relocation in connection with the foregoing, and the levying of a tax in payment thereof.	0	N	1	N			0		0	0	1		0
+84	92	CITY OF PFLUGERVILLE GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+85	93	COUNCIL MEMBER, PLACE 3, CITY OF PFLUGERVILLE	C			0	N	1	N			0		0	0	1		0
+86	94	COUNCIL MEMBER, PLACE 5, CITY OF PFLUGERVILLE	C			0	N	1	N			0		0	0	1		0
+87	96	THE VILLAGE OF POINT VENTURE CITY COUNCIL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+88	97	COUNCIL MEMBER, THE VILLAGE OF POINT VENTURE	C	Vote for none, one, two or three		0	N	3	N			0		0	0	1		0
+89	99	VILLAGE OF SPICEWOOD CANYON SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+90	101	MAYOR, VILLAGE OF SPICEWOOD CANYON	C			0	N	1	N			0		0	0	1		0
+91	102	VILLAGE COMMISSIONER, VILLAGE OF SPICEWOOD CANYON	C	Vote for none, one, or two 		0	N	2	N			0		0	0	1		0
+92	100	PROPOSITION, VILLAGE OF SPICEWOOD CANYON	P		Incorporation of the Municipality to be known as The Village of Spicewood Canyon, Texas.	0	N	1	N			0		0	0	1		0
+93	56	CENTRAL HEALTH TAX RATIFICATION ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+94	57	PROP. 1, CENTRAL HEALTH	P		Approving the ad valorem tax rate of $0.129 per $100 valuation in Central Health, also known as the Travis County Healthcare District, for the 2013 tax year, a rate that exceeds the district's rollback tax rate.  The proposed ad valorem tax rate exceeds the ad valorem tax rate most recently adopted by the district by $0.05 per $100 valuation; funds will be used for improved healthcare in Travis County, including support for a new medical school consistent with the mission of Central Health, a site for a new teaching hospital, trauma services, specialty medicine such as cancer care, community-wide health clinics, training for physicians, nurses and other healthcare professionals, primary care, behavioral and mental healthcare, prevention and wellness programs, and/or to obtain federal matching funds for healthcare services.	0	N	1	N			0		0	0	1		0
+95	105	AUSTIN COMMUNITY COLLEGE BOARD OF TRUSTEE ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+96	106	PLACE 7, ACC TRUSTEE	C			0	N	1	N			0		0	0	1		0
+97	107	PLACE 8, ACC TRUSTEE	C			0	N	1	N			0		0	0	1		0
+98	108	PLACE 9, ACC TRUSTEE	C			0	N	1	N			0		0	0	1		0
+99	110	AUSTIN INDEPENDENT SCHOOL DISTRICT SCHOOL BOARD GENERAL TRUSTEE ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+100	111	DISTRICT 2 SINGLE MEMBER TRUSTEE, AISD	C	Vote for none or one		0	N	1	N			0		0	0	1		0
+101	112	DISTRICT 3 SINGLE MEMBER TRUSTEE, AISD	C	Vote for none or one		0	N	1	N			0		0	0	1		0
+102	113	DISTRICT 5 SINGLE MEMBER TRUSTEE, AISD	C	Vote for none or one		0	N	1	N			0		0	0	1		0
+103	114	AT-LARGE POSITION 8, AISD	C	Vote for none or one		0	N	1	N			0		0	0	1		0
+104	116	ROUND ROCK INDEPENDENT SCHOOL DISTRICT SCHOOL BOARD TRUSTEE ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+105	117	PLACE 2, ROUND ROCK ISD BOARD OF TRUSTEES	C			0	N	1	N			0		0	0	1		0
+106	118	PLACE 7, ROUND ROCK ISD BOARD OF TRUSTEES	C			0	N	1	N			0		0	0	1		0
+107	120	LAKESIDE MUNICIPAL UTILITY DISTRICT NO. 3 DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+108	121	DIRECTORS, LAKESIDE MUNICIPAL UTILITY DISTRICT NO. 3	C	Vote for none, one or two 		0	N	2	N			0		0	0	1		0
+109	123	NORTH AUSTIN MUNICIPAL UTILITY DISTRICT NO. 1 DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+110	124	PLACE 1, DIRECTOR, NORTH AUSTIN MUNICIPAL UTILITY DISTRICT NO. 1	C			0	N	1	N			0		0	0	1		0
+111	125	PLACE 3, DIRECTOR, NORTH AUSTIN MUNICIPAL UTILITY DISTRICT NO. 1	C			0	N	1	N			0		0	0	1		0
+112	126	PLACE 5, DIRECTOR, NORTH AUSTIN MUNICIPAL UTILITY DISTRICT NO. 1	C			0	N	1	N			0		0	0	1		0
+113	128	SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1 CONFIRMATION ELECTION, SYSTEM FACILITIES BOND ELECTION, MAINTENANCE TAX ELECTION, PARK AND RECREATIONAL FACILITIES BOND ELECTION, ROAD BOND ELECTION AND PERMANENT DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+114	129	DIRECTORS, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1	C	Vote for none, one, two, three or four		0	N	4	N	0	0	0		0	0	1		0
+156	1	Instruction Text:	B			0	N	0	N			0		0	0	1		0
+116	130	PROP. 1, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1 	P		Confirming Creation of Southeast Travis County Municipal Utility District No. 1.	0	N	1	N			0		0	0	1		0
+117	131	PROP. 2, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1 	P		An Operation and Maintenance Tax for the District Not to Exceed One Dollar and Fifty Cents ($1.50) Per One Hundred Dollars ($100) Valuation of Taxable Property.	0	N	1	N			0		0	0	1		0
+118	132	PROP. 3, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1 	P		The Issuance of $22,065,000 Bonds for System Facilities and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+119	133	PROP. 4, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1 	P		The Issuance of $1,541,650 Bonds for Park and Recreational Facilities and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+120	134	PROP. 5, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 1 	P		The Issuance of $7,500,000 Bonds for Roads and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+121	135	SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY LIMITED DISTRICT NO. 1 CONFIRMATION AND MAINTENANCE TAX ELECTION	T			0	N	0	N			0		0	0	1		0
+122	136	PROP. 1, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY LIMITED DISTRICT NO. 1	P		Confirming Creation of Southeast Travis County Limited District No. 1.	0	N	1	N			0		0	0	1		0
+123	137	PROP. 2, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY LIMITED DISTRICT NO. 1	P		An Operation and Maintenance Tax for the Limited District Not To Exceed One Dollar and Fifty Cents ($1.50) Per One Hundred Dollars ($100) Valuation of Taxable Property.	0	N	1	N			0		0	0	1		0
+124	139	SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2 CONFIRMATION ELECTION, SYSTEM FACILITIES BOND ELECTION, MAINTENANCE TAX ELECTION, PARK AND RECREATIONAL FACILITIES BOND ELECTION, ROAD BOND ELECTION AND PERMANENT DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+125	140	DIRECTORS, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2	C	Vote for none, one, two, three or four		0	N	4	N	0	0	0		0	0	1		0
+127	141	PROP. 1, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2	P		Confirming Creation of Southeast Travis County Municipal Utility District No. 2.	0	N	1	N			0		0	0	1		0
+128	142	PROP. 2, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2	P		An Operation and Maintenance Tax for the District Not To Exceed One Dollar and Fifty Cents ($1.50) Per One Hundred Dollars ($100) Valuation of Taxable Property.	0	N	1	N			0		0	0	1		0
+129	143	PROP. 3, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2	P		The Issuance of $32,875,000 Bonds for System Facilities and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+130	144	PROP. 4, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2	P		The Issuance of $3,902,243 Bonds for Park and Recreational Facilities and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+131	145	PROP. 5, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 2	P		The Issuance of $9,745,000 Bonds for Roads and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+132	146	SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY LIMITED DISTRICT NO. 2 CONFIRMATION AND MAINTENANCE TAX ELECTION	T			0	N	0	N			0		0	0	1		0
+133	147	PROP. 1, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY LIMITED DISTRICT NO. 2	P		Confirming Creation of Southeast Travis County Limited District No. 2.	0	N	1	N			0		0	0	1		0
+134	148	PROP. 2, SOUTHEAST TRAVIS COUNTY MUNICIPAL UTILITY LIMITED DISTRICT NO. 2	P		An Operation and Maintenance Tax for the Limited District Not To Exceed One Dollar and Fifty Cents ($1.50) Per One Hundred Dollars ($100) Valuation of Taxable Property.	0	N	1	N			0		0	0	1		0
+135	150	TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18, DIRECTORS ELECTION 	T			0	N	0	N	0	0	0		0	0	1		0
+136	151	DIRECTORS, TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18	C	Vote for none, one, two, three, four or five		0	N	5	N			0		0	0	1		0
+137	152	TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18 CONFIRMATION ELECTION, MAINTENANCE TAX ELECTION AND BOND ELECTION	T			0	N	0	N			0		0	0	1		0
+138	153	PROP. 1, TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18	P		Confirming Creation of the District.	0	N	1	N			0		0	0	1		0
+139	154	PROP. 2, TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18	P		An Operation and Maintenance Tax Not to Exceed One Dollar ($1.00) Per One Hundred Dollars ($100) Valuation of Taxable Property.	0	N	1	N			0		0	0	1		0
+140	155	PROP. 3, TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18	P		The Issuance of $42,365,000 Bonds to Provide a Waterworks System, Sanitary Sewer System, Drainage System, Storm Sewer System, and the Costs of the Creation, Administration and Operation of the District and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+141	156	PROP. 4, TRAVIS COUNTY MUNICIPAL UTILITY DISTRICT NO. 18	P		The Issuance of Road Facilities Bonds in the Amount of $7,085,000 and the Levy of Taxes in Payment of the Bonds.	0	N	1	N			0		0	0	1		0
+142	158	WELLS BRANCH MUNICIPAL UTILITY DISTRICT DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+143	159	DIRECTOR, PLACE 2, WELLS BRANCH MUNICIPAL UTILITY DISTRICT 	C			0	N	1	N			0		0	0	1		0
+144	160	DIRECTOR, PLACE 4, WELLS BRANCH MUNICIPAL UTILITY DISTRICT 	C			0	N	1	N			0		0	0	1		0
+145	162	WILLIAMSON-TRAVIS COUNTIES MUNICIPAL UTILITY DISTRICT NO 1 DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+146	163	DIRECTORS, WILLIAMSON-TRAVIS COUNTIES MUNICIPAL UTILITY DISTRICT NO 1	C	Vote for none, one, or two 		0	N	2	N			0		0	0	1		0
+147	165	WESTBANK COMMUNITY LIBRARY DISTRICT TRUSTEE ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+148	166	BOARD OF TRUSTEES, WESTBANK COMMUNITY LIBRARY DISTRICT	C	Vote for none, one, two, or three		0	N	3	N			0		0	0	1		0
+149	168	TRAVIS COUNTY WATER CONTROL AND IMPROVEMENT DISTRICT POINT VENTURE, BOARD OF DIRECTORS ELECTION 	T			0	N	0	N	0	0	0		0	0	1		0
+150	169	BOARD OF DIRECTORS, TRAVIS COUNTY WATER CONTROL AND IMPROVEMENT DISTRICT - POINT VENTURE  	C	Vote for none, one, or two 		0	N	2	N			0		0	0	1		0
+151	171	BARTON SPRINGS EDWARDS AQUIFER CONSERVATION DISTRICT GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+152	172	PRECINCT 3, DIRECTOR, BARTON SPRINGS EDWARDS AQUIFER CONSERVATION DISTRICT	C			1	N	1	N			0		0	0	1		0
+153	173	PRECINCT 4, DIRECTOR, BARTON SPRINGS EDWARDS AQUIFER CONSERVATION DISTRICT	C			0	N	1	N			0		0	0	1		0
+154	175	TANGLEWOOD FOREST LIMITED DISTRICT DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+155	176	DIRECTORS, TANGLEWOOD FOREST LIMITED DISTRICT 	C	Vote for none, one, two, or three		0	N	3	N			0		0	0	1		0
+158	55	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+159	58	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+160	78	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+161	83	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+162	88	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+163	91	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+164	95	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+165	98	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+166	104	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+167	109	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+168	115	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+169	119	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+170	122	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+171	127	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+172	138	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+173	149	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+174	177	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+175	157	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+176	161	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+177	164	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+178	167	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+179	170	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+180	174	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0

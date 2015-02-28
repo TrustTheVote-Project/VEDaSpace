@@ -1,0 +1,59 @@
+ELECTIONID,ID,DISTRICTNAME,SEQUENCE,DISTRICTTYPE,GROUPID,VISIBLE
+20121106,111111,Travis County General Election,1,County,,1
+20121106,111115,Travis County Central Health Election,2,County,,1
+20121106,111112,City of Austin Election,3,City,,1
+20121106,2,Austin Community College Election,4,Community College,,1
+20121106,111114,Austin Independent School District Election,5,School District,,1
+20121106,1914,Round Rock Independent School District Election,6,School District,,1
+20121106,301,City of Jonestown Election,7,City,,1
+20121106,302,City of Lago Vista Election,8,City,,1
+20121106,316,City of Lakeway Election,9,City,,1
+20121106,304,City of Pflugerville Election,10,City,,1
+20121106,315,Village of Point Venture Election,11,City,,1
+20121106,366,Village of Spicewood Canyon Election,12,City,,1
+20121106,111113,Edwards Aquifer Election,13,Edwards Aquifer District,,1
+20121106,1201,Westbank Library District Election,14,Library District,,1
+20121106,1384,Lakeside Municipal Utility District 3 Election,15,Municipal Utility District,,1
+20121106,1326,Southeast Travis County Municipal Utility District 1 Election,16,Municipal Utility District,,1
+20121106,1327,Southeast Travis County Municipal Utility District 2 Election,17,Municipal Utility District,,1
+20121106,1320,North Austin Municipal Utility District 1 Election,18,Municipal Utility District,,1
+20121106,1309,Point Venture Water Control and Improvement District  Election,19,WCID,,1
+20121106,1333,Tanglewood Forest Limited District Election,20,Municipal Utility District,,1
+20121106,1325,Travis County Municipal Utility District 18 Election,21,Municipal Utility District,,1
+20121106,1321,Wells Branch Municipal Utility District Election,22,Municipal Utility District,,1
+20121106,1350,Williamson/Travis County Municipal Utility District 1 Election,23,Municipal Utility District,,1
+20121106,1,ALL TRAVIS COUNTY VOTERS,,Travis County,111111,0
+20121106,205,"5, STATE BOARD OF EDUCATION",,Travis County,111111,0
+20121106,210,"10, STATE BOARD OF EDUCATION",,Travis County,111111,0
+20121106,310,City of Austin - Full,,City,111112,0
+20121106,311,City of Austin - Limited,,City,111112,0
+20121106,710,"District 10, Congressional",,County,111111,0
+20121106,717,"District 17, Congressional",,County,111111,0
+20121106,721,"District 21, Congressional",,County,111111,0
+20121106,725,"District 25, Congressional",,County,111111,0
+20121106,735,"District 35, Congressional",,County,111111,0
+20121106,1001,Justice of the Peace 1,,County,111111,0
+20121106,1002,Justice of the Peace 2,,County,111111,0
+20121106,1003,Justice of the Peace 3,,County,111111,0
+20121106,1004,Justice of the Peace 4,,County,111111,0
+20121106,1005,Justice of the Peace 5,,County,111111,0
+20121106,1246,"District 46, Legislative",,County,111111,0
+20121106,1247,"District 47, Legislative",,County,111111,0
+20121106,1248,"District 48, Legislative",,County,111111,0
+20121106,1249,"District 49, Legislative",,County,111111,0
+20121106,1250,"District 50, Legislative",,County,111111,0
+20121106,1251,"District 51, Legislative",,County,111111,0
+20121106,1414,"District 14, Senate",,County,111111,0
+20121106,1421,"District 21, Senate",,County,111111,0
+20121106,1424,"District 24, Senate",,County,111111,0
+20121106,1425,"District 25, Senate",,County,111111,0
+20121106,1601,"Precinct 1, Commissioner",,County,111111,0
+20121106,1603,"Precinct 3, Commissioner",,County,111111,0
+20121106,1703,"SMD #3, EDWARDS AQUIFER",,Edwards Aquifer District,111113,0
+20121106,1704,"SMD #4, EDWARDS AQUIFER",,Edwards Aquifer District,111113,0
+20121106,1901,AISD - AUSTIN ISD,,School District,111114,0
+20121106,2042,AISD SMD 2,,School District,111114,0
+20121106,2043,AISD SMD 3,,School District,111114,0
+20121106,2045,AISD SMD 5,,School District,111114,0
+20121106,9999,FEDERAL RACES ONLY,,Federal Ballot,,0
+20121106,10000,All Precincts,,ALL,,0

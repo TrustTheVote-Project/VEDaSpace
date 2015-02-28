@@ -1,0 +1,5 @@
+NP	 	1	1		1	
+REP	Republican	14	14		0	
+DEM	Democratic	15	15		0	
+LIB	Libertarian	16	16		0	
+GRN	Green	17	17		0	

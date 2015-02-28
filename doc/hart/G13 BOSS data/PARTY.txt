@@ -1,0 +1,3 @@
+NP		1	1		1	
+DEM	Democratic	2	2		0	
+REP	Republican	3	3		0	

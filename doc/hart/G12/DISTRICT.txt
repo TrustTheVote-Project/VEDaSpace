@@ -1,0 +1,54 @@
+710	"District 10, Congressional"
+717	"District 17, Congressional"
+721	"District 21, Congressional"
+725	"District 25, Congressional"
+735	"District 35, Congressional"
+1414	"District 14, Senate"
+1421	"District 21, Senate"
+1424	"District 24, Senate"
+1425	"District 25, Senate"
+1246	"District 46, Legislative"
+1247	"District 47, Legislative"
+1248	"District 48, Legislative"
+1249	"District 49, Legislative"
+1250	"District 50, Legislative"
+1251	"District 51, Legislative"
+1601	"Precinct 1, Commissioner"
+1603	"Precinct 3, Commissioner"
+301	City of Jonestown
+302	City of Lago Vista
+304	City of Pflugerville
+310	City of Austin - Full
+311	City of Austin - Limited
+315	Village of Point Venture
+316	City of Lakeway
+366	Village of Spicewood Canyon
+1001	Justice of the Peace 1
+1002	Justice of the Peace 2
+1003	Justice of the Peace 3
+1004	Justice of the Peace 4
+1005	Justice of the Peace 5
+1901	AISD - AUSTIN ISD
+1914	RRISD - ROUND ROCK ISD
+2042	AISD SMD 2
+2043	AISD SMD 3
+2045	AISD SMD 5
+1309	POINT VENTURE WCID
+1320	NORTH AUSTIN MUD 1
+1321	WELLS BRANCH MUD
+1325	TRAVIS COUNTY MUD 18
+1326	"MUD 1, SOUTHEAST TR COUNTY"
+1327	"MUD 2, SOUTHEAST TR COUNTY"
+1333	TANGLEWOOD FOREST LIMITED DIST
+1350	WMS/TRAVIS COUNTY MUD 1
+1384	LAKESIDE MUD 3
+1703	"SMD #3, EDWARDS AQUIFER"
+1704	"SMD #4, EDWARDS AQUIFER"
+1201	WESTBANK LIBRARY DIST
+205	"5, STATE BOARD OF EDUCATION"
+210	"10, STATE BOARD OF EDUCATION"
+1	ALL TRAVIS COUNTY VOTERS
+2	AUSTIN COMMUNITY COLLEGE
+9999	FEDERAL RACES ONLY
+111115	Travis County Central Health
+10000	All Precincts

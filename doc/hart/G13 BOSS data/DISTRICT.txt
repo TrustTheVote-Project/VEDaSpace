@@ -1,0 +1,15 @@
+1	Travis County Constitutional Amendments Election
+301	City of Jonestown Election
+305	City of Rollingwood Election
+306	City of Sunset Valley Election
+308	Village of The Hills Election
+310	City of Austin Election
+314	City of Leander Election
+315	City of Point Venture Election
+319	City of Bee Cave Election
+320	City of Round Rock Election
+322	Village of Volente Election
+504	Travis County Emergency Services District #4 Election
+1250	Travis County Legislative District 50 Special Election
+1339	Pilot Knob Municipal Utility District #4 Election
+1912	Marble Falls Independent School District Election

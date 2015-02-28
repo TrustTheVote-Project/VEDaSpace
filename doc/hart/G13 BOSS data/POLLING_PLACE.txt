@@ -1,0 +1,244 @@
+1	EV (1) Ben Hur Shrine Center	 Ben Hur Shrine Center	
+2	EV (2) Carver Library and Museum Complex	 Carver Library and Museum Complex	
+3	EV (3) County Tax Office, Pflugerville	 County Tax Office, Pflugerville	
+4	EV (4) Dan Ruiz Public Library	 Dan Ruiz Public Library	
+5	EV (5) Fiesta Mart Central	 Fiesta Mart Central	
+6	EV (6) Fiesta Mart Stassney	 Fiesta Mart Stassney	
+7	EV (7) Gus Garcia Recreation Center	 Gus Garcia Recreation Center	
+8	EV (8) HEB South Congress	 HEB South Congress	
+9	EV (9) Howson Branch Library	 Howson Branch Library	
+10	EV (10) Mobile 1	 Mobile 1	
+11	EV (11) Mobile 2	 Mobile 2	
+12	EV (12) Mobile 3	 Mobile 3	
+13	EV (13) Parque Zaragoza Recreation Center	 Parque Zaragoza Recreation Center	
+14	EV (14) Randalls Ben White and Manchaca	 Randalls Ben White and Manchaca	
+15	EV (15) Randalls Flagship at West Lake Hills	 Randalls Flagship at West Lake Hills	
+16	EV (16) Randalls South Mopac and William Cannon	 Randalls South Mopac and William Cannon	
+17	EV (17) Randalls Research and Braker	 Randalls Research and Braker	
+18	EV (18) Randalls Lakeway	 Randalls Lakeway	
+19	EV (19) Randalls Brodie and Slaughter	 Randalls Brodie and Slaughter	
+20	EV (20) Randalls Steiner Ranch	 Randalls Steiner Ranch	
+21	EV (21) Travis County Airport Blvd Offices	 Travis County Airport Blvd Offices	
+22	EV (22) University of Texas, Flawn Academic Center	 University of Texas, Flawn Academic Center	
+23	ED (23) Dailey Middle School	101:114:115:116:119:138	
+24	ED (24) Copperfield Elementary School	102	
+25	ED (25) Graham Elementary School	103:108	
+26	ED (26) Cedar View Rehabilitation	104	
+27	ED (27) Manor ISD Administration Building	105	
+28	ED (28) Neidig Elementary School	106	
+29	ED (29) New Sweden Lutheran Church	107	
+30	ED (30) Parmer Lane Elementary School	109:111	
+31	ED (31) Park Crest Middle School	110:161	
+32	ED (32) Dessau Elementary School	112	
+33	ED (33) Wieland Elementary School	113	
+34	ED (34) Overton Elementary School	117:120	
+35	ED (35) LBJ High School	121:128:131:134	
+36	ED (36) YMCA East Community Branch	122	
+37	ED (37) Murchison Elementary School	123	
+38	ED (38) Carver Library and Museum Complex	124	
+39	ED (39) David Chapel Portable	126	
+40	ED (40) Sims Elementary School	129	
+41	ED (41) Memorial United Methodist Church	130:118	
+42	ED (42) Pecan Springs Elementary School	132	
+43	ED (43) Blanton Elementary School	133	
+44	ED (44) Messiah Lutheran Church	135	
+45	ED (45) Pfluger Hall	136	
+46	ED (46) Rowe Lane Elementary School	137:163	
+47	ED (47) Gus Garcia Recreation Center	139:140:141	
+48	ED (48) Travis County Airport Blvd Offices	142	
+49	ED (49) Pflugerville ISD Administration Building	146	
+50	ED (50) County Tax Office, Pflugerville	148:145	
+51	ED (51) Reilly Elementary School	149	
+52	ED (52) Brookhollow Elementary School	150	
+53	ED (53) Dottie Jordan Recreation Center	151	
+54	ED (54) Maplewood Elementary School	152	
+55	ED (55) Fiesta Mart Central	152	
+56	ED (56) Pioneer Crossing Elementary School	153	
+57	ED (57) Bluebonnet Trail Elementary School	154:125:127	
+58	ED (58) Virginia Brown Recreation Center	156	
+59	ED (59) Spring Hill Elementary School	160	
+60	ED (60) Barrington Elementary School	164	
+61	ED (61) Winters Building	200	
+62	ED (62) Red River Church	202	
+63	ED (63) Boulder Ridge Community Room	203	
+64	ED (64) Camden Huntingdon Apartments	205	
+65	ED (65) Lee Elementary School	206	
+66	ED (66) YMCA Northwest Branch	207	
+67	ED (67) University of Texas, Flawn Academic Center	208:277	
+68	ED (68) O. Henry Middle School	210:251	
+69	ED (69) Walnut Creek Elementary School	211	
+70	ED (70) Bryker Woods Elementary School	214	
+71	ED (71) Wells Branch Community Library	215	
+72	ED (72) Northwest Elementary School	216	
+73	ED (73) Lanier High School	217:223:224	
+74	ED (74) ACC Northridge Campus	218	
+75	ED (75) Caldwell Elementary School	219	
+76	ED (76) Bridge Point Elementary School	221:212	
+77	ED (77) Cook Elementary School	222:209	
+78	ED (78) Wells Branch MUD Recreation Center	225	
+79	ED (79) Villas of Bristol Heights Apartments	227:226	
+80	ED (80) Wells Branch Community Center	229	
+81	ED (81) Cat Mountain Homeowners Association	231:213:220	
+82	ED (82) Canyon Ridge Middle School	232	
+83	ED (83) Shepherd of the Hills Christian Church	233	
+84	ED (84) Austin Christian Fellowship	234	
+85	ED (85) McCallum High School	235	
+86	ED (86) Rosedale Elementary School	236	
+87	ED (87) Highland Park Baptist Church	237	
+88	ED (88) Murchison Middle School	238	
+89	ED (89) Gullett Elementary School	239	
+90	ED (90) Highland Park Elementary School	240	
+91	ED (91) Brentwood Elementary School	241	
+92	ED (92) Northwest Baptist Church	242	
+93	ED (93) Ben Hur Shrine Center	243	
+94	ED (94) Randalls Steiner Ranch	244	
+95	ED (95) Grandview Hills Elementary School	245	
+96	ED (96) Hill Elementary School	246	
+97	ED (97) Doss Elementary School	247	
+98	ED (98) Burnet Middle School	248	
+99	ED (99) St. Matthews Episcopal Church	249:262	
+100	ED (100) Mathews Elementary School	250	
+101	ED (101) North Village Library	252	
+102	ED (102) First Presbyterian Church	253	
+103	ED (103) Emeritus at North Austin	254:228:267	
+104	ED (104) Howson Branch Library	256:266	
+105	ED (105) McBee Elementary School	258	
+106	ED (106) Summitt Elementary School	259	
+107	ED (107) Austin Brethren Church	260	
+108	ED (108) United Christian Church	263	
+109	ED (109) Grant AME Worship Center	268	
+110	ED (110) Congregation Beth Israel	273	
+111	ED (111) First English Lutheran Church	274	
+112	ED (112) Baker Center	275	
+113	ED (113) Sunset Valley City Hall	301	
+114	ED (114) Bailey Middle School	302	
+115	ED (115) Oak Hill Primitive Baptist Church	303	
+116	ED (116) Kiker Elementary School	304	
+117	ED (117) Rollingwood Municipal Building	307:356	
+118	ED (118) Briarcliff P.O.A. Community Center	308	
+119	ED (119) Manchaca United Methodist Church	310	
+120	ED (120) Travis County Sheriff's Office	312	
+121	ED (121) Senior Activity Center	313:311	
+122	ED (122) Oak Hill Fire Dept. Barton Creek Station	314	
+123	ED (123) Villages Amenities Center	315	
+124	ED (124) Travis County Parks Office	316	
+125	ED (125) Lost Creek MUD Office	317	
+126	ED (126) Lakeway Activity Center	319:306:346	
+127	ED (127) Randalls Lakeway	320	
+128	ED (128) Triumphant Love Lutheran Church	321	
+129	ED (129) Great Hills Baptist Church	323:305:345	
+130	ED (130) Randalls Research	323	
+131	ED (131) Bee Cave City Hall	324:368	
+132	ED (132) Laurel Mountain Elementary School	326	
+133	ED (133) Fire Station #33	327	
+134	ED (134) Renaissance Retirement Center	328	
+135	ED (135) Austin City Hall	329:325	
+136	ED (136) Laura's Library	330:318:357	
+137	ED (137) Kathy Caraway Elementary School	331	
+138	ED (138) Zilker Elementary School	332:340:341	
+139	ED (139) Canyon Creek Elementary School	333:343	
+140	ED (140) Pickfair Community Center	334	
+141	ED (141) Canyon Vista Middle School	335	
+142	ED (142) Hallmark Baptist Church	336	
+143	ED (143) Lakewood Homeowners Association	337	
+144	ED (144) Travis County WCID #18	338	
+145	ED (145) Western Hills Church of Christ	339	
+146	ED (146) Barton Hills Elementary School	342	
+147	ED (147) Cunningham Elementary School	344	
+148	ED (148) Hill Country Middle School	347	
+149	ED (149) ACC Pinnacle Campus	349	
+150	ED (150) Cowan Elementary School	350:309	
+151	ED (151) Randalls Brodie	350	
+152	ED (152) Randalls South Mopac	351	
+153	ED (153) Small Middle School	351	
+154	ED (154) Travis Country Office (H.O.A.)	354	
+155	ED (155) Covington Middle School	358:352	
+156	ED (156) Lake Travis ISD Educational Development Ctr.	359	
+157	ED (157) Bowie High School	360	
+158	ED (158) Oak Hill Fire Dept. Station #301	361	
+159	ED (159) Will Hampton Branch Public Library	362	
+160	ED (160) Shepherd of the Hills Presbyterian Church	363	
+161	ED (161) Randalls Flagship at West Lake Hills	364	
+162	ED (162) West Rural Community Center	365	
+163	ED (163) Mills Elementary School	366	
+164	ED (164) Clayton Elementary School	367	
+165	ED (165) Christ Episcopal Church	369	
+166	ED (166) Round Mountain Community Center	370	
+167	ED (167) Lago Vista High School	371	
+168	ED (168) Community Center at Jonestown	372	
+169	ED (169) Lago Vista City Hall	373	
+170	ED (170) Deer Creek Elementary School	374	
+171	ED (171) Volente Fire Department	375	
+172	ED (172) Del Valle ISD Administration Building	401	
+173	ED (173) Elroy Community Library	402	
+174	ED (174) Creedmoor Elementary School	403	
+175	ED (175) Blazier Elementary School	404	
+176	ED (176) Ojeda Middle School	405	
+177	ED (177) St. Alban's Episcopal Church	406:417	
+178	ED (178) South Rural Community Center	407	
+179	ED (179) Science & Health Resource Center	410	
+180	ED (180) Texas Oaks Baptist Church	414	
+181	ED (181) Casey Elementary School	415	
+182	ED (182) Akins High School	416:411	
+183	ED (183) Parker Lane United Methodist Church	420	
+184	ED (184) Congress Avenue Baptist Church	421	
+185	ED (185) Fulmore Middle School	422	
+186	ED (186) Montopolis Recreation Center	423	
+187	ED (187) South Austin Recreation Center	424:409	
+188	ED (188) HEB South Congress	424	
+189	ED (189) Govalle Elementary School	426:427:436:444	
+190	ED (190) Parque Zaragoza Recreation Center	426	
+191	ED (191) Mexican American Cultural Center (MACC)	428	
+192	ED (192) Dan Ruiz Branch Public Library	429	
+193	ED (193) Baty Elementary School	431	
+194	ED (194) Travis High School	433:442	
+195	ED (195) Southwest Church of Christ	435:408	
+196	ED (196) Twin Oaks Branch Library	437	
+197	ED (197) Sanchez Elementary School	438:432:434	
+198	ED (198) Cantu/Pan Am Recreation Center	439	
+199	ED (199) CityView at the Park Senior Apts	440	
+200	ED (200) St. John's Lutheran Church	441	
+201	ED (201) Fiesta Mart Stassney	441	
+202	ED (202) Mendez Middle School	443	
+203	ED (203) St. Elmo Elementary School	446:425	
+204	ED (204) Odom Elementary School	447:419	
+205	ED (205) Langford Elementary School	448:413:418	
+206	ED (206) Southeast Branch Public Library	450	
+207	ED (207) Bedichek Middle School	451	
+208	ED (208) Houston Elementary School	452	
+209	ED (209) Randalls Ben White	454:412	
+210	ED (210) Mockingbird Post Office	458	
+211	ED (211) ACC South Austin Campus	460	
+212	ED (212) Ann Richards School	461:430	
+213	ED (213) Williams Elementary School	463	
+214	ED (214) Emergency JBC 1	ED JBC 1 	
+215	ED (215) Emergency JBC 2	ED JBC 2 	
+216	ED (216) Emergency JBC 3	ED JBC 3 	
+217	ED (217) Emergency JBC 4	ED JBC 4 	
+218	ED (218) Emergency JBC 5	ED JBC 5 	
+219	ED (219) Emergency JBC 6	ED JBC 6 	
+220	ED (220) Emergency JBC 7	ED JBC 7 	
+221	ED (221) Emergency JBC 8	ED JBC 8 	
+222	ED (222) Emergency JBC 9	ED JBC 9 	
+223	ED (223) Emergency JBC 10	ED JBC 10 	
+224	ED (224) Emergency JBC 11	ED JBC 11 	
+225	ED (225) Emergency JBC 12	ED JBC 12 	
+226	ED (226) Emergency JBC 13	ED JBC 13 	
+227	ED (227) Emergency JBC 14	ED JBC 14 	
+228	ED (228) Emergency JBC 15	ED JBC 15 	
+229	ED (229) Emergency JBC 16	ED JBC 16	
+230	ED (230) Emergency JBC 17	ED JBC 17	
+231	ED (231) Emergency JBC 18	ED JBC 18	
+232	ED (232) Emergency JBC 19	ED JBC 19	
+233	ED (233) Emergency JBC 20	ED JBC 20	
+234	ED (234) Emergency JBC 21	ED JBC 21	
+235	ED (235) Emergency JBC 22	ED JBC 22	
+236	ED (236) Emergency JBC 23	ED JBC 23	
+237	ED (237) Emergency JBC 24	ED JBC 24	
+238	ED (238) Emergency JBC 25	ED JBC 25	
+239	ED (239) Emergency JBC 26	ED JBC 26	
+240	ED (240) Emergency JBC 27	ED JBC 27	
+241	ED (241) Emergency JBC 28	ED JBC 28	
+242	ED (242) Emergency JBC 29	ED JBC 29	
+243	ED (243) Emergency JBC 30	ED JBC 30	
+244	ED (244) Ballot Remake	Ballot Remake 	

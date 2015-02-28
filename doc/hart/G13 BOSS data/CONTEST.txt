@@ -1,0 +1,82 @@
+2	5	CONSTITUTIONAL AMENDMENT ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+3	6	PROP. 1, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment authorizing the legislature to provide for an exemption from ad valorem taxation of all or part of the market value of the residence homestead of the surviving spouse of a member of the armed services of the United States who is killed in action.	0	N	1	N	0	0	0		0	0	1		0
+4	7	PROP. 2, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment eliminating an obsolete requirement for a State Medical Education Board and a State Medical Education Fund, neither of which is operational.	0	N	1	N	0	0	0		0	0	1		0
+5	8	PROP. 3, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment to authorize a political subdivision of this state to extend the number of days that aircraft parts that are exempt from ad valorem taxation due to their location in this state for a temporary period may be located in this state for purposes of qualifying for the tax exemption.	0	N	1	N	0	0	0		0	0	1		0
+6	9	PROP. 4, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment authorizing the legislature to provide for an exemption from ad valorem taxation of part of the market value of the residence homestead of a partially disabled veteran or the surviving spouse of a partially disabled veteran if the residence homestead was donated to the disabled veteran by a charitable organization.	0	N	1	N	0	0	0		0	0	1		0
+7	10	PROP. 5, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment to authorize the making of a reverse mortgage loan for the purchase of homestead property and to amend lender disclosures and other requirements in connection with a reverse mortgage loan.	0	N	1	N	0	0	0		0	0	1		0
+8	11	PROP. 6, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment providing for the creation of the State Water Implementation Fund for Texas and the State Water Implementation Revenue Fund for Texas to assist in the financing of priority projects in the state water plan to ensure the availability of adequate water resources.	0	N	1	N	0	0	0		0	0	1		0
+9	12	PROP. 7, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment authorizing a home-rule municipality to provide in its charter the procedure to fill a vacancy on its governing body for which the unexpired term is 12 months or less.	0	N	1	N	0	0	0		0	0	1		0
+10	13	PROP. 8, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment repealing Section 7, Article IX, Texas Constitution, which relates to the creation of a hospital district in Hidalgo County.	0	N	1	N	0	0	0		0	0	1		0
+11	14	PROP. 9, CONSTITUTIONAL AMENDMENT ELECTION	P		The constitutional amendment relating to expanding the types of sanctions that may be assessed against a judge or justice following a formal proceeding instituted by the State Commission on Judicial Conduct.	0	N	1	N	0	0	0		0	0	1		0
+12	16	CITY OF AUSTIN BOND ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+13	17	PROPOSITION, CITY OF AUSTIN	P		The issuance of $65,000,000 affordable housing bonds and notes for constructing, renovating, improving, and equipping affordable housing for low income persons and families; acquiring land and interests in land and property necessary to do so; and funding affordable housing programs as may be permitted by law; and the levy of a tax sufficient to pay for the bonds and notes.	0	N	1	N	0	0	0		0	0	1		0
+14	19	CITY OF BEE CAVE SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+15	20	PROPOSITION, CITY OF BEE CAVE 	P		The reauthorization of the local sales and use tax in the City of Bee Cave, Texas at the rate of one-eighth of one percent to continue providing revenue for maintenance and repair of municipal streets. 	0	N	1	N	0	0	0		0	0	1		0
+16	22	CITY OF JONESTOWN GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+17	23	MAYOR, CITY OF JONESTOWN	C			0	N	1	N	0	0	0		0	0	1		0
+18	24	PLACE 1, ALDERMAN, CITY OF JONESTOWN	C			0	N	1	N	0	0	0		0	0	1		0
+19	25	PLACE 2, ALDERMAN, CITY OF JONESTOWN	C			0	N	1	N	0	0	0		0	0	1		0
+20	30	CITY OF ROLLINGWOOD GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+80	27	CITY OF LEANDER SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+22	33	CITY OF ROLLINGWOOD BOND ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+23	34	PROPOSITION 1, CITY OF ROLLINGWOOD	P		The issuance of $905,000 general obligation bonds for water facilities and improvements.	0	N	1	N	0	0	0		0	0	1		0
+24	35	PROPOSITION 2, CITY OF ROLLINGWOOD	P		The issuance of $1,965,000 general obligation bonds for repair and improvement of existing residential streets and related improvements.	0	N	1	N	0	0	0		0	0	1		0
+25	38	PROPOSITION 3, CITY OF ROLLINGWOOD	P		The reauthorization of the local sales and use tax in the City of Rollingwood at the rate of one-fourth of one percent to continue providing revenue for maintenance and repair of municipal streets.	0	N	1	N	0	0	0		0	0	1		0
+26	40	CITY OF ROUND ROCK BOND ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+27	41	PROPOSITION 1, CITY OF ROUND ROCK	P		The issuance of up to $16,500,000 tax bonds for city fire department facilities.	0	N	1	N	0	0	0		0	0	1		0
+28	42	PROPOSITION 2, CITY OF ROUND ROCK	P		The issuance of up to $56,500,000 tax bonds for city park and recreational purposes.	0	N	1	N	0	0	0		0	0	1		0
+29	43	PROPOSITION 3, CITY OF ROUND ROCK	P		The issuance of up to $23,200,000 tax bonds for city library facilities.	0	N	1	N	0	0	0		0	0	1		0
+30	44	PROPOSITION 4, CITY OF ROUND ROCK	P		The issuance of up to $27,400,000 tax bonds for joint city police and fire department training facilities.	0	N	1	N	0	0	0		0	0	1		0
+31	46	CITY OF SUNSET VALLEY GENERAL CITY ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+32	47	COUNCIL MEMBER, CITY OF SUNSET VALLEY	C	Vote for none, one, two, or three		0	N	3	N			0		0	0	1		0
+33	48	CITY OF SUNSET VALLEY SPECIAL ELECTION	T			0	N	0	N			0		0	0	1		0
+34	49	PROPOSITION NO. 1, CITY OF SUNSET VALLEY	P		The reauthorization of the local sales and use tax in the City of Sunset Valley at the rate of one fourth of one percent to continue providing revenue for maintenance and repair of municipal streets.	0	N	1	N	0	0	0		0	0	1		0
+35	51	THE VILLAGE OF POINT VENTURE GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+36	52	COUNCIL, THE VILLAGE OF POINT VENTURE	C	Vote for none, one, or two		0	N	2	N	0	0	0		0	0	1		0
+37	53	MAYOR, THE VILLAGE OF POINT VENTURE	C			0	N	1	N	0	0	0		0	0	1		0
+38	55	VILLAGE OF THE HILLS GENERAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+39	56	MAYOR, VILLAGE OF THE HILLS	C			0	N	1	N	0	0	0		0	0	1		0
+40	57	BOARD OF ALDERMEN, VILLAGE OF THE HILLS	C	Vote for none, one, or two		0	N	2	N			0		0	0	1		0
+41	58	VILLAGE OF THE HILLS PROPOSITION ELECTION	T			0	N	0	N			0		0	0	1		0
+42	59	PROP. 1, VILLAGE OF THE HILLS	P		The adoption of a local sales and use tax in the Village of The Hills at the rate of one-fourth of one percent to provide revenue for maintenance and repair of municipal streets.	0	N	1	N	0	0	0		0	0	1		0
+43	61	VILLAGE OF VOLENTE CITY COUNCIL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+44	62	CITY COUNCIL, VILLAGE OF VOLENTE	C	Vote for none, one, two, or three		0	N	3	N			0		0	0	1		0
+45	64	MARBLE FALLS INDEPENDENT SCHOOL DISTRICT BOND ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+46	65	PROPOSITION, MARBLE FALLS INDEPENDENT SCHOOL DISTRICT	P		The issuance of $6,550,000 school building bonds for the construction, acquisition, and equipment of school buildings in the District (including the rehabilitation, renovation, expansion and improvement thereof), and levying of the tax in payment thereof.	0	N	1	N	0	0	0		0	0	1		0
+47	67	PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4 A CONFIRMATION ELECTION, A SYSTEM FACILITIES BOND ELECTION, A MAINTENANCE TAX ELECTION, A PARK AND RECREATIONAL FACILITIES BOND ELECTION, A ROAD BOND ELECTION AND A PERMANENT DIRECTORS ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+48	68	PERMANENT DIRECTORS ELECTION, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	C	Vote for none, one, two, three or four		4	N	4	N	0	0	0		0	0	1		0
+49	70	PROP. 1, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		Confirming creation of Pilot Knob Municipal Utility District No. 4.	0	N	1	N	0	0	0		0	0	1		0
+50	71	PROP. 2, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		An operation and maintenance tax for the district not to exceed one dollar and fifty cents ($1.50) per one hundred dollars ($100) valuation of taxable property.	0	N	1	N	0	0	0		0	0	1		0
+51	72	PROP. 3, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		The issuance of $93,730,000 bonds for system facilities and the levy of taxes in payment of the bonds	0	N	1	N	0	0	0		0	0	1		0
+52	73	PROP. 4, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		The issuance of $5,235,000 bonds for park and recreational facilities and the levy of taxes in payment of the bonds.	0	N	1	N	0	0	0		0	0	1		0
+53	74	PROP. 5, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		The issuance of $53,185,000 bonds for roads and the levy of taxes in payment of the bonds.	0	N	1	N	0	0	0		0	0	1		0
+54	76	PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4 A CONFIRMATION ELECTION AND A MAINTENANCE TAX ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+55	77	PROP. 1, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		Confirming Creation of Pilot Knob Limited District No. 4.	0	N	1	N	0	0	0		0	0	1		0
+56	78	PROP. 2, PILOT KNOB MUNICIPAL UTILITY DISTRICT NO. 4	P		An operation and maintenance tax for the limited district not to exceed one dollar and fifty cents ($1.50) per one hundred dollars ($100) valuation of taxable property.	0	N	1	N	0	0	0		0	0	1		0
+57	80	TRAVIS COUNTY EMERGENCY SERVICES DISTRICT NO. 4 SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+58	81	PROPOSITION NO. 1, TRAVIS COUNTY EMERGENCY SERVICES DISTRICT NO. 4	P		The increase in the rate of the local sales and use tax imposed by Travis County Emergency Services District No. 4 from one percent to two percent.	0	N	1	N	0	0	0		0	0	1		0
+59	37	CITY OF ROLLINGWOOD SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+60	1	Instruction Text:	B			0	N	0	N			0	Ballot Instructions	0	0	1		
+61	15	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+62	18	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+63	21	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+64	26	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+65	39	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+66	45	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+67	50	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+68	54	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+69	60	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+70	63	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+71	66	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+72	79	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+73	82	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+74	31	UNOPPOSED CANDIDATES DECLARED ELECTED	T			0	N	0	N	0	0	0	UNOPPOSED CONTEST	0	0	1		0
+75	32	Alderman, City of Rollingwood |Joe Basham | |Alderman, City of Rollingwood |Amy Pattillo | |Alderman, City of Rollingwood |Jay Jayakumar | | |	T			0	N	0	N	0	0	0	UNOPPOSED CONTEST	0	0	1		0
+77	2	STATE REPRESENTATIVE DISTRICT 50 SPECIAL ELECTION	T			0	N	0	N	0	0	0		0	0	1		0
+78	3	DISTRICT 50, STATE REPRESENTATIVE (UNEXPIRED TERM)	C			0	N	1	N	0	0	64		0	0	1		0
+79	4	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+81	28	PLACE 4, CITY COUNCIL, UNEXPIRED TERM, CITY OF LEANDER	C			0	N	1	N	0	0	64		0	0	1		0
+82	29	To continue voting press the NEXT button.	T			0	N	0	N	0	0	0	Ballot Text	0	0	1		0
+83	36	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+84	75	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
+85	69	To continue voting press the NEXT button.	T			0	N	0	N			0	Ballot Text	0	0	1		0
