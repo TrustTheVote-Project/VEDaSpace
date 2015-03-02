@@ -16,7 +16,7 @@
 6	16	1		Bill Flores	N	14	
 6	17	2		Ben Easton	N	16	
 7	18	1		Lamar Smith	N	14	
-7	19	2		Candace E. Duvál	N	15	
+7	19	2		Candace E. Duval	N	15	
 7	20	3		John-Henry Liberty	N	16	
 8	21	1		Roger Williams	N	14	
 8	22	2		Elaine M. Henderson	N	15	
@@ -27,7 +27,7 @@
 9	27	4		Meghan Owen	N	17	
 10	28	1		Christi Craddick	N	14	
 10	29	2		Dale Henry	N	15	
-10	30	3		Vivekananda "Vik" Wall	N	16	
+10	30	3		Vivekananda 'Vik' Wall	N	16	
 10	31	4		Chris Kennedy	N	17	
 11	32	1		Barry Smitherman	N	14	
 11	33	2		Jaime O. Perez	N	16	
@@ -107,7 +107,7 @@
 49	107	1		Gerald Daugherty	N	14	
 50	108	1		Danny Thomas	N	15	
 51	109	2		Adan Ballesteros	N	15	
-51	110	3		Raul "Roy" Camacho	N	16	
+51	110	3		Raul 'Roy' Camacho	N	16	
 51	111	1		Toby J. Miller	N	14	
 52	112	2		Sally Hernandez	N	15	
 52	113	3		Scott G. McKinlay	N	16	
@@ -162,25 +162,25 @@
 81	162	1		Richard Bohn	N	1	
 83	163	1		For	N	1	
 83	164	2		Against	N	1	
-85	165	1		Omar Peña	N	1	
+85	165	1		Omar Pena	N	1	
 85	166	2		David Prout	N	1	
 85	167	3		Tom Anker	N	1	
 86	168	1		Victor Gonzales	N	1	
-88	169	2		E.C. "Sonny" Ables	N	1	
+88	169	2		E.C. 'Sonny' Ables	N	1	
 88	170	4		Lisa Guest	N	1	
 88	171	3		Mike Maritz	N	1	
 88	172	1		Michael Sutton	N	1	
 90	173	1		Stephen M. Aechternacht	N	1	
-91	174	1		Lawrence Richard "Rich" Scroggins	N	1	
+91	174	1		Lawrence Richard 'Rich' Scroggins	N	1	
 91	175	2		Larry Neal Britton	N	1	
 92	279	2		Against		1	
 92	280	1		For		1	
 94	178	2		Against	N	1	
 94	300	1		For		1	
 96	179	1		Barbara P. Mink	N	1	
-96	180	2		Brigido "Brig" Mireles	N	1	
+96	180	2		Brigido 'Brig' Mireles	N	1	
 97	181	1		Betty Hwang	N	1	
-98	182	1		Daniel J. "DC" Caldwell	N	1	
+98	182	1		Daniel J. 'DC' Caldwell	N	1	
 98	184	2		Allen Kaplan	N	1	
 100	183	1		Jayme Mathias	N	1	
 100	278	2		Sam Guzman	N	1	
@@ -190,7 +190,7 @@
 102	188	2		Amber Elenz	N	1	
 103	189	1		Gina Hinojosa	N	1	
 103	190	2		Mary Ellen Pietruszynski	N	1	
-105	191	1		Charles "Chad" Chadwell	N	1	
+105	191	1		Charles 'Chad' Chadwell	N	1	
 105	192	2		Tere McCann	N	1	
 106	193	1		Pauline Law	N	1	
 106	194	2		Eric M. Pav	N	1	
@@ -253,10 +253,10 @@
 141	251	1		For	N	1	
 141	252	2		Against	N	1	
 143	253	1		Joe Petronis	N	1	
-143	254	2		Charles "Chuck" Walters	N	1	
+143	254	2		Charles 'Chuck' Walters	N	1	
 144	255	1		Janet Maxey	N	1	
 144	256	2		Ron Robinder	N	1	
-146	257	1		Paul Rábago	N	1	
+146	257	1		Paul Rabago	N	1	
 146	258	2		Chris W. Rocco	N	1	
 146	259	3		Donald Baker	N	1	
 146	260	4		Robert M. Kenny, Jr	N	1	
@@ -268,7 +268,7 @@
 150	266	2		Brian Probst	N	1	
 150	267	3		Harry Filbey	N	1	
 153	268	1		Jack Allen Goodman	N	1	
-153	269	2		Robert "Bob" Larsen	N	1	
+153	269	2		Robert 'Bob' Larsen	N	1	
 153	270	3		Jerry D. Hering	N	1	
 155	271	1		Linda R. Klar	N	1	
 155	272	2		Ryan Leahy	N	1	

@@ -168,6 +168,14 @@ module DMap
       end
     end
     
+    def method_missing(method_sym, *arguments, &block)
+      if attributes.has_key?(method_sym)
+        return attributes[method_sym]
+      else
+        super
+      end
+    end
+    
 
     
   end

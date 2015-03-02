@@ -249,7 +249,7 @@ module VSSC
           end
         end
       end
-      xml
+      return xml
     end
     
   end
