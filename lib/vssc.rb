@@ -102,7 +102,7 @@ module VSSC
     
     def self.included(base)
       base.extend ClassMethods
-      base.include ActiveModel::Validations
+      base.send(:include, ActiveModel::Validations)
     end
     
     def is_valid_date_time?(value)
