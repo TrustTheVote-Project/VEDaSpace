@@ -32,6 +32,7 @@ module Hart
           df.precinct_split :id, :order, {:precinct_id=>[:precinct, :id]}, :precinct_split_type, :unknown?
           df.precinct(:NA, :NA, :id, :NA, :NA)
       end
+      
       DMap::File.define("DISTRICT.txt", DEFAULTS) do |df|
         df.district :id, :name
       end
@@ -48,8 +49,12 @@ module Hart
         df.hart_contest :id, :order, :name, :type, :instructions, :description
       end
 
-      DMap::File.define_relation("CONTEST_AND_PRECINCT.txt", DEFAULTS) do |df|
-        df.contest_precinct_split({:contest_id=>[:contest, :id]}, {:precinct_split_id=>[:precinct_split, :id]})
+      # DMap::File.define_relation("CONTEST_AND_PRECINCT.txt", DEFAULTS) do |df|
+      #   df.contest_precinct_split({:contest_id=>[:contest, :id]}, {:precinct_split_id=>[:precinct_split, :id]})
+      # end
+
+      DMap::File.define_relation("DISTRICT_AND_CONTEST.txt", DEFAULTS) do |df|
+        df.district_contest({:district_id=>[:district, :id]}, {:contest_id=>[:contest, :id]})
       end
 
       # DMap::File.define_relation('POLLING_PLACE_AND_PRECINCT.txt', DEFAULTS) do |df|

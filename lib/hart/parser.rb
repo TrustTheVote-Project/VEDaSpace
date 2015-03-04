@@ -33,25 +33,42 @@ module Hart
       # put in all the districts in with the related precinct-splits
       # Make a hash of districts based on set of sub-gpus
       district_from_gpus = {}
+      
+      # districts also need extra data to be complete
+      district_meta = {}
+      district_rows = CSV.read('./doc/hart/G12/MODIFIED_DISTRICT.csv', :headers=>true)
+      district_rows.each do |row|
+        district_meta[row['ID']] = row
+      end
+      
+      
       DMap::ModelRegister.classes[:district].all.values.each do |d|
         district = VSSC::District.new
         district.object_id = "district-#{d.attributes[:id]}"
         district.name = d.attributes[:name]
-      
+        district.district_type = case district_meta[d.id]['DISTRICTTYPE'].downcase.to_s
+        when "city"
+          VSSC::DistrictType.locality
+        when "federal ballot"
+          VSSC::DistrictType.statewide
+        else
+          VSSC::DistrictType.local
+        end
+        
+        ## CUSTOM STUFF
+        if district.name =~ /Congressional/i
+          district.district_type = VSSC::DistrictType.congressional
+        elsif district.name =~ /Senate/i
+          district.district_type = VSSC::DistrictType.state_house
+        elsif district.name =~ /Legislative/i
+          district.district_type = VSSC::DistrictType.state_senate
+        end
+        
+        
         d.relations(:district_precinct_split).each do |d_p_split|
           district.gp_sub_unit_ref << "precinct-split-#{d_p_split.attributes[:precinct_split_id]}"
         end
-      
-        ps_ids = d.relations(:district_precinct_split).collect{|ps| ps.precinct_split_id.to_i}.sort
-        p_ids = ps_ids.collect {|ps_id| 
-          ps = DMap::ModelRegister.classes[:precinct_split].find(ps_id.to_s)
-          %w(Limited Full).include?(ps.precinct_split_type) ? nil : ps.precinct_id
-        }.compact.uniq.sort
-        if district_from_gpus[p_ids]
-          puts [district_from_gpus[p_ids], "district-#{d.id}"].join(" ")
-        end
-        district_from_gpus[p_ids] = "district-#{d.id}"
-      
+            
         report.gp_unit_collection.gp_unit << district
       
       end
@@ -89,6 +106,14 @@ module Hart
         election.candidate_collection.candidate << candidate
       end
     
+      # CUSTOM  pullng results from CSV
+      results = CSV.read("./doc/hart/20121106results-mod.csv", :headers=>true)
+      contest_candidates = {}
+      results.each do |row|
+        cc = "#{row['Contest_Id']} - #{row['candidate_id']}"
+        contest_candidates[cc] ||= []
+        contest_candidates[cc] << row
+      end
     
       election.contest_collection = VSSC::ContestCollection.new
       report.office_collection = VSSC::OfficeCollection.new
@@ -106,10 +131,61 @@ module Hart
         
           contest.number_elected = c.number_elected
           # For each candidate
-          c.relations(:candidate).each do |candidate|
+          contest_gp_units = {}
+          c.relations(:candidate).each_with_index do |candidate, i|
             candidate_selection= VSSC::CandidateSelection.new
             candidate_selection.object_id ="candidate-selection-#{candidate.id}"
             candidate_selection.candidate << "candidate-#{candidate.id}"
+            
+            cc = "#{c.id} - #{candidate.id}"
+            contest_candidates[cc].each do |row|
+              vc_a = VSSC::VoteCounts.new
+              vc_e = VSSC::VoteCounts.new
+              vc = VSSC::VoteCounts.new
+              # "Precinct_name":"101" 
+              # "Reporting_flag":"1" 
+              # "total_ballots":"2061"
+              # "total_votes":"1110"
+              # "total_under_votes":"757"
+              # "total_over_votes":"0"
+              # "absentee_ballots":"48"
+              # "absentee_votes":"28"
+              # "absentee_under_votes":"18"
+              # "absentee_over_votes":"0"
+              # "early_ballots":"1133"
+              # "early_votes":"628"
+              # "early_under_votes":"406"
+              # "early_over_votes":"0"
+              # "election_ballots":"880"
+              # "election_votes":"454"
+              # "election_under_votes":"333"
+              # "election_over_votes":"0"
+              vc_e.gp_unit = vc.gp_unit = vc_a.gp_unit = "precinct-split-#{row["Pct_Id"]}"
+              vc_a.object_id = "votecount-#{cc}-absentee"
+              vc_a.ballot_type = VSSC::BallotType.absentee
+              vc_a.count = row["absentee_votes"]
+              vc_e.object_id = "votecount-#{cc}-early"
+              vc_e.ballot_type = VSSC::BallotType.early
+              vc_e.count = row["early_votes"]
+              vc.object_id = "votecount-#{cc}-election-day"
+              vc.ballot_type = VSSC::BallotType.election_day
+              vc.count = row["election_votes"]
+              candidate_selection.vote_counts << vc
+              candidate_selection.vote_counts << vc_a
+              candidate_selection.vote_counts << vc_e
+              
+              # for the first candidate in the loop put in the totals
+              if i == 0
+                total_count = VSSC::TotalCounts.new
+                total_count.gp_unit = "precinct-split-#{row["Pct_Id"]}"
+                total_count.object_id = "total-counts-#{total_count.gp_unit}-#{c.id}"
+                total_count.ballots_cast = row["total_ballots"]
+                total_count.overvotes = row["total_over_votes"]
+                total_count.undervotes = row["total_under_votes"]
+                contest.contest_total_counts_by_gp_unit << total_count
+              end
+              
+            end
             contest.ballot_selection << candidate_selection
           end
         elsif c.contest_type.downcase == "p"
@@ -137,17 +213,10 @@ module Hart
       
         # For whatever the contest, look at all the precinct-splits in the contest/precinct-split
         # and detect an exatly-matching district
-        ps_ids = c.relations(:contest_precinct_split).collect{|ps| ps.precinct_split_id.to_i}.sort
-        p_ids = ps_ids.collect {|ps_id| 
-          ps = DMap::ModelRegister.classes[:precinct_split].find(ps_id.to_s)
-          %w(Limited Full).include?(ps.precinct_split_type) ? nil : ps.precinct_id
-        }.compact.uniq.sort
-      
-        contest.contest_gp_scope = district_from_gpus[p_ids]
-        if contest.contest_gp_scope.blank?
-          puts c.office.to_s + ' ' + p_ids.to_s
-        end
-      
+        puts c.relations(:district_contest).collect(&:district_id).join(", ")
+        district_id = c.relations(:district_contest).last.district_id
+        contest.contest_gp_scope = "district-#{district_id}"
+
         contest.object_id = "contest-#{c.id}"
         contest.name = c.office
         contest.sequence_order = c.order
@@ -159,7 +228,10 @@ module Hart
     
       puts report.valid?
       puts report.errors.messages.collect{|k,v|"#{k}: #{v}"}.join("\n")
-      puts report.to_xml_node.doc.to_s
+      
+      File.open(report.object_id + "-vssc.xml", "w+") do |f|
+        f.write report.to_xml_node.doc.to_s
+      end
     
       
       
