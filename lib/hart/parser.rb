@@ -4,7 +4,7 @@ require 'nokogiri'
 
 module Hart
   class Parser
-    def self.parse
+    def self.parse(include_results=true)
       
       Hart::Mapper.map
       
@@ -138,53 +138,54 @@ module Hart
             candidate_selection.candidate << "candidate-#{candidate.id}"
             
             cc = "#{c.id} - #{candidate.id}"
-            contest_candidates[cc].each do |row|
-              vc_a = VSSC::VoteCounts.new
-              vc_e = VSSC::VoteCounts.new
-              vc = VSSC::VoteCounts.new
-              # "Precinct_name":"101" 
-              # "Reporting_flag":"1" 
-              # "total_ballots":"2061"
-              # "total_votes":"1110"
-              # "total_under_votes":"757"
-              # "total_over_votes":"0"
-              # "absentee_ballots":"48"
-              # "absentee_votes":"28"
-              # "absentee_under_votes":"18"
-              # "absentee_over_votes":"0"
-              # "early_ballots":"1133"
-              # "early_votes":"628"
-              # "early_under_votes":"406"
-              # "early_over_votes":"0"
-              # "election_ballots":"880"
-              # "election_votes":"454"
-              # "election_under_votes":"333"
-              # "election_over_votes":"0"
-              vc_e.gp_unit = vc.gp_unit = vc_a.gp_unit = "precinct-split-#{row["Pct_Id"]}"
-              vc_a.object_id = "votecount-#{cc}-absentee"
-              vc_a.ballot_type = VSSC::BallotType.absentee
-              vc_a.count = row["absentee_votes"]
-              vc_e.object_id = "votecount-#{cc}-early"
-              vc_e.ballot_type = VSSC::BallotType.early
-              vc_e.count = row["early_votes"]
-              vc.object_id = "votecount-#{cc}-election-day"
-              vc.ballot_type = VSSC::BallotType.election_day
-              vc.count = row["election_votes"]
-              candidate_selection.vote_counts << vc
-              candidate_selection.vote_counts << vc_a
-              candidate_selection.vote_counts << vc_e
+            if include_results
+              contest_candidates[cc].each do |row|
+                vc_a = VSSC::VoteCounts.new
+                vc_e = VSSC::VoteCounts.new
+                vc = VSSC::VoteCounts.new
+                # "Precinct_name":"101" 
+                # "Reporting_flag":"1" 
+                # "total_ballots":"2061"
+                # "total_votes":"1110"
+                # "total_under_votes":"757"
+                # "total_over_votes":"0"
+                # "absentee_ballots":"48"
+                # "absentee_votes":"28"
+                # "absentee_under_votes":"18"
+                # "absentee_over_votes":"0"
+                # "early_ballots":"1133"
+                # "early_votes":"628"
+                # "early_under_votes":"406"
+                # "early_over_votes":"0"
+                # "election_ballots":"880"
+                # "election_votes":"454"
+                # "election_under_votes":"333"
+                # "election_over_votes":"0"
+                vc_e.gp_unit = vc.gp_unit = vc_a.gp_unit = "precinct-split-#{row["Pct_Id"]}"
+                vc_a.object_id = "votecount-#{cc}-absentee"
+                vc_a.ballot_type = VSSC::BallotType.absentee
+                vc_a.count = row["absentee_votes"]
+                vc_e.object_id = "votecount-#{cc}-early"
+                vc_e.ballot_type = VSSC::BallotType.early
+                vc_e.count = row["early_votes"]
+                vc.object_id = "votecount-#{cc}-election-day"
+                vc.ballot_type = VSSC::BallotType.election_day
+                vc.count = row["election_votes"]
+                candidate_selection.vote_counts << vc
+                candidate_selection.vote_counts << vc_a
+                candidate_selection.vote_counts << vc_e
               
-              # for the first candidate in the loop put in the totals
-              if i == 0
-                total_count = VSSC::TotalCounts.new
-                total_count.gp_unit = "precinct-split-#{row["Pct_Id"]}"
-                total_count.object_id = "total-counts-#{total_count.gp_unit}-#{c.id}"
-                total_count.ballots_cast = row["total_ballots"]
-                total_count.overvotes = row["total_over_votes"]
-                total_count.undervotes = row["total_under_votes"]
-                contest.contest_total_counts_by_gp_unit << total_count
+                # for the first candidate in the loop put in the totals
+                if i == 0
+                  total_count = VSSC::TotalCounts.new
+                  total_count.gp_unit = "precinct-split-#{row["Pct_Id"]}"
+                  total_count.object_id = "total-counts-#{total_count.gp_unit}-#{c.id}"
+                  total_count.ballots_cast = row["total_ballots"]
+                  total_count.overvotes = row["total_over_votes"]
+                  total_count.undervotes = row["total_under_votes"]
+                  contest.contest_total_counts_by_gp_unit << total_count
+                end
               end
-              
             end
             contest.ballot_selection << candidate_selection
           end
@@ -229,7 +230,7 @@ module Hart
       puts report.valid?
       puts report.errors.messages.collect{|k,v|"#{k}: #{v}"}.join("\n")
       
-      File.open(report.object_id + "-vssc.xml", "w+") do |f|
+      File.open(report.object_id + "#{include_results ? '-results' : ''}-vssc.xml", "w+") do |f|
         f.write report.to_xml_node.doc.to_s
       end
     
@@ -239,4 +240,4 @@ module Hart
   end
 end
 
-Hart::Parser.parse
+Hart::Parser.parse(true)

@@ -144,7 +144,7 @@ module VSSC
       xml_attributes.each do |key, value|
         if self.attributes.include?(key)
           self.send("#{attributes[key][:method]}=", convert_value_to_type(value.value, attributes[key][:type] ))
-        else
+        elsif key.to_s != 'type'
           parse_error "Attribute #{key} not part of #{self.class}"
         end
       end
