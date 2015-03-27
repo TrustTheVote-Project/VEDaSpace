@@ -5,10 +5,11 @@ Name: A (hopefully) Friendly identifier
 Internal ID: (must be unique within Object Class)
 Object Type: congressional, local, locality, other, state-house, state-senate, statewide (from VSSC - for Districts only)
 Enclosing Ids: List of items that this object is completely within. Each item should be <Object Class>:<ID>
+Shape: Shape string
 
-For example:
+For example (left off 'shape' for simplicity'):
 Object Class,    Name,                        Internal ID, Type,           Enclosing Ids
-District,        District 10, Congressional,  710,         congressional, 
+District,        District 10, Congressional,  710,         congressional,  
 District,        Federal,                     1,           statewide,
 District,        District 14, Senate          1414,        state-senate,
 Precinct,        101,                         101,         ,               
