@@ -13,7 +13,6 @@ module VSSC
     define_attribute("phone")
     define_attribute("postalCode")
     define_attribute("stateAbbreviation")
-    define_attribute("streetName")
-    
+    define_attribute("streetName")    
   end
 end
