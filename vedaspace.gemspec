@@ -5,7 +5,7 @@ require "vedaspace/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "vedaspace"
-  spec.version       = VEDaSpace::VERSION
+  spec.version       = Vedaspace::VERSION
   spec.authors       = ["OSET", "Alex Mekelburg"]
   spec.email         = ["alex.mekelburg@gmail.com"]
   spec.summary   = %q{Ruby classes based on Nist ERR election data format}

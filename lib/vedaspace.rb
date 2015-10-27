@@ -3,7 +3,7 @@ require "active_model"
 require 'xsd_functions'
 #require_relative 'xsd_'
 
-module Vedastore
+module Vedaspace
 
 end
 
