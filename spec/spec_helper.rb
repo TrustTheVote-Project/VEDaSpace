@@ -1,5 +1,5 @@
 Bundler.require
-require 'vssc'
+require 'vedastore'
 
 RSpec.configure do |config|
   

@@ -1,16 +1,16 @@
 # coding: utf-8
 $:.push File.expand_path("../lib", __FILE__)
 
-require "vssc/version"
+require "vedaspace/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "vssc-ruby"
-  spec.version       = VSSC::VERSION
+  spec.name          = "vedaspace"
+  spec.version       = VEDaSpace::VERSION
   spec.authors       = ["OSET", "Alex Mekelburg"]
   spec.email         = ["alex.mekelburg@gmail.com"]
-  spec.summary   = %q{Ruby classes based on VSSC election data format}
-  spec.description   = %q{Ruby classes based on VSSC election data format}
-  spec.license       = "MIT"
+  spec.summary   = %q{Ruby classes based on Nist ERR election data format}
+  spec.description   = %q{Ruby classes based on Nist ERR election data format}
+  spec.license       = "OSET Foundation"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
