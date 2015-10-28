@@ -6,8 +6,8 @@
 #     <xsd:enumeration value="write-in"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::CandidatePreElectionStatus
-  include VsscEnum
+class Vedaspace::Enum::CandidatePreElectionStatus
+  include Vedaspace::Enum
   
   set_enum_values "filed",
                   "qualified",

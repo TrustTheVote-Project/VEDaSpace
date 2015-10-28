@@ -7,8 +7,8 @@
 #     <xsd:enumeration value="wkt"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::GeoSpatialFormat
-  include VsscEnum
+class Vedaspace::Enum::GeoSpatialFormat
+  include Vedaspace::Enum
   
   set_enum_values "geo-json",
                   "gml",

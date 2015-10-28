@@ -6,8 +6,8 @@
 #     <xsd:enumeration value="other"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::BallotMeasureType
-  include VsscEnum
+class Vedaspace::Enum::BallotMeasureType
+  include Vedaspace::Enum
   
   set_enum_values "ballot-measure",
                   "initiative",

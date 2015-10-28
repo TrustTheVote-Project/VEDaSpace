@@ -6,8 +6,8 @@
 #     <xsd:enumeration value="unknown"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::CountItemStatus
-  include VsscEnum
+class Vedaspace::Enum::CountItemStatus
+  include Vedaspace::Enum
   
   set_enum_values "completed",
                   "in-process",

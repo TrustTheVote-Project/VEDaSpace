@@ -4,8 +4,8 @@
 #     <xsd:enumeration value="unexpired-term"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::OfficeTermType
-  include VsscEnum
+class Vedaspace::Enum::OfficeTermType
+  include Vedaspace::Enum
   
   set_enum_values "full-term",
                   "unexpired-term"

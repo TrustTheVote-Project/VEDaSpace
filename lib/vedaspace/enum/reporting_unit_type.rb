@@ -29,8 +29,8 @@
 #     <xsd:enumeration value="other"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::ReportingUnitType
-  include VsscEnum
+class Vedaspace::Enum::ReportingUnitType
+  include Vedaspace::Enum
   
   set_enum_values "ballot-batch",
                   "ballot-style-area",

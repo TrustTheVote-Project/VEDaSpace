@@ -6,8 +6,8 @@
 #     <xsd:enumeration value="withdrawn"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::CandidatePostElectionStatus
-  include VsscEnum
+class Vedaspace::Enum::CandidatePostElectionStatus
+  include Vedaspace::Enum
   
   set_enum_values "advanced-to-runoff",
                   "projected-winner",

@@ -8,8 +8,8 @@
 #     <xsd:enumeration value="unofficial-partial"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::ResultsStatus
-  include VsscEnum
+class Vedaspace::Enum::ResultsStatus
+  include Vedaspace::Enum
   
   set_enum_values "certified",
                   "correction",

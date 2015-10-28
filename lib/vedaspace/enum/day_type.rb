@@ -12,8 +12,8 @@
 #     <xsd:enumeration value="weekend"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::DayType
-  include VsscEnum
+class Vedaspace::Enum::DayType
+  include Vedaspace::Enum
   
   set_enum_values "all",
                   "sunday",

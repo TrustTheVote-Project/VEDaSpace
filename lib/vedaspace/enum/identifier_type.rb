@@ -8,8 +8,8 @@
 #     <xsd:enumeration value="other"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::IdentifierType
-  include VsscEnum
+class Vedaspace::Enum::IdentifierType
+  include Vedaspace::Enum
   
   set_enum_values "fips",
                   "local-level",

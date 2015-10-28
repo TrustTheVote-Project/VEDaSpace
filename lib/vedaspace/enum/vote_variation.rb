@@ -14,8 +14,8 @@
 #     <xsd:enumeration value="other"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::VoteVariation
-  include VsscEnum
+class Vedaspace::Enum::VoteVariation
+  include Vedaspace::Enum
 
   set_enum_values "1-of-m",
                   "approval",

@@ -1,20 +1,23 @@
 module Vedaspace
   module ElectionReport
-  
+    extend InclusionTracking
     extend ActiveSupport::Concern
+    
     include XsdFunctions
     
-    included do
-    
-      # TODO: Election should be multiple??
-      define_element("Election", type: Vssc::Election, belongs_to: true)
   
-      define_element("ExternalIdentifiers", type: Vssc::ExternalIdentifierCollection, method: :external_identifier_collection)
+    included do
+      Vedaspace::ElectionReport.register_inclusion(self)
       
-      define_element("Format", type: Vssc::Enum::ReportDetailLevel)
+      # TODO: Election should be multiple??
+      define_element("Election", type: Vedaspace::Election, belongs_to: true)
+  
+      ## define_element("ExternalIdentifiers", type: Vssc::ExternalIdentifierCollection, method: :external_identifier_collection)
+      
+      define_element("Format", type: Vedaspace::Enum::ReportDetailLevel)
       define_element("GeneratedDate", type: "xsd:dateTime")
 
-      define_element("GpUnitCollection", type: Vssc::GpUnit, method: :gp_units, passthrough: "GpUnit")
+     ##  define_element("GpUnitCollection", type: Vssc::GpUnit, method: :gp_units, passthrough: "GpUnit")
       
       define_element("Issuer", required: true)
       define_element("IssuerAbbreviation", required: true)
@@ -22,15 +25,15 @@ module Vedaspace
       define_element("Notes")
 
       # need Office / OfficeGroup
-      define_element("OfficeCollection", type: Vssc::Office, method: :offices, passthrough: "Office")
+      ## define_element("OfficeCollection", type: Vssc::Office, method: :offices, passthrough: "Office")
       
-      define_element("PartyCollection", type: Vssc::Party, method: :parties, passthrough: "Party")
+      ## define_element("PartyCollection", type: Vssc::Party, method: :parties, passthrough: "Party")
       
-      define_element("PersonCollection", type: Vssc::Person, method: :people, passthrough: "Person")     
+      ## define_element("PersonCollection", type: Vssc::Person, method: :people, passthrough: "Person")     
   
       define_element("SequenceStart", type: Fixnum)
       define_element("SequenceEnd", type: Fixnum)
-      define_element("Status", type: Vssc::Enum::ResultsStatus)
+      define_element("Status", type: Vedaspace::Enum::ResultsStatus)
       define_element("TestType")
       define_element("VendorApplicationId", method: :vendor_application_identifier)
 

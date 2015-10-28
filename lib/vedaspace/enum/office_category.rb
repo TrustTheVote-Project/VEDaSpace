@@ -5,8 +5,8 @@
 #     <xsd:enumeration value="StateWide"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::OfficeCategory
-  include VsscEnum
+class Vedaspace::Enum::OfficeCategory
+  include Vedaspace::Enum
   
   set_enum_values "CountyWide",
                   "Judicial",

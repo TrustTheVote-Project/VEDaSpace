@@ -9,8 +9,8 @@
 #     <xsd:enumeration value="other"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::ElectionType
-  include VsscEnum
+class Vedaspace::Enum::ElectionType
+  include Vedaspace::Enum
   
   set_enum_values "general",
                   "partisan-primary-closed",

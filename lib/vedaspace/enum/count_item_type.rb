@@ -13,8 +13,8 @@
 #     <xsd:enumeration value="other"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::CountItemType
-  include VsscEnum
+class Vedaspace::Enum::CountItemType
+  include Vedaspace::Enum
   
   set_enum_values "absentee",
                   "absentee-fwab",

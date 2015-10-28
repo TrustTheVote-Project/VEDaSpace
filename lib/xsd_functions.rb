@@ -1,22 +1,17 @@
 require 'active_support'
 module XsdFunctions
-	extend ActiveSupport::Concern
+  extend ActiveSupport::Concern
   
   included do
     #class_attribute :elements, :xml_attributes, {instance_accessor: false}
-    
     class << self
-      attr_accessor :elements, :xml_attributes, :text_node_method
+      attr_accessor :elements, :xml_attributes, :text_node_method      
     end
+
   end
   
-  module ClassMethods
-  
-    def define_xml_accessor_hook(accessor_group, element_name, opts={})
-        
-    end
-  
-  
+  module ClassMethods  
+    
     def define_xml_accessor(accessor_group, element_name, opts={})
       method_name = opts[:method] || element_name.underscore      
       
@@ -32,7 +27,9 @@ module XsdFunctions
       if opts[:required]
       #   TODO: validate presence in *export*
       end
-      define_xml_accessor_hook(accessor_group, element_name, opts)
+      if self.respond_to?(:define_xml_accessor_hook)
+        self.define_xml_accessor_hook(accessor_group, element_name, method_name, element_type, opts)
+      end
     end
   
     def define_element(element_name, opts={})

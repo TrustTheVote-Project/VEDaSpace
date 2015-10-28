@@ -4,8 +4,8 @@
 #     <xsd:enumeration value="summary-contest"/>
 #   </xsd:restriction>
 # </xsd:simpleType>
-class Vssc::Enum::ReportDetailLevel
-  include VsscEnum
+class Vedaspace::Enum::ReportDetailLevel
+  include Vedaspace::Enum
   
   set_enum_values "precinct-level",
                   "summary-contest"

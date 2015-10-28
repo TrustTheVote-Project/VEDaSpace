@@ -1,11 +1,15 @@
 require "active_support/all"
 require "active_model"
 require 'xsd_functions'
+require 'inclusion_tracking'
 #require_relative 'xsd_'
 
 module Vedaspace
-
 end
+
+require_relative 'vedaspace/enum'
+
+# Dir[File.dirname(__FILE__) + '/vedaspace/enum/*.rb'].each {|file| require file }
 
 # require_relative 'vssc/party_registration.rb'
 # require_relative 'vssc/spatial_extent.rb'
@@ -40,7 +44,7 @@ end
 # require_relative 'vssc/person_collection.rb'
 # require_relative 'vssc/office_collection.rb'
 #
-# require_relative 'vssc/election.rb'
+require_relative 'vedaspace/election.rb'
 #
 require_relative 'vedaspace/election_report.rb'
 #
