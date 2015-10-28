@@ -5,19 +5,17 @@ module XsdFunctions
   included do
     #class_attribute :elements, :xml_attributes, {instance_accessor: false}
     
-    # TODO: rails-specific
-    # before_save :vssc_before_save_callback
-    # after_save  :vssc_after_save_callback
-    
     class << self
       attr_accessor :elements, :xml_attributes, :text_node_method
-      
-      
-      
     end
   end
   
   module ClassMethods
+  
+    def define_xml_accessor_hook(accessor_group, element_name, opts={})
+        
+    end
+  
   
     def define_xml_accessor(accessor_group, element_name, opts={})
       method_name = opts[:method] || element_name.underscore      
@@ -31,17 +29,10 @@ module XsdFunctions
       # this is for those "collections"
       self.send(accessor_group)[element_name][:passthrough] = opts[:passthrough]
       
-      
       if opts[:required]
       #   TODO: validate presence in *export*
       end
-      
-      if opts[:belongs_to]
-        raise 'shouldnt be in xsd_functions'
-        # TODO: rails specific
-        #belongs_to method_name.to_sym, class_name: element_type.to_s, foreign_key: "#{method_name}_id".to_sym
-      end
-      
+      define_xml_accessor_hook(accessor_group, element_name, opts)
     end
   
     def define_element(element_name, opts={})
@@ -93,17 +84,7 @@ module XsdFunctions
       rescue Exception, LoadError
         return false
       end
-    end
-    
-  end
-    
-    
-  def vssc_before_save_callback
-    #puts "Saving: #{self.class}"
-  end
-  
-  def vssc_after_save_callback
-    #puts "Saved! #{self.class}"
+    end    
   end
   
   def is_valid_date_time?(value)

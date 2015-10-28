@@ -42,6 +42,6 @@ end
 #
 # require_relative 'vssc/election.rb'
 #
-# require_relative 'vssc/election_report.rb'
+require_relative 'vedaspace/election_report.rb'
 #
 # require_relative 'vssc/parser.rb'
