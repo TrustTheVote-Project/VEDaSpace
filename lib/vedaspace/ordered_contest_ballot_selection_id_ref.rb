@@ -1,4 +1,4 @@
-module Vedastore::OrderedContestBallotSelectionIdRef
+module Vedaspace::OrderedContestBallotSelectionIdRef
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions  

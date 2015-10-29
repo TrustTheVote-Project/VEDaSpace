@@ -12,7 +12,7 @@ module Vedaspace::OrderedContest
   included do
     define_element("ContestId", method: :contest_identifier)
 
-    define_element("OrderedBallotSelectionId", type: Vedastore::OrderedContestBallotSelectionIdRef, method: :ordered_contest_ballot_selection_id_refs)
+    define_element("OrderedBallotSelectionId", type: Vedaspace::OrderedContestBallotSelectionIdRef, method: :ordered_contest_ballot_selection_id_refs)
   
   end  
 end

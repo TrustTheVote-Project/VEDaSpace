@@ -19,7 +19,7 @@ module Vedaspace::ExternalIdentifier
   include XsdFunctions
   
   included do
-    define_element("Type", type: Vedastore::Enum::IdentifierType, method: :identifier_type, required:true)
+    define_element("Type", type: Vedaspace::Enum::IdentifierType, method: :identifier_type, required:true)
     define_element("OtherType")  
     define_element("Value", required: true)
 

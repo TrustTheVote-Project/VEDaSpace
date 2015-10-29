@@ -17,7 +17,7 @@ module Vedaspace::Term
   
     define_element("StartDate", type: Date)
     define_element("EndDate", type: Date)
-    define_element("Type", type: Vedastore::Enum::OfficeTermType, method: :office_term_type)
+    define_element("Type", type: Vedaspace::Enum::OfficeTermType, method: :office_term_type)
   
     define_attribute("label")
   end

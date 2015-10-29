@@ -18,7 +18,7 @@ module Vedaspace::BallotSelection
   
   included do
     define_element("SequenceOrder", type: Fixnum)
-    define_element("VoteCountsCollection", type: Vedastore::VoteCounts, method: :counts, passthrough: "VoteCounts")
+    define_element("VoteCountsCollection", type: Vedaspace::VoteCounts, method: :counts, passthrough: "VoteCounts")
   
     define_attribute("objectId", :required=>true)
   end

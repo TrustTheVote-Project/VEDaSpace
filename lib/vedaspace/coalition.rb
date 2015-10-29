@@ -15,9 +15,9 @@ module Vedaspace::Coalition
   
   included do
     include Vedaspace::Party
-    define_element("ContestId", type: Vssc::PartyContestIdRef, method: :party_contest_id_refs)
+    define_element("ContestId", type: Vedaspace::PartyContestIdRef, method: :party_contest_id_refs)
   
-    define_element("PartyId", type: Vssc::PartyPartyIdRef, method: :party_party_id_refs)
+    define_element("PartyId", type: Vedaspace::PartyPartyIdRef, method: :party_party_id_refs)
   end
   
 end

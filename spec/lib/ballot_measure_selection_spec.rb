@@ -8,8 +8,8 @@
 
 require_relative '../spec_helper.rb'
 
-describe VSSC::BallotMeasureSelection do
-  let(:b) { VSSC::BallotMeasureSelection.new }
+describe Vedaspace::BallotMeasureSelection do
+  let(:b) { Vedaspace::BallotMeasureSelection.new }
   before(:each) do
     b.object_id = "abc"
   end

@@ -19,7 +19,7 @@ module Vedaspace::CandidateContest
     include Vedaspace::Contest
     
     define_element("NumberElected", type: Fixnum)
-    define_element("OfficeId", type: Vssc::ContestOfficeIdRef, method: :contest_office_id_refs)
+    define_element("OfficeId", type: Vedaspace::ContestOfficeIdRef, method: :contest_office_id_refs)
   
     define_element("PrimaryPartyId", method: :primary_party_identifier)
   

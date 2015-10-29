@@ -34,7 +34,7 @@ module Vedaspace::ContactInformation
     # TODO: Set up parsing for LatLng!
     define_element("Name")
     define_element("Phone")
-    define_element("Schedule", type: Vssc::Schedule, method: :schedules)
+    define_element("Schedule", type: Vedaspace::Schedule, method: :schedules)
   
     define_element("Uri")
   

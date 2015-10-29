@@ -18,9 +18,9 @@ module Vedaspace::Candidate
   include XsdFunctions  
   
   included do
-    define_element("BallotName", type: Vssc::InternationalizedText, belongs_to: true)
+    define_element("BallotName", type: Vedaspace::InternationalizedText, belongs_to: true)
 
-    define_element("ExternalIdentifiers", type: Vssc::ExternalIdentifierCollection, method: :external_identifier_collection)
+    define_element("ExternalIdentifiers", type: Vedaspace::ExternalIdentifierCollection, method: :external_identifier_collection)
   
     define_element("FileDate", type: "xsd:date")  
     define_element("IsIncumbent", type: "xsd:boolean")  
