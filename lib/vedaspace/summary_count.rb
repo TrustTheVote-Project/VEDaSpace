@@ -12,7 +12,7 @@
 #     </xsd:extension>
 #   </xsd:complexContent>
 # </xsd:complexType>
-module Vedaspace::SummaryCounts
+module Vedaspace::SummaryCount
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions  

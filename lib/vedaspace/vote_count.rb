@@ -7,13 +7,13 @@
 #     </xsd:extension>
 #   </xsd:complexContent>
 # </xsd:complexType>
-module Vedaspace::VoteCounts
+module Vedaspace::VoteCount
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions
   
   included do
-    include Vedaspace::Counts
+    include Vedaspace::Count
     define_element("Count", type: Float, required: true)
   end
   

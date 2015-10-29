@@ -7,7 +7,7 @@
 #     <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
 #   </xsd:sequence>
 # </xsd:complexType>
-module Vedaspace::Counts
+module Vedaspace::Count
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions  

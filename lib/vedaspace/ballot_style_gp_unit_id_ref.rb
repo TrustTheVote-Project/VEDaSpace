@@ -1,4 +1,4 @@
-module Vedasoace::BallotStyleGpUnitIdRef
+module Vedaspace::BallotStyleGpUnitIdRef
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions  

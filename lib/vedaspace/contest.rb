@@ -18,7 +18,7 @@
 #   </xsd:sequence>
 #   <xsd:attribute name="objectId" type="xsd:ID" use="required"/>
 # </xsd:complexType>
-module Vedsapace::Contest
+module Vedaspace::Contest
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions  
