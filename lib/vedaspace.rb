@@ -8,8 +8,9 @@ end
 
 require_relative 'vedaspace/enum'
 
-# Dir[File.dirname(__FILE__) + '/vedaspace/enum/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/vedaspace/*.rb'].each {|file| require file }
 
+require_relative 'vedaspace/'
 # require_relative 'vssc/party_registration.rb'
 # require_relative 'vssc/spatial_extent.rb'
 # require_relative 'vssc/spatial_dimension.rb'
