@@ -14,7 +14,7 @@ module Vedaspace
       define_element("Format", type: Vedaspace::Enum::ReportDetailLevel)
       define_element("GeneratedDate", type: "xsd:dateTime")
 
-     ##  define_element("GpUnitCollection", type: Vssc::GpUnit, method: :gp_units, passthrough: "GpUnit")
+      define_element("GpUnitCollection", type: Vedaspace::GpUnit, method: :gp_units, passthrough: "GpUnit")
       
       define_element("Issuer", required: true)
       define_element("IssuerAbbreviation", required: true)
@@ -22,11 +22,11 @@ module Vedaspace
       define_element("Notes")
 
       # need Office / OfficeGroup
-      ## define_element("OfficeCollection", type: Vssc::Office, method: :offices, passthrough: "Office")
+      define_element("OfficeCollection", type: Vedaspace::Office, method: :offices, passthrough: "Office")
       
-      ## define_element("PartyCollection", type: Vssc::Party, method: :parties, passthrough: "Party")
+      define_element("PartyCollection", type: Vedaspace::Party, method: :parties, passthrough: "Party")
       
-      ## define_element("PersonCollection", type: Vssc::Person, method: :people, passthrough: "Person")     
+      define_element("PersonCollection", type: Vedaspace::Person, method: :people, passthrough: "Person")     
   
       define_element("SequenceStart", type: Fixnum)
       define_element("SequenceEnd", type: Fixnum)
