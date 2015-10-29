@@ -2,7 +2,6 @@ require "active_support/all"
 require "active_model"
 require 'xsd_functions'
 require 'inclusion_tracking'
-#require_relative 'xsd_'
 
 module Vedaspace
 end

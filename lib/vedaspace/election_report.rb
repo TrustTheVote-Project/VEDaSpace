@@ -1,18 +1,15 @@
 module Vedaspace
   module ElectionReport
-    extend InclusionTracking
     extend ActiveSupport::Concern
-    
+    extend InclusionTracking
     include XsdFunctions
     
-  
     included do
-      Vedaspace::ElectionReport.register_inclusion(self)
       
       # TODO: Election should be multiple??
       define_element("Election", type: Vedaspace::Election, belongs_to: true)
   
-      ## define_element("ExternalIdentifiers", type: Vssc::ExternalIdentifierCollection, method: :external_identifier_collection)
+      define_element("ExternalIdentifiers", type: Vedaspace::ExternalIdentifierCollection, method: :external_identifier_collection)
       
       define_element("Format", type: Vedaspace::Enum::ReportDetailLevel)
       define_element("GeneratedDate", type: "xsd:dateTime")
