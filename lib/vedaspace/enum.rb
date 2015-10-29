@@ -30,7 +30,7 @@ module Vedaspace::Enum
       end
     end
   
-    def parse_vssc(node)
+    def parse_ved(node)
       return self.new(node.text)
     end
   

@@ -57,16 +57,16 @@ module XsdFunctions
       doc  
     end
     
-    def parse_vssc_file(file_contents_or_path)
+    def parse_ved_file(file_contents_or_path)
       node = self.noko_doc(file_contents_or_path).root
-      er = self.parse_vssc(node)
+      er = self.parse_ved(node)
       
       #er.save!
         
       return er
     end
     
-    def parse_vssc(node)
+    def parse_ved(node)
       e = self.new
       e.set_vssc_attributes(node.attributes)
       e.set_vssc_elements(node.elements)
@@ -216,7 +216,7 @@ module XsdFunctions
         klass = klass.constantize if klass.is_a?(String)
       end
       begin
-        klass.parse_vssc(element)
+        klass.parse_ved(element)
       rescue Exception => e
         puts "Error in convert_element_to_type for class: #{klass}"
         raise e 
