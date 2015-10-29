@@ -15,7 +15,7 @@ module Vedaspace::Schedule
   include XsdFunctions  
   
   included do  
-    define_element("Hours", type: Vssc::Hours, method: :hours)
+    define_element("Hours", type: Vssc::Hour, method: :hours)
   
     define_attribute("IsOnlyByAppointment", type: "xsd:boolean")
     define_attribute("IsOrByAppointment", type: "xsd:boolean")

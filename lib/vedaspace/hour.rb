@@ -6,7 +6,7 @@
 #   </xsd:sequence>
 #   <xsd:attribute name="label" type="xsd:string"/>
 # </xsd:complexType>
-module Vedaspace::Hours
+module Vedaspace::Hour
   extend ActiveSupport::Concern
   extend InclusionTracking
   include XsdFunctions  
