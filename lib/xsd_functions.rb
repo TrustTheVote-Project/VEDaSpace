@@ -76,7 +76,7 @@ module XsdFunctions
     
     def is_type?(type_name)
       begin
-        "Vssc::#{type_name}".constantize
+        "Vedaspace::#{type_name}".constantize
         return true
       rescue Exception, LoadError
         return false
@@ -205,17 +205,20 @@ module XsdFunctions
           specific_type = element.attributes["xsi:type"].value
         end
         if specific_type
-          klass = "Vssc::#{specific_type}".constantize
+          klass = "Vedaspace::#{specific_type}".constantize
         # klass = "Vssc::#{(element.xml_attributes['type'].value || element.xml_attributes['xsi:type'].value || element_name)}".constantize
         end
       rescue Exception => e
-        if !(obj_type.to_s =~ /Vssc::Enum/)
+        if !(obj_type.to_s =~ /Vedaspace::Enum/)
           puts "Didn't parse element: #{self.class} - #{element_name} - #{element} - #{obj_type} - #{e.backtrace.join("\n")}"
         end
         klass = obj_type
         klass = klass.constantize if klass.is_a?(String)
       end
       begin
+        if klass.respond_to(:concrete_class_name)
+          klass = klass.concrete_class_name.constantize
+        end
         klass.parse_ved(element)
       rescue Exception => e
         puts "Error in convert_element_to_type for class: #{klass}"
@@ -275,7 +278,7 @@ module XsdFunctions
       node_name = options[:passthrough]
     end
     if !value.nil? && (!is_many?(options[:method]) || !value.empty?)       
-      if options[:type].to_s =~ /Vssc::/ && !(options[:type].to_s =~ /Vssc::Enum/)
+      if options[:type].to_s =~ /Vedaspace::/ && !(options[:type].to_s =~ /Vedaspace::Enum/)
         if !is_many?(options[:method])
           value = [value]
         end
