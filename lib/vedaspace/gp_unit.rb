@@ -8,10 +8,10 @@
 #   <xsd:attribute name="objectId" type="xsd:ID" use="required"/>
 # </xsd:complexType>
 module Vedaspace::GpUnit
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do    
     define_element("ComposingGpUnitId", type: Vedaspace::GpUnitComposingGpUnitIdRef, method: :gp_unit_composing_gp_unit_id_refs)
     
@@ -19,7 +19,7 @@ module Vedaspace::GpUnit
     
     define_element("Name")
     
-    define_element("SummaryCounts", type: Vedaspace::SummaryCounts, method: :summary_counts)
+    define_element("SummaryCounts", type: Vedaspace::SummaryCount, method: :summary_counts)
     
     define_attribute("objectId", required: true)
   end

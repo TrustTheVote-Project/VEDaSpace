@@ -17,10 +17,10 @@
 #   <xsd:attribute name="objectId" type="xsd:ID" use="required"/>
 # </xsd:complexType>
 module Vedaspace::Person
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
 
     define_element("ContactInformation", type: Vedaspace::ContactInformation, method: :contact_informations)

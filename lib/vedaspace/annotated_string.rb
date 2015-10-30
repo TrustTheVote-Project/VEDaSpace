@@ -6,8 +6,8 @@
 #   </xsd:simpleContent>
 # </xsd:complexType>
 module Vedaspace::AnnotatedString
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions
   
   included do

@@ -216,7 +216,7 @@ module XsdFunctions
         klass = klass.constantize if klass.is_a?(String)
       end
       begin
-        if klass.respond_to(:concrete_class_name)
+        if klass.respond_to?(:concrete_class_name)
           klass = klass.concrete_class_name.constantize
         end
         klass.parse_ved(element)

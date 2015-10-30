@@ -5,10 +5,10 @@
 #   </xsd:sequence>
 # </xsd:complexType>
 module Vedaspace::SpatialExtent
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     define_element("Coordinates")
     define_element("Format", required: true, type: Vedaspace::Enum::GeoSpatialFormat)

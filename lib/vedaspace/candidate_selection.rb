@@ -10,10 +10,10 @@
 #   </xsd:complexContent>
 # </xsd:complexType>
 module Vedaspace::CandidateSelection
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     include Vedaspace::BallotSelection
     define_element("CandidateId", type: Vedaspace::BallotSelectionCandidateIdRef, method: :ballot_selection_candidate_id_refs)

@@ -9,10 +9,10 @@
 #   </xsd:complexContent>
 # </xsd:complexType>
 module Vedaspace::Coalition
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     include Vedaspace::Party
     define_element("ContestId", type: Vedaspace::PartyContestIdRef, method: :party_contest_id_refs)

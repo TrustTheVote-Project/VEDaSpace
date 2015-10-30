@@ -1,10 +1,10 @@
 module Vedaspace::Election
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
-    define_element("BallotStyleCollection", typew: Vedaspace::BallotStyle, method: :ballot_styles, passthrough: "BallotStyle")
+    define_element("BallotStyleCollection", type: Vedaspace::BallotStyle, method: :ballot_styles, passthrough: "BallotStyle")
     
     define_element("CandidateCollection", type: Vedaspace::Candidate, method: :candidates, passthrough: "Candidate")
 

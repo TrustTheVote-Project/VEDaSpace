@@ -6,10 +6,10 @@
 #   </xsd:simpleContent>
 # </xsd:complexType>
 module Vedaspace::LanguageString
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     define_attribute("Language") #type: "xsd:language"
     # inner text is actual value

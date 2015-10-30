@@ -22,10 +22,10 @@
 #   </xsd:complexContent>
 # </xsd:complexType>
 module Vedaspace::ReportingUnit
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     include Vedaspace::GpUnit
     

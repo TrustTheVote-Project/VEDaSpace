@@ -6,10 +6,10 @@
 #   </xsd:sequence>
 # </xsd:complexType>
 module Vedaspace::ElectionAdministration
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     define_element("ContactInformation", type: Vedaspace::ContactInformation)
     define_element("ElectionOfficialPersonId")

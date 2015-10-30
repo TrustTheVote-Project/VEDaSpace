@@ -1,8 +1,8 @@
 class Vedaspace::RetentionContest
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     include Vedaspace::BallotMeasureContest
     define_element("CandidateId", method: :candidate_identifier)

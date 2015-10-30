@@ -6,10 +6,10 @@
 #   </xsd:sequence>
 # </xsd:complexType>
 module Vedaspace::CountStatus
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     define_element("Status", type: Vedaspace::Enum::CountItemStatus)
     define_element("Type", type: Vedaspace::Enum::CountItemType, method: :count_item_type)

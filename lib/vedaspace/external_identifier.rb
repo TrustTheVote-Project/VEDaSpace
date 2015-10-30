@@ -14,10 +14,10 @@
 #   <xsd:attribute name="label" type="xsd:string"/>
 # </xsd:complexType>
 module Vedaspace::ExternalIdentifier
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     define_element("Type", type: Vedaspace::Enum::IdentifierType, method: :identifier_type, required:true)
     define_element("OtherType")  

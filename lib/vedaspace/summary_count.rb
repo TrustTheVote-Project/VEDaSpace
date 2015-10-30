@@ -13,10 +13,10 @@
 #   </xsd:complexContent>
 # </xsd:complexType>
 module Vedaspace::SummaryCount
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     belongs_to :summary_countable, polymorphic: true
   

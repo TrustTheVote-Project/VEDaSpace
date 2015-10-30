@@ -5,10 +5,10 @@
 #   </xsd:sequence>
 # </xsd:complexType>
 module Vedaspace::PartyRegistration
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     define_element("Count", required: true, type: Fixnum)
     define_element("PartyId", method: :party_identifier)

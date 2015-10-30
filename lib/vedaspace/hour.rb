@@ -7,10 +7,10 @@
 #   <xsd:attribute name="label" type="xsd:string"/>
 # </xsd:complexType>
 module Vedaspace::Hour
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do  
 
     belongs_to :hourable, polymorphic: true

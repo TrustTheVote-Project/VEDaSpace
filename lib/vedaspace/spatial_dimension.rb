@@ -5,10 +5,10 @@
 #   </xsd:sequence>
 # </xsd:complexType>
 module Vedaspace::SpatialDimension
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     define_element("MapUri")
     define_element("SpatialExtent", type: Vedaspace::SpatialExtent, belongs_to: true)  

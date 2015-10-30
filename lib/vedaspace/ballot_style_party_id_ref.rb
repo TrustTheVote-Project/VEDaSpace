@@ -1,6 +1,6 @@
 module Vedaspace::BallotStylePartyIdRef
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
   
   included do

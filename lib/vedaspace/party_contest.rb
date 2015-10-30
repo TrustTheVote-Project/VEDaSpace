@@ -4,10 +4,10 @@
 #   </xsd:complexContent>
 # </xsd:complexType>
 module Vedaspace::PartyContest
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     include Vedaspace::Contest
   end

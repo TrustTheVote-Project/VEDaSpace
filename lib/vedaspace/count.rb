@@ -8,10 +8,10 @@
 #   </xsd:sequence>
 # </xsd:complexType>
 module Vedaspace::Count
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do  
     define_element("Device", type: Vedaspace::Device, belongs_to: true)
     define_element("GpUnitId", method: :gp_unit_identifier)

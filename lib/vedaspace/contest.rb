@@ -19,10 +19,10 @@
 #   <xsd:attribute name="objectId" type="xsd:ID" use="required"/>
 # </xsd:complexType>
 module Vedaspace::Contest
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     define_element("Abbreviation")
     define_element("BallotSelection", type: Vedaspace::BallotSelection, method: :ballot_selections)
@@ -35,7 +35,7 @@ module Vedaspace::Contest
     define_element("Name")
     define_element("SequenceOrder", type: Fixnum)
     define_element("SubUnitsReported", type: Fixnum)
-    define_element("SummaryCounts", type: Vedaspace::SummaryCounts, method: :summary_counts)
+    define_element("SummaryCounts", type: Vedaspace::SummaryCount, method: :summary_counts)
     define_element("TotalSubUnits", type: Fixnum)
     define_element("VoteVariation", type: Vedaspace::Enum::VoteVariation )
     define_element("OtherVoteVariation")

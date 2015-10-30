@@ -47,10 +47,10 @@
 # </xsd:complexType>
 require 'csv'
 module Vedaspace::ElectionReport
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     
     # TODO: Election should be multiple??

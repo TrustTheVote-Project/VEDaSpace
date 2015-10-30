@@ -8,10 +8,10 @@
 #   </xsd:complexContent>
 # </xsd:complexType>
 module Vedaspace::PartySelection
-  extend ActiveSupport::Concern
   extend InclusionTracking
-  include XsdFunctions
-  
+  extend ActiveSupport::Concern
+  include XsdFunctions  
+    
   included do
     include Vedaspace::BallotSelection
     define_element("PartyId", type: Vedaspace::BallotSelectionPartyIdRef, method: :ballot_selection_party_id_refs)

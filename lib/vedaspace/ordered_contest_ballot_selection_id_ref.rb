@@ -1,8 +1,8 @@
 module Vedaspace::OrderedContestBallotSelectionIdRef
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-
+  
   included do
     define_text_node(:ballot_selection_id_ref)  
   end

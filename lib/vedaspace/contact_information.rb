@@ -22,10 +22,10 @@
 #   <xsd:attribute name="label" type="xsd:string"/>
 # </xsd:complexType>
 module Vedaspace::ContactInformation
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
-  
+    
   included do
     define_element("AddressLine")
     define_element("Directions", type: Vssc::InternationalizedText, belongs_to: true)

@@ -12,13 +12,13 @@
 #   <xsd:attribute name="objectId" type="xsd:ID" use="required"/>
 # </xsd:complexType>
 module Vedaspace::BallotSelection
-  extend ActiveSupport::Concern
   extend InclusionTracking
+  extend ActiveSupport::Concern
   include XsdFunctions  
   
   included do
     define_element("SequenceOrder", type: Fixnum)
-    define_element("VoteCountsCollection", type: Vedaspace::VoteCounts, method: :counts, passthrough: "VoteCounts")
+    define_element("VoteCountsCollection", type: Vedaspace::VoteCount, method: :counts, passthrough: "VoteCounts")
   
     define_attribute("objectId", :required=>true)
   end

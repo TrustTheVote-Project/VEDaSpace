@@ -1,3 +1,5 @@
 module InclusionTracking
-  mattr_accessor :concrete_class_name
+  def self.extended(base)
+    base.send(:mattr_accessor, :concrete_class_name)
+  end
 end
