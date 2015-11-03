@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["OSET", "Alex Mekelburg"]
   spec.email         = ["alex.mekelburg@gmail.com"]
   spec.summary   = %q{Ruby classes based on Nist ERR election data format}
-  spec.description   = %q{Ruby classes based on Nist ERR election data format}
+  spec.description   = %q{Ruby classes based on Nist ERR election data format http://www.nist.gov/itl/vote/ieee-swg-p1622.cfm}
   spec.license       = "OSET Foundation"
 
   spec.files         = `git ls-files`.split($/)
