@@ -14,7 +14,7 @@
 #   </xsd:sequence>
 #   <xsd:attribute name="label" type="xsd:string"/>
 # </xsd:complexType>
-class Vedaspace::OfficeGroup < ActiveRecord::Base
+module Vedaspace::OfficeGroup
   extend InclusionTracking
   extend ActiveSupport::Concern
   include XsdFunctions  
