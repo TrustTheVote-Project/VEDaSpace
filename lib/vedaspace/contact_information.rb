@@ -28,7 +28,7 @@ module Vedaspace::ContactInformation
     
   included do
     define_element("AddressLine")
-    define_element("Directions", type: Vssc::InternationalizedText, belongs_to: true)
+    define_element("Directions", type: Vedaspace::InternationalizedText, belongs_to: true)
     define_element("Email")
     define_element("Fax")
     # TODO: Set up parsing for LatLng!

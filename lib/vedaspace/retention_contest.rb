@@ -1,4 +1,4 @@
-class Vedaspace::RetentionContest
+module Vedaspace::RetentionContest
   extend InclusionTracking
   extend ActiveSupport::Concern
   include XsdFunctions  
