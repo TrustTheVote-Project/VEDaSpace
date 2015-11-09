@@ -18,8 +18,6 @@ module Vedaspace::SummaryCount
   include XsdFunctions  
     
   included do
-    belongs_to :summary_countable, polymorphic: true
-  
     define_element("BallotsCast", type: Fixnum)
     define_element("BallotsOutstanding", type: Fixnum)
     define_element("BallotsRejected", type: Fixnum)

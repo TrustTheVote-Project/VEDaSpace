@@ -23,5 +23,4 @@ module Vedaspace::BallotSelection
     define_attribute("objectId", :required=>true)
   end
   
-  
 end

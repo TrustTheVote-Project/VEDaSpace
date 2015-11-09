@@ -13,7 +13,7 @@ module XsdFunctions
   module ClassMethods  
     
     def define_xml_accessor(accessor_group, element_name, opts={})
-      method_name = opts[:method] || element_name.underscore      
+      method_name = opts[:method] || element_name.underscore    
       
       self.send("#{accessor_group}=", (self.send(accessor_group) || {}))
     
@@ -23,6 +23,14 @@ module XsdFunctions
       self.send(accessor_group)[element_name][:type] = element_type
       # this is for those "collections"
       self.send(accessor_group)[element_name][:passthrough] = opts[:passthrough]
+      
+      # add the accessor if not there
+      puts "\t#{method_name}"
+      if !self.method_defined?("#{method_name}=")
+        puts method_name if method_name.to_s == "object_id"
+        self.send(:attr_accessor, method_name)
+      end
+      
       
       if opts[:required]
       #   TODO: validate presence in *export*
@@ -93,7 +101,11 @@ module XsdFunctions
   end
 
   def xml_attributes
-    return ([Object, ActiveRecord::Base].include?(self.class.superclass) ? {} : (self.class.superclass.xml_attributes || {})).merge(self.class.xml_attributes || {})
+    if Object.const_defined?("ActiveRecord")
+      return ([Object, ActiveRecord::Base].include?(self.class.superclass) ? {} : (self.class.superclass.xml_attributes || {})).merge(self.class.xml_attributes || {})
+    else
+      return ([Object].include?(self.class.superclass) ? {} : (self.class.superclass.xml_attributes || {})).merge(self.class.xml_attributes || {})
+    end
   end
   
   def xml_attributes_hash(node_name)
@@ -122,7 +134,11 @@ module XsdFunctions
   
   
   def elements
-    ([Object, ActiveRecord::Base].include?(self.class.superclass) ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
+    if Object.const_defined?("ActiveRecord")
+      return ([Object, ActiveRecord::Base].include?(self.class.superclass) ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
+    else
+      return ([Object].include?(self.class.superclass) ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
+    end
   end
   
   
@@ -142,9 +158,14 @@ module XsdFunctions
     end
   end
   
+  # TODO: This needs to go back into vedaspace declarations and not rely on reflections
   def is_many?(method)
-    reflection = self.class.reflect_on_association(method)
-    return reflection && [:has_many, :has_and_belongs_to_many].include?(reflection.macro)
+    if Object.const_defined?('ActiveRecord')
+      reflection = self.class.reflect_on_association(method)
+      return reflection && [:has_many, :has_and_belongs_to_many].include?(reflection.macro)
+    else
+      return false
+    end
   end
   
   def set_vssc_element_value(element, element_name, method, type)
@@ -156,7 +177,7 @@ module XsdFunctions
         self.send("#{method}=", value)
       end
     rescue Exception => e
-      puts "Error Parsing Element #{value}"
+      puts "Error Parsing Element #{element}"
       raise e
     end
   end

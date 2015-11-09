@@ -13,8 +13,6 @@ module Vedaspace::Hour
     
   included do  
 
-    belongs_to :hourable, polymorphic: true
-  
     define_element("Day", type: Vedaspace::Enum::DayType, required: true)
     define_element("StartTime", type: DateTime, required: true)
     define_element("EndTime", type: DateTime, required: true)
