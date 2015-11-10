@@ -107,7 +107,7 @@ module XsdFunctions
   end
 
   def xml_attributes
-    if Object.const_defined?("ActiveRecord")
+    if Object.const_defined?("ActiveRecord") && self.is_a?(ActiveRecord::Base)
       return ([Object, ActiveRecord::Base].include?(self.class.superclass) ? {} : (self.class.superclass.xml_attributes || {})).merge(self.class.xml_attributes || {})
     else
       return ([Object].include?(self.class.superclass) ? {} : (self.class.superclass.xml_attributes || {})).merge(self.class.xml_attributes || {})
@@ -140,7 +140,7 @@ module XsdFunctions
   
   
   def elements
-    if Object.const_defined?("ActiveRecord")
+    if Object.const_defined?("ActiveRecord") && self.is_a?(ActiveRecord::Base)
       return ([Object, ActiveRecord::Base].include?(self.class.superclass) ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
     else
       return ([Object].include?(self.class.superclass) ? {} :( self.class.superclass.elements || {})).merge(self.class.elements || {})
@@ -166,7 +166,7 @@ module XsdFunctions
   
   # TODO: This needs to go back into vedaspace declarations and not rely on reflections
   def is_many?(method)
-    if Object.const_defined?('ActiveRecord')
+    if Object.const_defined?('ActiveRecord') && self.is_a?(ActiveRecord::Base)
       reflection = self.class.reflect_on_association(method)
       return reflection && [:has_many, :has_and_belongs_to_many].include?(reflection.macro)
     else
