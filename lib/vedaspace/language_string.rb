@@ -11,6 +11,8 @@ module Vedaspace::LanguageString
   include XsdFunctions  
     
   included do
+    self.node_name = 'LanguageString'
+    
     define_attribute("Language") #type: "xsd:language"
     # inner text is actual value
     define_text_node(:text)

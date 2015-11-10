@@ -11,6 +11,8 @@ module Vedaspace::AnnotatedString
   include XsdFunctions
   
   included do
+    self.node_name = 'AnnotatedString'
+    
     define_text_node("value")
     define_attribute("annotation")
   end

@@ -22,6 +22,8 @@ module Vedaspace::BallotMeasureContest
   
   included do
     include Vedaspace::Contest
+    self.node_name = 'BallotMeasureContest'
+    
     define_element "ConStatement", type: Vedaspace::InternationalizedText, belongs_to: true
   
     define_element "EffectOfAbstain", type: Vedaspace::InternationalizedText, belongs_to: true

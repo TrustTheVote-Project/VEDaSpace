@@ -12,6 +12,7 @@ module Vedaspace::Hour
   include XsdFunctions  
     
   included do  
+    self.node_name = 'Hour'
 
     define_element("Day", type: Vedaspace::Enum::DayType, required: true)
     define_element("StartTime", type: DateTime, required: true)

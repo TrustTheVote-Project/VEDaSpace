@@ -13,6 +13,8 @@ module Vedaspace::Count
   include XsdFunctions  
     
   included do  
+    self.node_name = 'Count'
+    
     define_element("Device", type: Vedaspace::Device, belongs_to: true)
     define_element("GpUnitId", method: :gp_unit_identifier)
     define_element("IsSuppressedForPrivacy", type: "xsd:boolean")

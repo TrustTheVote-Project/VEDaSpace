@@ -10,6 +10,8 @@ module Vedaspace::SpatialExtent
   include XsdFunctions  
     
   included do
+    self.node_name = 'SpatialExtent'
+    
     define_element("Coordinates")
     define_element("Format", required: true, type: Vedaspace::Enum::GeoSpatialFormat)
   end

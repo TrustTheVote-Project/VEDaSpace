@@ -22,15 +22,16 @@ module Vedaspace::Person
   include XsdFunctions  
     
   included do
+    self.node_name = 'Person'
 
-    define_element("ContactInformation", type: Vedaspace::ContactInformation, method: :contact_informations)
+    define_element("ContactInformation", type: Vedaspace::ContactInformation, method: :contact_informations, multiple: true)
 
     define_element("DateOfBirth", type: Date)
     define_element("FirstName")
     define_element("FullName", type: Vedaspace::InternationalizedText, belongs_to: true)
     define_element("Gender")
     define_element("LastName")
-    define_element("MiddleName", type: String, method: :middle_names)
+    define_element("MiddleName", type: String, method: :middle_names, multiple: true)
     define_element("Nickname")
     define_element("PartyId", method: :party_identifier)
     define_element("Prefix")

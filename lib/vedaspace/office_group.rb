@@ -20,11 +20,13 @@ module Vedaspace::OfficeGroup
   include XsdFunctions  
     
   included do  
+    self.node_name = 'OfficeGroup'
+    
     define_element("Name", required: true)
   
-    define_element("OfficeId", type: Vedaspace::OfficeGroupOfficeIdRef, method: :office_group_office_id_refs)
+    define_element("OfficeId", type: Vedaspace::OfficeGroupOfficeIdRef, method: :office_group_office_id_refs, multiple: true)
   
-    define_element("SubOfficeGroup", type: Vedaspace::OfficeGroup, method: :office_groups)
+    define_element("SubOfficeGroup", type: Vedaspace::OfficeGroup, method: :office_groups, multiple: true)
   
     define_attribute("label")
   end

@@ -10,9 +10,11 @@ module Vedaspace::OrderedContest
   include XsdFunctions  
     
   included do
+    self.node_name = 'OrderedContest'
+    
     define_element("ContestId", method: :contest_identifier)
 
-    define_element("OrderedBallotSelectionId", type: Vedaspace::OrderedContestBallotSelectionIdRef, method: :ordered_contest_ballot_selection_id_refs)
+    define_element("OrderedBallotSelectionId", type: Vedaspace::OrderedContestBallotSelectionIdRef, method: :ordered_contest_ballot_selection_id_refs, multiple: true)
   
   end  
 end

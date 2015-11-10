@@ -4,6 +4,8 @@ module Vedaspace::ContestOfficeIdRef
   include XsdFunctions  
     
   included do
+    self.node_name = 'ContestOfficeIdRef'
+    
     define_text_node(:office_id_ref)
   end
   

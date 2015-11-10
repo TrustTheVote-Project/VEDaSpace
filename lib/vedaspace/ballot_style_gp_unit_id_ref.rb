@@ -4,6 +4,7 @@ module Vedaspace::BallotStyleGpUnitIdRef
   include XsdFunctions  
   
   included do  
+    self.node_name = 'BallotStyleGpUnitIdRef'
     define_text_node(:gp_unit_id_ref)
   end
 end

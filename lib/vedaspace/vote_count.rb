@@ -14,6 +14,8 @@ module Vedaspace::VoteCount
   
   included do
     include Vedaspace::Count
+    self.node_name = 'VoteCount'
+    
     define_element("Count", type: Float, required: true)
   end
   

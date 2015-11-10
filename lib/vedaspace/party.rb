@@ -14,6 +14,8 @@ module Vedaspace::Party
   include XsdFunctions  
     
   included do
+    self.node_name = 'Party'
+    
     define_element("Abbreviation")
     define_element("Color")
 

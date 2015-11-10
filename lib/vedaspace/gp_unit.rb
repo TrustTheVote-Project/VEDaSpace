@@ -13,13 +13,15 @@ module Vedaspace::GpUnit
   include XsdFunctions  
     
   included do    
-    define_element("ComposingGpUnitId", type: Vedaspace::GpUnitComposingGpUnitIdRef, method: :gp_unit_composing_gp_unit_id_refs)
+    self.node_name = 'GpUnit'
+    
+    define_element("ComposingGpUnitId", type: Vedaspace::GpUnitComposingGpUnitIdRef, method: :gp_unit_composing_gp_unit_id_refs, multiple: true)
     
     define_element("ExternalIdentifiers", type: Vedaspace::ExternalIdentifierCollection, method: :external_identifier_collection)
     
     define_element("Name")
     
-    define_element("SummaryCounts", type: Vedaspace::SummaryCount, method: :summary_counts)
+    define_element("SummaryCounts", type: Vedaspace::SummaryCount, method: :summary_counts, multiple: true)
     
     define_attribute("objectId", required: true)
   end

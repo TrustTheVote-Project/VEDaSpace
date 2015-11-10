@@ -4,6 +4,8 @@ module Vedaspace::PartyContestIdRef
   include XsdFunctions  
     
   included do
+    self.node_name = 'PartyContestIdRef'
+    
     define_text_node(:contest_id_ref)
   end  
 

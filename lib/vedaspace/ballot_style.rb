@@ -14,16 +14,17 @@ module Vedaspace::BallotStyle
   include XsdFunctions  
   
   included do
+    self.node_name = 'BallotStyle'
 
     define_element("ExternalIdentifiers", type: Vedaspace::ExternalIdentifierCollection, method: :external_identifier_collection)
     
-    define_element("OrderedContest", method: :ordered_contests, type: Vedaspace::OrderedContest)
+    define_element("OrderedContest", method: :ordered_contests, type: Vedaspace::OrderedContest, multiple: true)
     
-    define_element("GpUnitId", type: Vedaspace::BallotStyleGpUnitIdRef, method: :ballot_style_gp_unit_id_refs)
+    define_element("GpUnitId", type: Vedaspace::BallotStyleGpUnitIdRef, method: :ballot_style_gp_unit_id_refs, multiple: true)
     
     define_element("ImageUri")
 
-    define_element("PartyId", type: Vedaspace::BallotStylePartyIdRef, method: :ballot_style_party_id_refs)
+    define_element("PartyId", type: Vedaspace::BallotStylePartyIdRef, method: :ballot_style_party_id_refs, multiple: true)
 
     define_attribute("objectId")
   end

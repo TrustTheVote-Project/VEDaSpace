@@ -10,7 +10,9 @@ module Vedaspace::InternationalizedText
   include XsdFunctions  
     
   included do
-    define_element("Text", type: Vedaspace::LanguageString, method: :language_strings)
+    self.node_name = 'InternationalizedText'
+    
+    define_element("Text", type: Vedaspace::LanguageString, method: :language_strings, multiple: true)
     define_attribute("label")
   end
   

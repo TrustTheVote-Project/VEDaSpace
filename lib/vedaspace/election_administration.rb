@@ -11,10 +11,12 @@ module Vedaspace::ElectionAdministration
   include XsdFunctions  
     
   included do
+    self.node_name = 'ElectionAdministration'
+    
     define_element("ContactInformation", type: Vedaspace::ContactInformation)
     define_element("ElectionOfficialPersonId")
   
-    define_element("ElectionOfficialPersonId", type: Vedaspace::ElectionAdministrationOfficialIdRef, method: :election_official_person_id_refs)
+    define_element("ElectionOfficialPersonId", type: Vedaspace::ElectionAdministrationOfficialIdRef, method: :election_official_person_id_refs, multiple: true)
   
     define_element("Name")
   end

@@ -4,15 +4,17 @@ module Vedaspace::Election
   include XsdFunctions  
     
   included do
-    define_element("BallotStyleCollection", type: Vedaspace::BallotStyle, method: :ballot_styles, passthrough: "BallotStyle")
+    self.node_name = 'Election'
     
-    define_element("CandidateCollection", type: Vedaspace::Candidate, method: :candidates, passthrough: "Candidate")
+    define_element("BallotStyleCollection", type: Vedaspace::BallotStyle, method: :ballot_styles, passthrough: "BallotStyle", multiple: true)
+    
+    define_element("CandidateCollection", type: Vedaspace::Candidate, method: :candidates, passthrough: "Candidate", multiple: true)
 
     define_element("ContactInformation", type: Vedaspace::ContactInformation, belongs_to: true)
 
-    define_element("ContestCollection", type: Vedaspace::Contest, method: :contests, passthrough: "Contest")
+    define_element("ContestCollection", type: Vedaspace::Contest, method: :contests, passthrough: "Contest", multiple: true)
 
-    define_element("CountStatus", type: Vedaspace::CountStatus, method: :count_statuses)
+    define_element("CountStatus", type: Vedaspace::CountStatus, method: :count_statuses, multiple: true)
 
     define_element("ElectionScopeId", method: :election_scope_identifier)
   

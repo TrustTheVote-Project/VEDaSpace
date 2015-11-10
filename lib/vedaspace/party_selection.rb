@@ -14,6 +14,8 @@ module Vedaspace::PartySelection
     
   included do
     include Vedaspace::BallotSelection
-    define_element("PartyId", type: Vedaspace::BallotSelectionPartyIdRef, method: :ballot_selection_party_id_refs)
+    self.node_name = 'PartySelection'
+    
+    define_element("PartyId", type: Vedaspace::BallotSelectionPartyIdRef, method: :ballot_selection_party_id_refs, multiple: true)
   end  
 end

@@ -4,6 +4,7 @@ module Vedaspace::BallotStylePartyIdRef
   include XsdFunctions  
   
   included do
+    self.node_name = 'BallotStylePartyIdRef'
     define_text_node(:party_id_ref)
   end
 

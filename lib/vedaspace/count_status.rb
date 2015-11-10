@@ -11,6 +11,8 @@ module Vedaspace::CountStatus
   include XsdFunctions  
     
   included do
+    self.node_name = 'CountStatus'
+    
     define_element("Status", type: Vedaspace::Enum::CountItemStatus)
     define_element("Type", type: Vedaspace::Enum::CountItemType, method: :count_item_type)
     define_element("OtherType")

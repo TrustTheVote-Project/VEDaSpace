@@ -12,6 +12,8 @@ module Vedaspace::Device
   include XsdFunctions  
     
   included do
+    self.node_name = 'Device'
+    
     define_element("Manufacturer")
     define_element("Model")
     define_element("Type", type: Vedaspace::Enum::DeviceType, method: :device_type)

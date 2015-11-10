@@ -10,6 +10,8 @@ module Vedaspace::PartyRegistration
   include XsdFunctions  
     
   included do
+    self.node_name = 'PartyRegistration'
+    
     define_element("Count", required: true, type: Fixnum)
     define_element("PartyId", method: :party_identifier)
   end

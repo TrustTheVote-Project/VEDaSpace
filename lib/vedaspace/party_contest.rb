@@ -10,5 +10,7 @@ module Vedaspace::PartyContest
     
   included do
     include Vedaspace::Contest
+    self.node_name = 'PartyContest'
+    
   end
 end

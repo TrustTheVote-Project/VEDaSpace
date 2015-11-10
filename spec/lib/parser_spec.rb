@@ -14,6 +14,8 @@ describe Vedaspace::Parser do
         e = Vedaspace::Parser.parse_ved_file(f)
       end
             
+      #puts e.gp_units
+            
       expect(e.to_xml_node.doc.root).to be_equivalent_to(doc.root)
     end
   end

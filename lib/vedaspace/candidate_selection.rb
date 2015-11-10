@@ -16,9 +16,11 @@ module Vedaspace::CandidateSelection
     
   included do
     include Vedaspace::BallotSelection
-    define_element("CandidateId", type: Vedaspace::BallotSelectionCandidateIdRef, method: :ballot_selection_candidate_id_refs)
+    self.node_name = 'CandidateSelection'
+    
+    define_element("CandidateId", type: Vedaspace::BallotSelectionCandidateIdRef, method: :ballot_selection_candidate_id_refs, multiple: true)
   
-    define_element("EndorsementPartyId", type: Vedaspace::BallotSelectionEndorsementPartyIdRef, method: :ballot_selection_endorsement_party_id_refs)
+    define_element("EndorsementPartyId", type: Vedaspace::BallotSelectionEndorsementPartyIdRef, method: :ballot_selection_endorsement_party_id_refs, multiple: true)
   
     define_element("IsWriteIn", type: "xsd:boolean", method: :is_write_in)
   end  

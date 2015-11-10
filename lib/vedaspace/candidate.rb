@@ -18,6 +18,8 @@ module Vedaspace::Candidate
   include XsdFunctions  
     
   included do
+    self.node_name = 'Candidate'
+    
     define_element("BallotName", type: Vedaspace::InternationalizedText, belongs_to: true)
 
     define_element("ExternalIdentifiers", type: Vedaspace::ExternalIdentifierCollection, method: :external_identifier_collection)

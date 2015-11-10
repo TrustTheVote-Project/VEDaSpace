@@ -52,7 +52,7 @@ module Vedaspace::ElectionReport
   include XsdFunctions  
     
   included do
-    
+    self.node_name = 'ElectionReport'
     # TODO: Election should be multiple??
     define_element("Election", type: Vedaspace::Election, belongs_to: true)
 
@@ -61,7 +61,7 @@ module Vedaspace::ElectionReport
     define_element("Format", type: Vedaspace::Enum::ReportDetailLevel)
     define_element("GeneratedDate", type: "xsd:dateTime")
 
-    define_element("GpUnitCollection", type: Vedaspace::GpUnit, method: :gp_units, passthrough: "GpUnit")
+    define_element("GpUnitCollection", type: Vedaspace::GpUnit, method: :gp_units, passthrough: "GpUnit", multiple: true)
     
     define_element("Issuer", required: true)
     define_element("IssuerAbbreviation", required: true)
@@ -69,11 +69,11 @@ module Vedaspace::ElectionReport
     define_element("Notes")
 
     # need Office / OfficeGroup
-    define_element("OfficeCollection", type: Vedaspace::Office, method: :offices, passthrough: "Office")
+    define_element("OfficeCollection", type: Vedaspace::Office, method: :offices, passthrough: "Office", multiple: true)
     
-    define_element("PartyCollection", type: Vedaspace::Party, method: :parties, passthrough: "Party")
+    define_element("PartyCollection", type: Vedaspace::Party, method: :parties, passthrough: "Party", multiple: true)
     
-    define_element("PersonCollection", type: Vedaspace::Person, method: :people, passthrough: "Person")     
+    define_element("PersonCollection", type: Vedaspace::Person, method: :people, passthrough: "Person", multiple: true)     
 
     define_element("SequenceStart", type: Fixnum)
     define_element("SequenceEnd", type: Fixnum)

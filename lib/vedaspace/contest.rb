@@ -21,21 +21,23 @@
 module Vedaspace::Contest
   extend InclusionTracking
   extend ActiveSupport::Concern
-  include XsdFunctions  
+  include XsdFunctions
     
   included do
+    self.node_name = 'Contest'
+
     define_element("Abbreviation")
-    define_element("BallotSelection", type: Vedaspace::BallotSelection, method: :ballot_selections)
+    define_element("BallotSelection", type: Vedaspace::BallotSelection, method: :ballot_selections, multiple: true)
     define_element("BallotSubTitle", type: Vedaspace::InternationalizedText, belongs_to: true)
     define_element("BallotTitle", type: Vedaspace::InternationalizedText, belongs_to: true)
-    define_element("CountStatus", type: Vedaspace::CountStatus, method: :count_statuses)
+    define_element("CountStatus", type: Vedaspace::CountStatus, method: :count_statuses, multiple: true)
     define_element("ElectoralDistrictId", method: :electoral_district_identifier)
     define_element("ExternalIdentifiers", type: Vedaspace::ExternalIdentifierCollection, method: :external_identifier_collection)
     define_element("HasRotation", type: "xsd:boolean")
     define_element("Name")
     define_element("SequenceOrder", type: Fixnum)
     define_element("SubUnitsReported", type: Fixnum)
-    define_element("SummaryCounts", type: Vedaspace::SummaryCount, method: :summary_counts)
+    define_element("SummaryCounts", type: Vedaspace::SummaryCount, method: :summary_counts, multiple: true)
     define_element("TotalSubUnits", type: Fixnum)
     define_element("VoteVariation", type: Vedaspace::Enum::VoteVariation )
     define_element("OtherVoteVariation")

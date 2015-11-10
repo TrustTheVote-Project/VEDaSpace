@@ -4,6 +4,8 @@ module Vedaspace::OrderedContestBallotSelectionIdRef
   include XsdFunctions  
   
   included do
+    self.node_name = 'OrderedContestBallotSelectionIdRef'
+    
     define_text_node(:ballot_selection_id_ref)  
   end
 

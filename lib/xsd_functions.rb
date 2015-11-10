@@ -5,9 +5,9 @@ module XsdFunctions
   included do
     #class_attribute :elements, :xml_attributes, {instance_accessor: false}
     class << self
-      attr_accessor :elements, :xml_attributes, :text_node_method      
+      attr_accessor :elements, :xml_attributes, :text_node_method, :node_name, :accessor_methods
     end
-
+    
   end
   
   module ClassMethods  
@@ -21,13 +21,13 @@ module XsdFunctions
       self.send(accessor_group)[element_name][:method] = method_name.to_sym
       element_type = opts[:type] || String
       self.send(accessor_group)[element_name][:type] = element_type
+      self.send(accessor_group)[element_name][:multiple] = opts[:multiple]
       # this is for those "collections"
       self.send(accessor_group)[element_name][:passthrough] = opts[:passthrough]
       
       # add the accessor if not there
-      puts "\t#{method_name}"
+      # puts "\t#{method_name}"
       if !self.method_defined?("#{method_name}=")
-        puts method_name if method_name.to_s == "object_id"
         self.send(:attr_accessor, method_name)
       end
       
@@ -50,6 +50,12 @@ module XsdFunctions
     
     def define_text_node(method_name)
       self.text_node_method = method_name
+      # puts "\t#{method_name}"
+      if !self.method_defined?("#{method_name}=")
+        self.send(:attr_accessor, method_name)
+      end
+      
+      
     end
     
     def noko_doc(file_contents_or_path)
@@ -164,6 +170,11 @@ module XsdFunctions
       reflection = self.class.reflect_on_association(method)
       return reflection && [:has_many, :has_and_belongs_to_many].include?(reflection.macro)
     else
+      self.class.elements.each do |e_name, e_hash|
+        if e_hash[:multiple] && e_hash[:method]==method
+          return true
+        end
+      end
       return false
     end
   end
@@ -172,6 +183,7 @@ module XsdFunctions
     begin
       value =  convert_element_to_type(element, element_name, type)
       if is_many?(method)
+        self.send("#{method}=", self.send("#{method}") || [])
         self.send("#{method}") << value
       else
         self.send("#{method}=", value)
@@ -218,7 +230,9 @@ module XsdFunctions
     else
       klass = nil
       begin
-        klass = self.class.reflect_on_association(self.elements[element_name][:method]).klass
+        # puts self.elements[element_name][:method]
+        # klass = self.class.reflect_on_association(self.elements[element_name][:method]).klass
+        klass = self.elements[element_name][:type].concrete_class_name.constantize
         specific_type = nil
         if element.attributes && element.attributes["type"]
           specific_type = element.attributes["type"].value
@@ -231,7 +245,7 @@ module XsdFunctions
         end
       rescue Exception => e
         if !(obj_type.to_s =~ /Vedaspace::Enum/)
-          puts "Didn't parse element: #{self.class} - #{element_name} - #{element} - #{obj_type} - #{e.backtrace.join("\n")}"
+          puts "Didn't parse element: #{self.class} - #{element_name} - #{element} - #{obj_type} \n#{e.message}\n #{e.backtrace.join("\n")}"
         end
         klass = obj_type
         klass = klass.constantize if klass.is_a?(String)
@@ -290,6 +304,7 @@ module XsdFunctions
   end
   
   def class_node_name
+    return self.class.node_name
     self.class.name.split('::').last
   end
   
@@ -308,7 +323,7 @@ module XsdFunctions
             v.to_xml_node(r, node_name)
           rescue Exception => e
             puts "Error parsing node #{node_name} with value #{v.inspect}"
-            Rails.logger.error("#{node_name} #{v.inspect}")
+            #Rails.logger.error("#{node_name} #{v.inspect}")
             raise e
           end
         end
@@ -335,7 +350,7 @@ module XsdFunctions
         elements.each do |k, options|
           value = self.send(options[:method])
           if options[:passthrough] && k != options[:passthrough]
-            if value.any? #passthroughs are always for collections/multiples
+            if value.is_a?(Array) && value.any? #passthroughs are always for collections/multiples
               xml.send(k) do |pr|            
                 self.element_xml_node(pr, k, options, value)
               end

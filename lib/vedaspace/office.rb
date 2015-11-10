@@ -26,6 +26,7 @@ module Vedaspace::Office
   include XsdFunctions  
     
   included do
+    self.node_name = 'Office'
   
     define_element("ContactInformation", type: Vedaspace::ContactInformation, belongs_to: true)
     define_element("ElectoralDistrictId", method: :electoral_district_identifier)
@@ -36,7 +37,7 @@ module Vedaspace::Office
     define_element("IsPartisan", type: "xsd:boolean")
     define_element("Name", type: Vedaspace::InternationalizedText, belongs_to: true)
   
-    define_element("OfficeHolderId", type: Vedaspace::OfficeOfficeHolderIdRef, method: :office_office_holder_id_refs)
+    define_element("OfficeHolderId", type: Vedaspace::OfficeOfficeHolderIdRef, method: :office_office_holder_id_refs, multiple: true)
   
     define_element("Term", type: Vedaspace::Term, belongs_to: true)
   

@@ -4,6 +4,8 @@ class Vedaspace::Parser
     er_klass = Class.new do
       include Vedaspace::ElectionReport
     end
+    Object.const_set("ConcreteElectionReport", er_klass)
+    Vedaspace::ElectionReport.concrete_class_name = "ConcreteElectionReport"
     
     # also create concrete and registered classes for everything
     Dir[File.dirname(__FILE__) + '/*.rb'].each do |file|
@@ -18,9 +20,8 @@ class Vedaspace::Parser
       end
       
     end
-    
-    
-    return er_klass.parse_ved_file(file)
+
+    return ConcreteElectionReport.parse_ved_file(file)
   end
   
 end

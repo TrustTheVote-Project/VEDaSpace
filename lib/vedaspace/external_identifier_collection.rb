@@ -19,7 +19,9 @@ module Vedaspace::ExternalIdentifierCollection
   include XsdFunctions  
     
   included do
-    define_element("ExternalIdentifier", type: Vedaspace::ExternalIdentifier, method: :external_identifiers)
+    self.node_name = 'ExternalIdentifierCollection'
+    
+    define_element("ExternalIdentifier", type: Vedaspace::ExternalIdentifier, method: :external_identifiers, multiple: true)
 
     define_attribute("label")
   end

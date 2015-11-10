@@ -14,6 +14,7 @@ module Vedaspace::Term
   include XsdFunctions  
     
   included do
+    self.node_name = 'Term'
   
     define_element("StartDate", type: Date)
     define_element("EndDate", type: Date)

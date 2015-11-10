@@ -27,6 +27,8 @@ module Vedaspace::ContactInformation
   include XsdFunctions  
     
   included do
+    self.node_name = 'ContactInformation'
+    
     define_element("AddressLine")
     define_element("Directions", type: Vedaspace::InternationalizedText, belongs_to: true)
     define_element("Email")
@@ -34,7 +36,7 @@ module Vedaspace::ContactInformation
     # TODO: Set up parsing for LatLng!
     define_element("Name")
     define_element("Phone")
-    define_element("Schedule", type: Vedaspace::Schedule, method: :schedules)
+    define_element("Schedule", type: Vedaspace::Schedule, method: :schedules, multiple: true)
   
     define_element("Uri")
   

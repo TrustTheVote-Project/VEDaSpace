@@ -15,6 +15,8 @@ module Vedaspace::ReportingDevice
     
   included do
     include Vedaspace::GpUnit
+    self.node_name = 'ReportingDevice'
+    
     define_element("Device", type: Vedaspace::Device, belongs_to: true)
     define_element("SerialNumber")
   end

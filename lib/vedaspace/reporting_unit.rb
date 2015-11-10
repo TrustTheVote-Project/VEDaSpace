@@ -28,19 +28,20 @@ module Vedaspace::ReportingUnit
     
   included do
     include Vedaspace::GpUnit
+    self.node_name = 'ReportingUnit'
     
-    define_element("AuthorityId", type: Vedaspace::GpUnitAuthorityIdRef, method: :gp_unit_authority_id_refs)
+    define_element("AuthorityId", type: Vedaspace::GpUnitAuthorityIdRef, method: :gp_unit_authority_id_refs, multiple: true)
   
     define_element("ContactInformation", type: Vedaspace::ContactInformation, belongs_to: true)
   
-    define_element("CountStatus", type: Vedaspace::CountStatus, method: :count_statuses)
+    define_element("CountStatus", type: Vedaspace::CountStatus, method: :count_statuses, multiple: true)
 
     define_element("ElectionAdministration", type: Vedaspace::ElectionAdministration, belongs_to: true)
     define_element("IsDistricted", type: "xsd:boolean")
     define_element("IsMailOnly", type: "xsd:boolean")
     define_element("Number")
   
-    define_element("PartyRegistration", type: Vedaspace::PartyRegistration, method: :party_registrations)
+    define_element("PartyRegistration", type: Vedaspace::PartyRegistration, method: :party_registrations, multiple: true)
   
     define_element("SpatialDimension", type: Vedaspace::SpatialDimension, belongs_to: true)
     define_element("SubUnitsReported", type: Fixnum)

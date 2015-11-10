@@ -4,6 +4,8 @@ module Vedaspace::OfficeGroupOfficeIdRef
   include XsdFunctions  
     
   included do
+    self.node_name = 'OfficeGroupOfficeIdRef'
+    
     define_text_node(:office_id_ref)
   end
 

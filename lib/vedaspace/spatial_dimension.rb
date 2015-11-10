@@ -10,6 +10,8 @@ module Vedaspace::SpatialDimension
   include XsdFunctions  
     
   included do
+    self.node_name = 'SpatialDimension'
+    
     define_element("MapUri")
     define_element("SpatialExtent", type: Vedaspace::SpatialExtent, belongs_to: true)  
   end

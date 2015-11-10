@@ -17,8 +17,9 @@ module Vedaspace::BallotSelection
   include XsdFunctions  
   
   included do
+    self.node_name = 'BallotSelection'
     define_element("SequenceOrder", type: Fixnum)
-    define_element("VoteCountsCollection", type: Vedaspace::VoteCount, method: :counts, passthrough: "VoteCounts")
+    define_element("VoteCountsCollection", type: Vedaspace::VoteCount, method: :counts, passthrough: "VoteCounts", multiple: true)
   
     define_attribute("objectId", :required=>true)
   end
