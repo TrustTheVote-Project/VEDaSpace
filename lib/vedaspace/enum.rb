@@ -37,9 +37,6 @@ module Vedaspace::Enum
   
   end
   
-  
-  
-  
   def self.included(base)
     base.extend ClassMethods
   end
@@ -48,6 +45,9 @@ module Vedaspace::Enum
 
   def to_s
     value
+  end
+  def to_str
+    to_s
   end
 
   def initialize(val)
