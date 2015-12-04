@@ -27,11 +27,9 @@ module XsdFunctions
       
       # add the accessor if not there
       # puts "\t#{method_name}"
-      if !self.method_defined?("#{method_name}=")
+      if !self.method_defined?("#{method_name}=") && (!Object.const_defined?("ActiveRecord") || !(self < ActiveRecord::Base))
         puts "Defining #{method_name} on #{self}"
         self.send(:attr_accessor, method_name)
-      else
-        puts "Already defined #{method_name} on #{self}"
       end
       
       
@@ -54,7 +52,7 @@ module XsdFunctions
     def define_text_node(method_name)
       self.text_node_method = method_name
       # puts "\t#{method_name}"
-      if !self.method_defined?("#{method_name}=")
+      if !self.method_defined?("#{method_name}=") && (!Object.const_defined?("ActiveRecord") || !(self < ActiveRecord::Base))
         self.send(:attr_accessor, method_name)
       end
       
@@ -357,7 +355,7 @@ module XsdFunctions
         elements.each do |k, options|
           value = self.send(options[:method])
           if options[:passthrough] && k != options[:passthrough]
-            if value.is_a?(Array) && value.any? #passthroughs are always for collections/multiples
+            if options[:multiple] && value.any? #passthroughs are always for collections/multiples
               xml.send(k) do |pr|            
                 self.element_xml_node(pr, k, options, value)
               end
