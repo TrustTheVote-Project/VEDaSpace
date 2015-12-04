@@ -28,7 +28,10 @@ module XsdFunctions
       # add the accessor if not there
       # puts "\t#{method_name}"
       if !self.method_defined?("#{method_name}=")
+        puts "Defining #{method_name} on #{self}"
         self.send(:attr_accessor, method_name)
+      else
+        puts "Already defined #{method_name} on #{self}"
       end
       
       
