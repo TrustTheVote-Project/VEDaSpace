@@ -215,7 +215,7 @@ module XsdFunctions
   def convert_element_to_type(element, element_name, obj_type)
     value = element.text
     case obj_type.to_s
-    when "String"
+    when "String", "cdata"
       return value.to_s
     when "Fixnum"
       return value.blank? ? nil : value.to_i
@@ -269,7 +269,7 @@ module XsdFunctions
     #   return obj_type.find(value)
     # end
     case obj_type.to_s
-    when "String"
+    when "String", "cdata"
       return value.to_s
     when "Fixnum"
       return value.blank? ? nil : value.to_i
@@ -284,7 +284,7 @@ module XsdFunctions
     end
   end
   
-  def convert_type_to_value(value, obj_type)
+  def convert_type_to_value(value, obj_type, val_node=nil)
     case obj_type.to_s
     when "xsd:date"
       return value.blank? ? nil : value.iso8601.gsub(/T.*/,'')
@@ -326,6 +326,10 @@ module XsdFunctions
             #Rails.logger.error("#{node_name} #{v.inspect}")
             raise e
           end
+        end
+      elsif options[:type] == "cdata"
+        r.send(node_name) do |cnode|
+          cnode.cdata value.to_s
         end
       else
         if !is_many?(options[:method])
