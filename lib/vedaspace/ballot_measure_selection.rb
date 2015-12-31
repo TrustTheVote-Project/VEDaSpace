@@ -16,7 +16,7 @@ module Vedaspace::BallotMeasureSelection
     include Vedaspace::BallotSelection
     self.node_name = 'BallotMeasureSelection'
     
-    define_attribute "Selection", type: Vedaspace::InternationalizedText, belongs_to: true
+    define_element "Selection", type: Vedaspace::InternationalizedText, belongs_to: true
   end
   
 end
