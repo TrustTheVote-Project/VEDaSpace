@@ -14,6 +14,12 @@ module Vedaspace::InternationalizedText
     
     define_element("Text", type: Vedaspace::LanguageString, method: :language_strings, multiple: true)
     define_attribute("label")
+    
+    def to_s(locale='en')
+      ls = language_strings.where(language: locale).first
+      ls ? ls.text : nil
+    end
+    
   end
   
 end
