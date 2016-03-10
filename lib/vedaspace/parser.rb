@@ -1,6 +1,7 @@
 class Vedaspace::Parser
   # Create concrete instances of vedaspace models
-  def self.parse_ved_file(file)
+  
+  def self.instantiate_concrete_classes
     er_klass = Class.new do
       include Vedaspace::ElectionReport
     end
@@ -20,7 +21,11 @@ class Vedaspace::Parser
       end
       
     end
-
+    
+  end
+  
+  def self.parse_ved_file(file)
+    self.instantiate_concrete_classes
     return ConcreteElectionReport.parse_ved_file(file)
   end
   
