@@ -330,7 +330,7 @@ module XsdFunctions
           end
         end
       elsif options[:type] == "cdata"
-        r.send(node_name) do |cnode|
+        r.tag!(node_name) do |cnode|
           cnode.cdata value.to_s
         end
       else
@@ -338,7 +338,7 @@ module XsdFunctions
           value = [value]
         end
         value.each do |v|
-          r.send(node_name, convert_type_to_value(v, options[:type]))
+          r.tag!(node_name, convert_type_to_value(v, options[:type]))
         end
       end
     end
