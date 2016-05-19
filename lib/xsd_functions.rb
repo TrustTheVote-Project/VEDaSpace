@@ -335,13 +335,13 @@ module XsdFunctions
         end
         return children
       elsif options[:type] == "cdata"
-        return "<#{node_name}>\n\t<![CDATA[#{value.to_s}]]>\n</#{node_name}>"        
+        return "<#{node_name}><![CDATA[#{value.to_s}]]></#{node_name}>"        
       else
         if !is_many?(options[:method])
           value = [value]
         end
         return value.collect do |v|
-          return "<#{node_name}>\n\t#{convert_type_to_value(v, options[:type])}\n</#{node_name}>"        
+          return "<#{node_name}>#{convert_type_to_value(v, options[:type])}</#{node_name}>"        
         end
       end
     end
