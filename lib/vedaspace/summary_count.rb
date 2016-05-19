@@ -18,6 +18,7 @@ module Vedaspace::SummaryCount
   include XsdFunctions  
     
   included do
+    include Vedaspace::Count
     self.node_name = 'SummaryCount'
     
     define_element("BallotsCast", type: Fixnum)
