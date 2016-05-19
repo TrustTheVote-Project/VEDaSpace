@@ -16,7 +16,7 @@ describe Vedaspace::Parser do
             
       #puts e.gp_units
             
-      expect(e.to_xml_node.doc.root).to be_equivalent_to(doc.root)
+      expect(e.to_xml_node.to_s).to be_equivalent_to(doc.root.to_s)
     end
   end
   

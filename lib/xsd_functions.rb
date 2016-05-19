@@ -1,5 +1,6 @@
 require 'active_support'
-require 'builder'
+#require 'builder'
+require 'xml'
 module XsdFunctions
   extend ActiveSupport::Concern
   
@@ -310,7 +311,8 @@ module XsdFunctions
     self.class.name.split('::').last
   end
   
-  def element_xml_node(r, k, options, value)
+  
+  def element_xml_node(k, options, value)
     node_name = k
     if options[:passthrough]
       node_name = options[:passthrough]
@@ -320,68 +322,172 @@ module XsdFunctions
         if !is_many?(options[:method])
           value = [value]
         end
+        children = []
         value.each do |v|
           begin
-            v.to_xml_node(r, node_name)
+            children << v.to_xml_node(node_name)
           rescue Exception => e
             puts "Error parsing node #{node_name} with value #{v.inspect}"
             #Rails.logger.error("#{node_name} #{v.inspect}")
             raise e
           end
         end
+        return children
       elsif options[:type] == "cdata"
-        r.tag!(node_name) do |cnode|
-          cnode.cdata value.to_s
-        end
+        node = create_node(node_name)
+        node << "<![CDATA![#{value.to_s}]]>"
+        return node
       else
         if !is_many?(options[:method])
           value = [value]
         end
-        value.each do |v|
-          r.tag!(node_name, convert_type_to_value(v, options[:type]))
+        return value.collect do |v|
+          node = create_node(node_name)
+          node << convert_type_to_value(v, options[:type])
+          node
         end
       end
     end
   end
   
-  def to_xml_node(xml = nil, node_name = nil, &block)
-    node_name ||= class_node_name
-    xml ||= Builder::XmlMarkup.new #Nokogiri::XML::Builder.new
-    if Object.const_defined?("Rails")
-      #Rails.logger.debug("Writing node: #{node_name}")
+  # def element_xml_node(r, k, options, value)
+  #   node_name = k
+  #   if options[:passthrough]
+  #     node_name = options[:passthrough]
+  #   end
+  #   if !value.nil? && (!is_many?(options[:method]) || !value.empty?)
+  #     if options[:type].to_s =~ /Vedaspace::/ && !(options[:type].to_s =~ /Vedaspace::Enum/)
+  #       if !is_many?(options[:method])
+  #         value = [value]
+  #       end
+  #       value.each do |v|
+  #         begin
+  #           v.to_xml_node(r, node_name)
+  #         rescue Exception => e
+  #           puts "Error parsing node #{node_name} with value #{v.inspect}"
+  #           #Rails.logger.error("#{node_name} #{v.inspect}")
+  #           raise e
+  #         end
+  #       end
+  #     elsif options[:type] == "cdata"
+  #       r.tag!(node_name) do |cnode|
+  #         cnode.cdata value.to_s
+  #       end
+  #     else
+  #       if !is_many?(options[:method])
+  #         value = [value]
+  #       end
+  #       value.each do |v|
+  #         r.tag!(node_name, convert_type_to_value(v, options[:type]))
+  #       end
+  #     end
+  #   end
+  # end
+  
+  
+  def add_node_attributes( node, attributes )
+    attributes.each do |name, value|
+      XML::Attr.new( node, name, value )
     end
-      
+  end
+
+  #create a node with name
+  #and a hash of namespaces or attributes
+  #passed to options
+  def create_node( name, options ={} )
+    node = XML::Node.new( name )
+
+    namespaces = options.delete( :namespaces )
+    add_namespaces( node, namespaces ) if namespaces
+
+    attributes = options.delete( :attributes )
+    add_node_attributes( node, attributes ) if attributes
+    node
+  end
+  
+  
+  def to_xml_node(node_name = nil, &block)
+    node_name ||= class_node_name
     t1 = Time.now
+    node = create_node(node_name, {attributes: xml_attributes_hash(node_name)})
+    
     if self.class.text_node_method
-      xml.tag!(node_name, self.send(self.class.text_node_method), xml_attributes_hash(node_name))
+      node << self.send(self.class.text_node_method)
     else
-      xml.tag!(node_name, xml_attributes_hash(node_name)) do |r|
-        if self.class.text_node_method
-          r.text self.send(self.class.text_node_method)        
-        else
-          elements.each do |k, options|
-            value = self.send(options[:method])
-            if options[:passthrough] && k != options[:passthrough]
-              if options[:multiple] && value && value.any? #passthroughs are always for collections/multiples
-                xml.tag!(k) do |pr|            
-                  self.element_xml_node(pr, k, options, value)
-                end
+      elements.each do |k, options|
+        value = self.send(options[:method])
+        if options[:passthrough] && k != options[:passthrough]
+          if options[:multiple] && value && value.any? #passthroughs are always for collections/multiples
+            p_node = create_node(k)
+            children = self.element_xml_node(k, options, value)
+            if children.is_a?(Array)
+              children.each do |c|
+                p_node << c
               end
-            else 
-              self.element_xml_node(r, k, options, value)
+            else
+              p_node << children
             end
+            node << p_node
           end
-          if block
-            yield r
+        else 
+          children = self.element_xml_node(k, options, value)
+          if children.is_a?(Array)
+            children.each do |c|
+              node << c
+            end
+          else
+            node << children
           end
         end
       end
+      if block
+        yield node
+      end
     end
-    t2 = Time.now
-    if !(node_name == "VoteCounts" || node_name == "SummaryCounts")
+    if Object.const_defined?("Rails") && !(node_name == "VoteCounts" || node_name == "SummaryCounts")
       Rails.logger.info("Wrote node: #{node_name} #{id} with #{elements.count} children in #{t2-t1}")
     end
-    return xml
+    return node
   end
+  
+  # def to_xml_node(xml = nil, node_name = nil, &block)
+  #   node_name ||= class_node_name
+  #   xml ||= Builder::XmlMarkup.new #Nokogiri::XML::Builder.new
+  #   if Object.const_defined?("Rails")
+  #     #Rails.logger.debug("Writing node: #{node_name}")
+  #   end
+  #
+  #   t1 = Time.now
+  #   if self.class.text_node_method
+  #     xml.tag!(node_name, self.send(self.class.text_node_method), xml_attributes_hash(node_name))
+  #   else
+  #     xml.tag!(node_name, xml_attributes_hash(node_name)) do |r|
+  #       if self.class.text_node_method
+  #         r.text self.send(self.class.text_node_method)
+  #       else
+  #         elements.each do |k, options|
+  #           value = self.send(options[:method])
+  #           if options[:passthrough] && k != options[:passthrough]
+  #             if options[:multiple] && value && value.any? #passthroughs are always for collections/multiples
+  #               xml.tag!(k) do |pr|
+  #                 self.element_xml_node(pr, k, options, value)
+  #               end
+  #             end
+  #           else
+  #             self.element_xml_node(r, k, options, value)
+  #           end
+  #         end
+  #         if block
+  #           yield r
+  #         end
+  #       end
+  #     end
+  #   end
+  #   t2 = Time.now
+  #   if !(node_name == "VoteCounts" || node_name == "SummaryCounts")
+  #     Rails.logger.info("Wrote node: #{node_name} #{id} with #{elements.count} children in #{t2-t1}")
+  #   end
+  #   return xml
+  # end
   
 end

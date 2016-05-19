@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'nokogiri'
 gem "activesupport", "~> 4.2"
+gem 'libxml-ruby'
 #gem "activemodel", "~> 4.2"
 
 group :test do
