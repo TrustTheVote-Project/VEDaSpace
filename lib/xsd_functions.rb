@@ -363,7 +363,7 @@ module XsdFunctions
             value = self.send(options[:method])
             if options[:passthrough] && k != options[:passthrough]
               if options[:multiple] && value && value.any? #passthroughs are always for collections/multiples
-                xml.send(k) do |pr|            
+                xml.tag!(k) do |pr|            
                   self.element_xml_node(pr, k, options, value)
                 end
               end
