@@ -350,6 +350,7 @@ module XsdFunctions
       Rails.logger.debug("Writing node: #{node_name}")
     end
       
+    t1 = Time.now
     xml.send(node_name, xml_attributes_hash(node_name)) do |r|
       if self.class.text_node_method
         r.text self.send(self.class.text_node_method)
@@ -370,6 +371,10 @@ module XsdFunctions
           yield r
         end
       end
+    end
+    t2 = Time.now
+    if !self.class.text_node_method
+      Rails.logger.info("Wrote node: #{node_name} with #{elements.count} children in #{t2-t1}")
     end
     return xml
   end
