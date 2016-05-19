@@ -347,7 +347,7 @@ module XsdFunctions
     node_name ||= class_node_name
     xml ||= Nokogiri::XML::Builder.new
     if Object.const_defined?("Rails")
-      Rails.logger.debug("Writing node: #{node_name}")
+      #Rails.logger.debug("Writing node: #{node_name}")
     end
       
     t1 = Time.now
@@ -373,7 +373,7 @@ module XsdFunctions
       end
     end
     t2 = Time.now
-    if !self.class.text_node_method
+    if !(node_name == "VoteCounts" || node_name == "SummaryCounts")
       Rails.logger.info("Wrote node: #{node_name} with #{elements.count} children in #{t2-t1}")
     end
     return xml
