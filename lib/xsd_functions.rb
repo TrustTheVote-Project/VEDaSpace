@@ -1,4 +1,5 @@
 require 'active_support'
+require 'builder'
 module XsdFunctions
   extend ActiveSupport::Concern
   
@@ -345,30 +346,34 @@ module XsdFunctions
   
   def to_xml_node(xml = nil, node_name = nil, &block)
     node_name ||= class_node_name
-    xml ||= Nokogiri::XML::Builder.new
+    xml ||= Builder::XmlMarkup.new #Nokogiri::XML::Builder.new
     if Object.const_defined?("Rails")
       #Rails.logger.debug("Writing node: #{node_name}")
     end
       
     t1 = Time.now
-    xml.send(node_name, xml_attributes_hash(node_name)) do |r|
-      if self.class.text_node_method
-        r.text self.send(self.class.text_node_method)
-      else
-        elements.each do |k, options|
-          value = self.send(options[:method])
-          if options[:passthrough] && k != options[:passthrough]
-            if options[:multiple] && value && value.any? #passthroughs are always for collections/multiples
-              xml.send(k) do |pr|            
-                self.element_xml_node(pr, k, options, value)
+    if self.class.text_node_method
+      xml.send(node_name, self.send(self.class.text_node_method), xml_attributes_hash(node_name))
+    else
+      xml.send(node_name, xml_attributes_hash(node_name)) do |r|
+        if self.class.text_node_method
+          r.text self.send(self.class.text_node_method)        
+        else
+          elements.each do |k, options|
+            value = self.send(options[:method])
+            if options[:passthrough] && k != options[:passthrough]
+              if options[:multiple] && value && value.any? #passthroughs are always for collections/multiples
+                xml.send(k) do |pr|            
+                  self.element_xml_node(pr, k, options, value)
+                end
               end
+            else 
+              self.element_xml_node(r, k, options, value)
             end
-          else 
-            self.element_xml_node(r, k, options, value)
           end
-        end
-        if block
-          yield r
+          if block
+            yield r
+          end
         end
       end
     end
