@@ -346,7 +346,9 @@ module XsdFunctions
   def to_xml_node(xml = nil, node_name = nil, &block)
     node_name ||= class_node_name
     xml ||= Nokogiri::XML::Builder.new
-    #Rails.logger.debug("Writing node: #{node_name}")
+    if Object.const_defined?("Rails")
+      Rails.logger.debug("Writing node: #{node_name}")
+    end
       
     xml.send(node_name, xml_attributes_hash(node_name)) do |r|
       if self.class.text_node_method
