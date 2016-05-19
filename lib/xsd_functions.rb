@@ -353,9 +353,9 @@ module XsdFunctions
       
     t1 = Time.now
     if self.class.text_node_method
-      xml.send(node_name, self.send(self.class.text_node_method), xml_attributes_hash(node_name))
+      xml.tag!(node_name, self.send(self.class.text_node_method), xml_attributes_hash(node_name))
     else
-      xml.send(node_name, xml_attributes_hash(node_name)) do |r|
+      xml.tag!(node_name, xml_attributes_hash(node_name)) do |r|
         if self.class.text_node_method
           r.text self.send(self.class.text_node_method)        
         else
