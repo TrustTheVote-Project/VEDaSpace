@@ -444,6 +444,7 @@ module XsdFunctions
         yield node
       end
     end
+    t2 = Time.now
     if Object.const_defined?("Rails") && !(node_name == "VoteCounts" || node_name == "SummaryCounts")
       Rails.logger.info("Wrote node: #{node_name} #{id} with #{elements.count} children in #{t2-t1}")
     end
