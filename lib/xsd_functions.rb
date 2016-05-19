@@ -335,7 +335,7 @@ module XsdFunctions
         return children
       elsif options[:type] == "cdata"
         node = create_node(node_name)
-        node << "<![CDATA![#{value.to_s}]]>"
+        node << create_cdata_node(value.to_s)
         return node
       else
         if !is_many?(options[:method])
@@ -404,6 +404,16 @@ module XsdFunctions
     add_node_attributes( node, attributes ) if attributes
     node
   end
+  def create_cdata_node( name, options ={} )
+    node = XML::Node.new_cdata( name )
+
+    namespaces = options.delete( :namespaces )
+    add_namespaces( node, namespaces ) if namespaces
+
+    attributes = options.delete( :attributes )
+    add_node_attributes( node, attributes ) if attributes
+    node
+  end  
   
   
   def to_xml_node(node_name = nil, &block)
